@@ -1,5 +1,4 @@
 [tools]
-just = "latest"
 neovim = "latest"
 node = "latest"
 wrangler = "latest"
