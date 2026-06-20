@@ -8,12 +8,12 @@ pipelines:
           caches:
             - node
           script:
-            - curl -L https://github.com/kristoff-it/zine/releases/download/v0.10.0-preview/zine-linux-x86_64.tar.gz -o zine.tar.gz
-            - tar -xzf zine.tar.gz
-            - chmod +x zine
-            - ./zine release
-            - name: install wrangler
-              script: 
+             curl -L https://github.com/kristoff-it/zine/releases/download/v0.10.0-preview/zine-linux-x86_64.tar.gz -o zine.tar.gz
+            tar -xzf zine.tar.gz
+            chmod +x zine
+            ./zine release
+           - name: install wrangler
+             script: 
                 npm install -g wrangler &&
                 wrangler pages deploy public \
                 --project-name pratyay \
