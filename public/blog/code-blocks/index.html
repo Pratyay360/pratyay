@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head id="head">
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1">
+		<title>Welcome to Zine!</title>
+		<link type="text/css" rel="stylesheet" href="/style.css">
+		<link type="text/css" rel="stylesheet" href="/highlight.css">
+		<!-- mathtex -->
+		<link type="text/css" rel="stylesheet" href="/Temml-Local.css">
+		<script defer src="/temml.min.js"></script>
+		<script defer src="/render-mathtex.js"></script>
+		<!-- /mathtex -->
+		
+	<style>
+		#prev-next {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			margin-top: 40px;
+		}
+		
+		figure {
+			align-self: center;
+			text-align: center;
+			font-style: italic;
+		}
+		
+		.post {
+			display:flex;
+			flex-direction: column;
+		}
+	</style>
+
+	</head>
+	<body id="body">
+		<h1 class="site-title">Welcome to Zine!</h1>
+		<nav>
+			<a href="/">Home</a>
+			&nbsp; • &nbsp;
+			<a href="/about/">About</a>
+			&nbsp; • &nbsp;
+			<a href="/blog/">Blog</a>
+			
+				&nbsp; • &nbsp;
+				<a href="/devlog/1990/">Devlog</a>
+			
+		</nav>
+		
+	<h1>Third Post</h1>
+	<div class="post"><p>Code blocks may be wider than the viewport on mobile. They’ll scroll horizontally.</p><pre><code class="zig"><span class="comment_documentation comment spell">/// Shaper that uses CoreText.</span>
+<span class="comment_documentation comment spell">///</span>
+<span class="comment_documentation comment spell">/// CoreText shaping differs in subtle ways from HarfBuzz so it may result</span>
+<span class="comment_documentation comment spell">/// in inconsistent rendering across platforms. But it also fixes many</span>
+<span class="comment_documentation comment spell">/// issues (some macOS specific):</span>
+<span class="comment_documentation comment spell">///</span>
+<span class="comment_documentation comment spell">///   - Theta hat offset is incorrect in HarfBuzz but correct by default</span>
+<span class="comment_documentation comment spell">///     on macOS applications using CoreText. (See:</span>
+<span class="comment_documentation comment spell">///     https://github.com/harfbuzz/harfbuzz/discussions/4525)</span>
+<span class="comment_documentation comment spell">///</span>
+<span class="comment_documentation comment spell">///   - Hyphens (U+2010) can be synthesized by CoreText but not by HarfBuzz.</span>
+<span class="comment_documentation comment spell">///     See: https://github.com/mitchellh/ghostty/issues/1643</span>
+<span class="comment_documentation comment spell">///</span>
+<span class="keyword_modifier">pub</span> <span class="keyword">const</span> <span class="constant variable_builtin type variable">Shaper</span> <span class="operator">=</span> <span class="keyword_type">struct</span> <span class="punctuation_bracket">{</span>
+    <span class="comment_documentation comment spell">/// The allocated used for the feature list, font cache, and cell buf.</span>
+    <span class="constant variable_builtin type variable_member variable">alloc</span><span class="punctuation_delimiter">:</span> <span class="constant variable_builtin type variable">Allocator</span><span class="punctuation_delimiter">,</span>
+
+    <span class="comment_documentation comment spell">/// The string used for shaping the current run.</span>
+    <span class="constant variable_builtin type variable_member variable">run_state</span><span class="punctuation_delimiter">:</span> <span class="constant variable_builtin type variable">RunState</span><span class="punctuation_delimiter">,</span>
+
+    <span class="comment_documentation comment spell">/// CoreFoundation Dictionary which represents our font feature settings.</span>
+    <span class="constant variable_builtin type variable_member variable">features</span><span class="punctuation_delimiter">:</span> <span class="operator">*</span><span class="constant variable_builtin type variable">macos</span><span class="punctuation_delimiter">.</span><span class="constant variable_builtin type variable_member variable">foundation</span><span class="punctuation_delimiter">.</span><span class="constant variable_builtin type variable_member variable">Dictionary</span><span class="punctuation_delimiter">,</span>
+<span class="comment_documentation comment spell">// ...</span>
+</code></pre>
+</div>
+	<div id="prev-next">
+		<div>
+			<a href="/blog/second-post/">
+				←
+				<span>Second Post</span>
+			</a>
+		</div>
+		<div></div>
+	</div>
+
+		<footer>
+			<hr>
+			<h5>SITE UNDER CONSTRUCTION</h5>
+			<img src="/under-construction.gif" width="90">
+		</footer>
+	</body>
+</html>
