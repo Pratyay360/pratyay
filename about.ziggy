@@ -1,0 +1,96 @@
+{
+    "name": "Pratyay Mustafi",
+    "description": "A passionate software enthusiast, with a curious mind",
+    "links": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/pratyay360"
+        },
+        {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/pratyaymustafi/"
+        },
+        {
+            "name": "Twitter",
+            "url": "https://twitter.com/pratyay360"
+        },
+        {
+            "name": "Email",
+            "url": "mailto:pratyaymustafi@outlook.com"
+        },
+        {
+            "name": "Codeberg",
+            "url": "https://codeberg.org/pratyay360"
+        },
+        {
+            "name": "Mastodon",
+            "url": "https://mastodon.social/@pratyay360"
+        },
+        {
+            "name": "GitLab",
+            "url": "https://gitlab.com/pratyay360"
+        }
+    ],
+    "education": [
+        {
+            "degree": "Bachelor of Computer Science ",
+            "institution": "University of Kalyani",
+            "year": "2021 - 2024"
+        },
+        {
+            "degree": "Master in Computer Application",
+            "institution": "Kalyani Government Engineering College",
+            "year": "2024 - 2026"
+        }
+    ],
+    "skills": [
+        { "category": "Programming Languages", "items": " Zig, Rust, C, C++, Python" },
+        { "category": "Web Development", "items": " Vite, svelte, tailwindcss" },
+        { "category": "Frameworks", "items": " React, nodejs(bun)" },
+        { "category": "Tools", "items": " Git(jj), Containers(podman, bootc) RestAPis: bruno" },
+        { "category": "Operating Systems", "items": " Linux    (unix-like systems)" }
+    ],
+    "projects": [
+        {
+            "name": "upiqrcode",
+            "description": "A npm package (zero dependency) for generating qr codes dynamically",
+            "url": "https://github.com/pratyay360/upiqrcode"
+        },
+        {
+            "name": "podman-ts",
+            "description": "have created(typescript) bindings for podman/containerd api, with vibe coding (inspired from vite/Oxc toolchain) and a cli tool for working with containers",
+            "url": "https://github.com/pratyay360/podman-ts"
+        },
+        {
+            "name": "searchapi",
+            "description": "dockerhub pulls(~1.5k) a http rest api based on searxng, using fastapi, can be used as a mcp",
+            "url": "https://github.com/pratyay360/searchapi"
+        },
+        {
+            "name": "drawx",
+            "description": "A simple drawing application built with react and tauri inspired by Tldraw and drawy(it's a kde app)",
+            "url": "https://github.com/pratyay360/drawx"
+        }
+    ],
+    "hobbies": [
+        "Exploring and tinkering with new technologies",
+        "Building stuff which i will be using myself ",
+        "Watching anime and reading manga"
+    ],
+    "personal_traits": [
+        "Curious love lerning about anything interesting",
+        "building stuff which are actually useful",
+        "affraid of not exploring anything new/unknown"
+    ],
+    "career": [
+        "currently  unemployed"
+    ],
+    "political_views": [
+        "i am a right winger and a strong supporter of bengali nationalism",
+        "I believe in the idea of a strong and wealthy west bengal (if our ancestors  colonized, we can do so now too )"
+    ],
+    "remarks": [
+        "personally speaking i am kind of a person who learns like a mile wide but only a inch deep",
+        "though I have good understanding of the fundamentals, can plan complex systems.  like a inch wide but a mile deeper"
+    ]
+}

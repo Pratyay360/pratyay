@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head id="head">
+		<meta charset="utf-8">
+		<title>Blog</title>
+	</head>
+	<body id="body">
+		<main id="main">
+			<article id="article">
+			<super>
+			</article>
+
+
+			comments
+		</main>
+		<div id="comments">
+			<script src="https://utteranc.es/client.js"
+                repo="Pratyay360/blog_md"
+                issue-term="og:title"
+                label="new comment"
+                theme="photon-dark"
+                crossorigin="anonymous"
+                async>
+			</script>
+		</div>
+	</body>
+</html>

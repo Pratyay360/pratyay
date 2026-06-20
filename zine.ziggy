@@ -1,6 +1,6 @@
 Site {
-    .title = "Welcome to Zine!",
-    .host_url = "https://example.com",
+    .title = "pratyay mustafi",
+    .host_url = "https://pratyay.bond",
     .content_dir_path = "content",
     .layouts_dir_path = "layouts",
     .assets_dir_path = "assets",

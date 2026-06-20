@@ -2,7 +2,7 @@
 .title = "Devlog - 1990",
 .date = @date("1990-01-01T00:00:00"),
 .author = "Sample Author",
-.layout = "devlog.shtml",
+.layout = "project.shtml",
 .draft = false,
 ---
 []($section.id('about'))
@@ -15,10 +15,10 @@ For example this is how the Zine devlog describes itself:
 
 > This is a non-exhaustive, curated list of changes meant to help users quickly see what has improved since they last checked.
 >
-> You can [subscribe to this page via RSS]($link.page('devlog').alternative('rss')).
+> You can [subscribe to this page via RSS]($link.page('projects').alternative('rss')).
 >
 > This page lists entries for the current year, for past entries consult the
-[devlog archive](/devlog/).
+[devlog archive](/projects/).
 
 Feel free to tweak it to your specific use case or replace it entirely as you
 see fit.

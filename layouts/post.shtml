@@ -37,4 +37,17 @@
 			</a>
 		</div>
 	</div>
+
+	<hr style="margin-top: 40px; margin-bottom: 40px;">
+	<div id="comments">
+		<h2>Comments</h2>
+		<script src="https://utteranc.es/client.js"
+                repo="Pratyay360/blog_md"
+                issue-term="og:title"
+                label="new comment"
+                theme="photon-dark"
+                crossorigin="anonymous"
+                async>
+		</script>
+	</div>
 </body>

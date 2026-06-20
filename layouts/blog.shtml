@@ -1,25 +1,71 @@
 <extend template="base.shtml">
 <head id="head">
 	<style>
-		.date {
-			font-size: 0.9em;
+		.blog-listing {
+			display: flex;
+			flex-direction: column;
+			gap: 24px;
 		}
-		
-		.title h3{
-			margin-top: 0;
+		.blog-post {
+			border-bottom: 1px solid #eee;
+			padding-bottom: 20px;
+		}
+		.blog-post:last-child {
+			border-bottom: none;
+		}
+		.blog-post-date {
+			font-size: 0.85em;
+			color: #666;
+			margin-bottom: 4px;
+		}
+		.blog-post-title {
+			margin: 0 0 8px 0;
+		}
+		.blog-post-title a {
+			text-decoration: none;
+			color: inherit;
+		}
+		.blog-post-title a:hover {
+			text-decoration: underline;
+		}
+		.blog-post-excerpt {
+			color: #444;
+			line-height: 1.6;
+		}
+		.blog-post-full {
+			display: none;
+			margin-top: 12px;
+			line-height: 1.7;
+		}
+		.blog-post-full.open {
+			display: block;
+		}
+		.blog-post-toggle {
+			cursor: pointer;
+			color: #0066cc;
+			background: none;
+			border: none;
+			padding: 0;
+			font-size: inherit;
+			text-decoration: underline;
+		}
+		.blog-loading {
+			color: #666;
+			font-style: italic;
+		}
+		.blog-error {
+			color: #c00;
+		}
+		.blog-intro {
+			margin-bottom: 24px;
 		}
 	</style>
 </head>
 <body id="body">
 	<h1 :text="$page.title"></h1>
-	<div :html="$page.content()"></div>
-	<div>
-		<h2>Post list</h2>
-		<div :loop="$page.subpages()">
-			<span class="date" :text="$loop.it.date.format('January 02, 2006')"></span>
-			<a class="title" href="$loop.it.link()">
-				<h3 :text="$loop.it.title"></h3>
-			</a>
-		</div>
+	<div class="blog-intro" :html="$page.content()"></div>
+	<script defer src="$site.asset('content.js').link()"></script>
+	<div id="dynamic-content">
+		<p class="blog-loading">Loading posts...</p>
 	</div>
 </body>

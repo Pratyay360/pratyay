@@ -1,0 +1,5 @@
+[tools]
+zls = "latest"
+zig = "latest"
+zigmod = "latest"
+neovim = "latest"

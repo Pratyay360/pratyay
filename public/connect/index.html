@@ -3,29 +3,33 @@
 	<head id="head">
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1">
-		<title :text="$site.title"></title>
-		<link type="text/css" rel="stylesheet" href="$site.asset('style.css').link()">
-		<link type="text/css" rel="stylesheet" href="$site.asset('highlight.css').link()">
+		<title>pratyay mustafi</title>
+		<link type="text/css" rel="stylesheet" href="/style.css">
+		<link type="text/css" rel="stylesheet" href="/highlight.css">
   <!-- mathtex -->
-  <link type="text/css" rel="stylesheet" href="$site.asset('Temml-Local.css').link()">
-  <script defer src="$site.asset('temml.min.js').link()"></script>
-  <script defer src="$site.asset('render-mathtex.js').link()"></script>
+  <link type="text/css" rel="stylesheet" href="/Temml-Local.css">
+  <script defer src="/temml.min.js"></script>
+  <script defer src="/render-mathtex.js"></script>
   <!-- /mathtex -->
-		<super>
+		
+
 	</head>
 	<body id="body">
-		<h1 class="site-title" :text="$site.title"></h1>
+		<h1 class="site-title">pratyay mustafi</h1>
 		<nav>
-			<a href="$site.page('').link()">Home</a>
+			<a href="/">Home</a>
 
 			&nbsp; • &nbsp;
-			<a href="$site.page('blog').link()">Blog</a>
-			<ctx :if="$site.page('projects').subpages().first?()">
+			<a href="/blog/">Blog</a>
+			
 				&nbsp; • &nbsp;
-				<a href="$if.link()">Devlog</a>
-			</ctx>
+				<a href="/projects/1990/">Devlog</a>
+			
 		</nav>
-		<super>
+		
+	<h1>Connect with me</h1>
+	<div></div>
+
 		<footer>
 			<hr>
 			<div class="footer-links">

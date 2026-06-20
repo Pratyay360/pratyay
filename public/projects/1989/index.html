@@ -13,22 +13,34 @@
   <!-- /mathtex -->
 		
 	<style>
-		#prev-next {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-			margin-top: 40px;
+		.feed {
+			margin-top: 2em;
 		}
 		
-		figure {
-			align-self: center;
-			text-align: center;
-			font-style: italic;
+		.feed>div {
+			margin: 0 -20px;
+			padding: 5px 20px;
+			margin-bottom: 1em;
 		}
 		
-		.post {
-			display:flex;
-			flex-direction: column;
+		.feed>div>h2 {
+			margin-top: 0.4em;
+		}
+		
+		.feed>div[id]:target {
+			animation: pulse-div 2s ease-in-out 1 forwards;
+		}
+		
+		@keyframes pulse-div {
+			
+			0%,
+			100% {
+				background-color: #222;
+			}
+			
+			50% {
+				background-color: #111;
+			}
 		}
 	</style>
 
@@ -46,34 +58,15 @@
 			
 		</nav>
 		
-	<h1>Second Post</h1>
-	<div class="post"></div>
-	<div id="prev-next">
-		<div>
-			<a href="/blog/first-post/">
-				←
-				<span>First Post: What&apos;s A Zine?</span>
-			</a>
+	<h1 class="title">Devlog - 1989</h1>
+	<div><div id="about"><h2>About this Devlog</h2><p>This is a non-exhaustive, curated list of changes meant to help users quickly see what has improved since they last checked.</p><p>You can <a href="/projects/index.xml">subscribe the latest devlog via RSS</a>.</p><p>This page lists entries for the year 1989, for past or future entries consult the <a href="/projects/">devlog archive</a>.</p></div></div>
+	<div class="feed">
+		<div id="1989-01-01T00:00:00">
+			<span>January 01, 1989</span>
+			<h2><a href="#1989-01-01T00:00:00">Hello 1989
+</a></h2>
+			<p>This is a sample entry.</p>
 		</div>
-		<div>
-			<a href="/blog/code-blocks/">
-				<span>Third Post</span>
-				→
-			</a>
-		</div>
-	</div>
-
-	<hr style="margin-top: 40px; margin-bottom: 40px;">
-	<div id="comments">
-		<h2>Comments</h2>
-		<script src="https://utteranc.es/client.js"
-                repo="Pratyay360/blog_md"
-                issue-term="og:title"
-                label="new comment"
-                theme="photon-dark"
-                crossorigin="anonymous"
-                async>
-		</script>
 	</div>
 
 		<footer>
