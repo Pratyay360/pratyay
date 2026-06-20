@@ -8,9 +8,9 @@ pipelines:
           caches:
             - node
           script:
-            - curl -fsSL https://github.com/kristoff-it/zine/releases/download/v0.11.3/aarch64-linux-musl.tar.xz -o zine.tar.gz
+            - curl -fsSL https://github.com/kristoff-it/zine/releases/download/v0.11.3/x86_64-linux-musl.tar.xz -o zine.tar.gz
             - tar -xvf zine.tar.gz
             - chmod +x zine
             - ./zine release
-            - npm install -g wrangler
-            - wrangler pages deploy public --project-name pratyay --branch main
+            - npm install wrangler
+            - npx wrangler pages deploy public --project-name pratyay --branch main
