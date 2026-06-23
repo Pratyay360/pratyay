@@ -1,5 +1,5 @@
 ---
-.title = "First Post: What's A Zine?",
+.title = "First Post: What's Zine?",
 .date = @date("1990-01-01T00:00:00"),
 .author = "Sample Author",
 .layout = "post.shtml",
@@ -59,7 +59,7 @@ Similarly, self-expression on Twitter is encouraged to take the shape of short,
 hyperbolic hot takes that forgo nuance in order to create catchy quips that can
 be used for hasty decision making.
 
-Likewise, [corpowave]($text.attrs('wave')) never goes out of style on LinkedIn.
+ikewise, [corpowave]($text.attrs('wave')) never goes out of style on LinkedIn.
 Spend enough time in there and you will become a character from Severance.
 
 ## We're not in 1990 anymore

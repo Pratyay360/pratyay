@@ -22,7 +22,7 @@
 			<a href="$site.page('blog').link()">Blog</a>
 			<ctx :if="$site.page('projects').subpages().first?()">
 				&nbsp; • &nbsp;
-				<a href="$if.link()">Devlog</a>
+				<a href="$if.link()">Projects</a>
 			</ctx>
 		</nav>
 		<super>
