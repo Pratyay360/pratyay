@@ -1,7 +1,0 @@
----
-.title = "Connect with me",
-.date = @date("1990-01-01T00:00:00"),
-.author = "pm",
-.layout = "index.shtml",
-.draft = false,
----

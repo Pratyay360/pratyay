@@ -1,36 +1,6 @@
 {
     "name": "Pratyay Mustafi",
     "description": "A passionate software enthusiast, with a curious mind",
-    "links": [
-        {
-            "name": "GitHub",
-            "url": "https://github.com/pratyay360"
-        },
-        {
-            "name": "LinkedIn",
-            "url": "https://www.linkedin.com/in/pratyaymustafi/"
-        },
-        {
-            "name": "Twitter",
-            "url": "https://twitter.com/pratyay360"
-        },
-        {
-            "name": "Email",
-            "url": "mailto:pratyaymustafi@outlook.com"
-        },
-        {
-            "name": "Codeberg",
-            "url": "https://codeberg.org/pratyay360"
-        },
-        {
-            "name": "Mastodon",
-            "url": "https://mastodon.social/@pratyay360"
-        },
-        {
-            "name": "GitLab",
-            "url": "https://gitlab.com/pratyay360"
-        }
-    ],
     "education": [
         {
             "degree": "Bachelor of Computer Science ",

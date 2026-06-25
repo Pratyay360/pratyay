@@ -6,11 +6,11 @@
 		<title :text="$site.title"></title>
 		<link type="text/css" rel="stylesheet" href="$site.asset('style.css').link()">
 		<link type="text/css" rel="stylesheet" href="$site.asset('highlight.css').link()">
-  <!-- mathtex -->
-  <link type="text/css" rel="stylesheet" href="$site.asset('Temml-Local.css').link()">
-  <script defer src="$site.asset('temml.min.js').link()"></script>
-  <script defer src="$site.asset('render-mathtex.js').link()"></script>
-  <!-- /mathtex -->
+		<!-- mathtex -->
+		<link type="text/css" rel="stylesheet" href="$site.asset('Temml-Local.css').link()">
+		<script defer src="$site.asset('temml.min.js').link()"></script>
+		<script defer src="$site.asset('render-mathtex.js').link()"></script>
+		<!-- /mathtex -->
 		<super>
 	</head>
 	<body id="body">
@@ -36,6 +36,16 @@
 				<a href="https://mastodon.social/@pratyay360">Mastodon</a>
 				&nbsp; • &nbsp;
 				<a href="mailto:pratyaymustafi@outlook.com">Email</a>
+				&nbsp; • &nbsp;
+				<a href="https://gitlab.com/pratyay360">Gitlab</a>
+				&nbsp; • &nbsp;
+				<a href="https://twitter.com/pratyay360">Twitter</a>
+				&nbsp; • &nbsp;
+				<a href="https://codeberg.org/pratyay360">Codeberg</a>
+				&nbsp; • &nbsp;
+				<a href="https://mastodon.social/@pratyay360">
+					Mastodon
+				</a>
 			</div>
 			<p class="footer-copy">&copy; 2025 Pratyay Mustafi</p>
 		</footer>

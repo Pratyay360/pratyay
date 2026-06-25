@@ -7,20 +7,13 @@
 	<body id="body">
 		<main id="main">
 			<article id="article">
-			<super>
+				<super>
 			</article>
-
 
 			comments
 		</main>
 		<div id="comments">
-			<script src="https://utteranc.es/client.js"
-                repo="Pratyay360/blog_md"
-                issue-term="og:title"
-                label="new comment"
-                theme="photon-dark"
-                crossorigin="anonymous"
-                async>
+			<script src="https://utteranc.es/client.js" repo="Pratyay360/blog_md" issue-term="og:title" label="new comment" theme="photon-dark" crossorigin="anonymous" async>
 			</script>
 		</div>
 	</body>
