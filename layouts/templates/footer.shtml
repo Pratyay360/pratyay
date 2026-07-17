@@ -1,9 +1,7 @@
-<extend template="header.shtml">
-
+<extend template="base.shtml">
 <head id="head"><super></head>
 <header id="header"><super></header>
 <main id="main"><super></main>
-
 <footer id="footer">
 	<div class="flx gap-l wt-600 flx-ctr">
 		<nav class="flx flx-col">
@@ -22,10 +20,6 @@
 			<a href="https://codeberg.org/pratyay360">Codeberg</a>
 		</nav>
 		<br>
-		<span class="text-center">
-			<p>Don't hesitate to send a lil' message, I'm looking to learn a thing or two from people.</p>
-		</span>
-
 		<p>
 			2026 Pratyay Mustafi
 		</p>

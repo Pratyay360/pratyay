@@ -1,9 +1,62 @@
-<extend template="base.shtml">
+<extend template="footer.shtml">
 <head id="head">
+	<!-- Octothorpes protocol -->
+	<link
+		rel="preload"
+		as="fetch"
+		href="$page.link().prefix($site.host_url).prefix('https://octothorp.es/?uri=')"
+	>
+	<ctx :if="$page.tags.empty.not()">
+		<ctx :loop="$page.tags">
+			<link rel="octo:octothorpes" href="$loop.it">
+		</ctx>
+	</ctx>
 </head>
-<header id="header"><super></header>
+<header id="header"></header>
 <main id="main">
-	<h1 :text="$page.title"></h1>
-	<div :html="$page.content()"></div>
+	<h1 :text="$page.title" class="txt-ctr"></h1>
+	<div class="subtitle-wrp txt-ctr">
+		<ctx :if="$page.custom.get?('subtitle')">
+			<span :text="$if" class="fgshade1"></span><br>
+		</ctx>
+		<time
+			class="fgshade3"
+			:text="$page.date.format('January 02, 2006')"
+		></time>
+	</div>
+	<!-- TOC's are broken at the moment -->
+	<ctx :if="$page.custom.get?('toc')">
+		<details>
+			<summary>Table of Contents</summary>
+			<ctx :html="$page.toc()"></ctx>
+		</details>
+	</ctx>
+	<div class="post" :html="$page.content()"></div>
+	<ctx :if="$page.footnotes?()">
+		<ol :loop="$if">
+			<li id="$loop.it.def_id">
+				<ctx :html="$loop.it.html()"></ctx>
+				<ctx :loop="$loop.it.ref_ids">
+					<a href="$loop.it.prefix('#')">⤴</a>
+				</ctx>
+			</li>
+		</ol>
+	</ctx>
+	<div class="no-print">
+		<ctx :if="$page.tags.empty.not()">
+			<p :loop="$page.tags" class="flex gap no-print ft-size-s">
+				<span :text="$loop.it.prefix('#')" class="italic fgshade3"></span>
+			</p>
+		</ctx>
+		<nav id="prev_next" class="flx flx-sp-bw no-print ft-size-s">
+			<ctx :if="$page.prevPage?()">
+				<a href="$if.link()" title="$if.title">← Previous</a>
+			</ctx>
+			<a href="#">↑ Top</a>
+			<ctx :if="$page.nextPage?()">
+				<a href="$if.link()" title="$if.title">Next →</a>
+			</ctx>
+		</nav>
+	</div>
 </main>
-<footer id="footer"><super></footer>
+<footer id="footer"></footer>

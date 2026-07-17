@@ -1,9 +1,0 @@
----
-.title = "Blog",
-.date = .date("1990-01-01T00:00:00"),
-.authors = ["Pratyay Mustafi"],
-.layout = "blog.shtml",
-.draft = false,
----
-
-Thoughts on programming, systems, and things I find interesting.

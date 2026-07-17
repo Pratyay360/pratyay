@@ -1,11 +1,12 @@
 <extend template="footer.shtml">
 <head id="head">
 	<script src="/pagefind/pagefind-component-ui.js" type="module"></script>
-	<ctx ps="$site.asset('css/pagefind-media-query.css')">
-		<link type="text/css"
-		      rel="stylesheet"
-		      href="$ctx.ps.link()"
-		      as="style"
+	<ctx ps="$site.asset.css('pagefind-media-querry.css')">
+		<link
+			type="text/css"
+			rel="stylesheet"
+			href="$ctx.ps.link()"
+			as="style"
 		>
 	</ctx>
 </head>

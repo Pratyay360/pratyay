@@ -1,6 +1,6 @@
-<extend template="footer.shtml">
-<head id="head"></head>
-<header id="header"></header>
+<extend template="base.shtml">
+<head id="head"><super></head>
+<header id="header"><super></header>
 <main id="main">
 	<h1 :text="$page.title" class="txt-ctr"></h1>
 	<div :html="$page.content()"></div>
@@ -27,4 +27,4 @@
 		</p>
 	</ctx>
 </main>
-<footer id="footer"></footer>
+<footer id="footer"><super></footer>

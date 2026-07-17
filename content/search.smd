@@ -1,0 +1,8 @@
+---
+.title = "Search",
+.date = .date("2026-05-28T17:31:00-04:00"),
+.authors = ["Pratyay Mustafi"],
+.layout = "search.shtml",
+---
+
+Search anything on my site thanks to [Pagefind](https://pagefind.app/).

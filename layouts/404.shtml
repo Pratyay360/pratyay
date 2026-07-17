@@ -1,6 +1,6 @@
 <extend template="base.shtml">
-<head id="head"></head>
-<header id="header"></header>
+<head id="head"><super></head>
+<header id="header"><super></header>
 <main id="main">
 	<h1>Error 404</h1>
 	<h1 :text="$page.title"></h1>
@@ -12,4 +12,4 @@
 		<a href="/search">search it</a>.
 	</p>
 </main>
-<footer id="footer"></footer>
+<footer id="footer"><super></footer>

@@ -1,0 +1,10 @@
+---
+.title = "Blog",
+.date = .date("1990-01-01T00:00:00"),
+.layout = "blog.shtml",
+.alternatives = [.{
+    .name = "rss",
+    .layout = "blog.xml",
+    .output = "section.xml",
+}],
+---

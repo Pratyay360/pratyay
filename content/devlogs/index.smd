@@ -1,9 +1,0 @@
-
----
-.title = "Homepage",
-.date = .date("1990-01-01T00:00:00"),
-.authors = ["Pratyay Mustafi"],
-.layout = "home.shtml",
-.draft = false,
----
-

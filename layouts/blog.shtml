@@ -1,73 +1,24 @@
-<extend template="base.shtml">
-<head id="head">
-	<style>
-		.blog-listing {
-			display: flex;
-			flex-direction: column;
-			gap: 24px;
-		}
-		.blog-post {
-			border-bottom: 1px solid #eee;
-			padding-bottom: 20px;
-		}
-		.blog-post:last-child {
-			border-bottom: none;
-		}
-		.blog-post-date {
-			font-size: 0.85em;
-			color: #666;
-			margin-bottom: 4px;
-		}
-		.blog-post-title {
-			margin: 0 0 8px 0;
-		}
-		.blog-post-title a {
-			text-decoration: none;
-			color: inherit;
-		}
-		.blog-post-title a:hover {
-			text-decoration: underline;
-		}
-		.blog-post-excerpt {
-			color: #444;
-			line-height: 1.6;
-		}
-		.blog-post-full {
-			display: none;
-			margin-top: 12px;
-			line-height: 1.7;
-		}
-		.blog-post-full.open {
-			display: block;
-		}
-		.blog-post-toggle {
-			cursor: pointer;
-			color: #0066cc;
-			background: none;
-			border: none;
-			padding: 0;
-			font-size: inherit;
-			text-decoration: underline;
-		}
-		.blog-loading {
-			color: #666;
-			font-style: italic;
-		}
-		.blog-error {
-			color: #c00;
-		}
-		.blog-intro {
-			margin-bottom: 24px;
-		}
-	</style>
-</head>
-<header id="header"><super></header>
+<extend template="footer.shtml">
+<head id="head"></head>
+<header id="header"></header>
 <main id="main">
-	<h1 :text="$page.title"></h1>
-	<div class="blog-intro" :html="$page.content()"></div>
-	<div id="dynamic-content">
-		<p class="blog-loading">Loading posts...</p>
-	</div>
+	<h1 :text="$page.title" class="txt-ctr"></h1>
+	<ctx :html="$page.content()"></ctx>
+	<ul :loop="$page.asset('content').ziggy()">
+		<li>
+			<a
+				class="wt-500"
+				href="$loop.it.get('url')"
+				target="_blank"
+				:text="$loop.it.get('blog')">
+			</a>
+			<ctx :if="$loop.it.has('rss')">
+				<a class="fgshade3" href="$loop.it.get('rss')">[rss]</a>
+			</ctx>
+			<ctx :if="$loop.it.has('atom')">
+				<a class="fgshade3" href="$loop.it.get('atom')">[atom]</a>
+			</ctx>
+		</li>
+	</ul>
 </main>
-
-<footer id="footer"><super></footer>
+<footer id="footer"></footer>

@@ -1,7 +1,7 @@
 <extend template="base.shtml">
 <head id="head"><super></head>
 <header id="header"><super></header>
-<main id="main">
+<main id="content">
 	<article id="$page.id">
 		<super>
 	</article>
@@ -13,4 +13,6 @@
 	</div>
 	<super>
 </main>
-<footer id="footer"></footer>
+<footer id="footer">
+	<super>
+</footer>

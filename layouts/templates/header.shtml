@@ -1,28 +1,24 @@
 <extend template="head.shtml">
 <head id="head"><super></head>
+
 <header id="header">
 	<nav>
-		<a href="$site.page('').link()">
-			Home
-		</a>
+		<a href="$site.page('').link()">Home</a>
 		&nbsp; • &nbsp;
-		<a href="$site.page('blog').link()">
-			Blog
-		</a>
+		<a href="$site.page('about').link()">about</a>
 		&nbsp; • &nbsp;
-		<a href="$site.page('projects').link()">
-			Projects
-		</a>
+		<a href="$site.page('blog').link()">Blog</a>
 		&nbsp; • &nbsp;
-		<a href="$site.page('devlog').link()">
-			Devlogs
-		</a>
+		<a href="$site.page('projects').link()">Projects</a>
 		&nbsp; • &nbsp;
-		<a href="$site.page('views').link()">
-			Views
-		</a>
+		<a href="$site.page('notes').link()">Notes</a>
+		&nbsp; • &nbsp;
+		<a href="$site.page('devlog').link()">Devlogs</a>
+		&nbsp; • &nbsp;
+		<a href="$site.page('search').link()">search</a>
 	</nav>
 	<super>
 </header>
+
 <main id="main"><super></main>
 <footer id="footer"><super></footer>

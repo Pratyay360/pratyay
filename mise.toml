@@ -1,8 +1,10 @@
 [tools]
-argc = "latest"
 "github:kristoff-it/superhtml" = "latest"
 "github:kristoff-it/ziggy" = "latest"
 "github:kristoff-it/zine" = "latest"
 "github:neurocyte/flow" = "latest"
 node = "latest"
 wrangler = "latest"
+
+[settings]
+experimental = true
