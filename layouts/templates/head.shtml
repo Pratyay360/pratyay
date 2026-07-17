@@ -1,0 +1,32 @@
+<extend template="base.shtml">
+<head id="head">
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1">
+	<meta name="generator" content="Zine">
+	<meta name="description" :content="$site.description">
+	<meta property="og:title" content="$page.title">
+	<meta property="og:description" content="$site.description">
+	<meta property="og:url" content="$site.url()">
+	<meta property="og:type" content="personal website">
+	<meta property="og:site_name" content="Pratyay">
+	<meta property="og:locale" content="en_US">
+	<ctx :if="$site.page('').isCurrent().not()">
+		<title :text="$site.title.prefix($page.title, ' - ')"></title>
+	</ctx>
+	<link type="text/css" rel="stylesheet" href="$site.asset('style.css').link()">
+	<link type="text/css" rel="stylesheet" href="$site.asset('highlight.css').link()">
+	<link type="text/css" rel="stylesheet" href="$site.asset('Temml-Local.css').link()">
+	<script defer src="$site.asset('render-mathtex.js').link()"></script>
+	<script data-goatcounter="https://pratyay.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+	<link type="text/css"
+	      rel="preload stylesheet"
+	      href="$site.asset('css/style.css').link()"
+	      as="style"
+	      onload="this.rel='stylesheet'"
+	>
+	<super>
+</head>
+<header id="header"><super></header>
+<main id="main"><super></main>
+<footer id="footer"><super></footer>

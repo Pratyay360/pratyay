@@ -61,11 +61,13 @@
 		}
 	</style>
 </head>
-<body id="body">
+<header id="header"><super></header>
+<main id="main">
 	<h1 :text="$page.title"></h1>
 	<div class="blog-intro" :html="$page.content()"></div>
-	<script defer src="$site.asset('content.js').link()"></script>
 	<div id="dynamic-content">
 		<p class="blog-loading">Loading posts...</p>
 	</div>
-</body>
+</main>
+
+<footer id="footer"><super></footer>

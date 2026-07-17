@@ -1,10 +1,14 @@
-Site {
+.zine_version = "0.12.0",
+.site = .simple(.{
     .title = "pratyay mustafi",
     .host_url = "https://pratyay.bond",
     .content_dir_path = "content",
     .layouts_dir_path = "layouts",
     .assets_dir_path = "assets",
     .static_assets = [
+        "robots.txt",
         "Temml.woff2",
+        "render-mathtex.js",
+        "buttons",
     ],
-}
+})

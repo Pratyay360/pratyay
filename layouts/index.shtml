@@ -1,7 +1,8 @@
 <extend template="base.shtml">
-<head id="head">
-</head>
-<body id="body">
+<head id="head"></head>
+<header id="header"><super></header>
+<main id="main">
 	<h1 :text="$page.title"></h1>
 	<div :html="$page.content()"></div>
-</body>
+</main>
+<footer id="footer"><super></footer>

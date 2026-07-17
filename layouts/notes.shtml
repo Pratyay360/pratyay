@@ -1,0 +1,28 @@
+<extend template="footer.shtml">
+<head id="head"></head>
+<header id="header"></header>
+<main id="main">
+	<h1 :text="$page.title" class="txt-ctr"></h1>
+	<div :html="$page.content()"></div>
+	<ul :loop="$page.subpages()">
+		<li>
+			<a class="wt-500" href="$loop.it.link()" :text="$loop.it.title"></a>
+			<ctx :if="$loop.it.isSection()">
+				<ul :loop="$loop.it.subpages()">
+					<li>
+						<a class="wt-500"
+						   href="$loop.it.link()"
+						   :text="$loop.it.title"
+						></a>
+					</li>
+				</ul>
+			</ctx>
+		</li>
+	</ul>
+	<ctx alt="$page.alternative('rss')">
+		<p class="txt-ctr">
+			<a href="$ctx.alt.link()">RSS feed</a>
+		</p>
+	</ctx>
+</main>
+<footer id="footer"></footer>

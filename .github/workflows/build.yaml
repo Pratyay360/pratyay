@@ -3,7 +3,11 @@ name: cloudflare pages
 on:
   push:
     branches:
-      - main  
+      - main 
+  workflow_dispatch:
+  event:
+    webhook:
+      -
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -15,8 +19,10 @@ jobs:
       - name: Setup Zine
         uses: kristoff-it/setup-zine@v1
         with:
-          version: v0.11.3
-          
+          version: latest
+      - name: populate blog 
+        run: |
+          curl https://api.github.com/repos/${{ github.user }}/blogs_md/contents/content | jq -r '.[] | .download_url' | xargs -I {} -L1 curl -L -o content/{}.md {}
       - name: Build
         run: zine release
           

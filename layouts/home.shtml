@@ -6,7 +6,8 @@
 		.links a { margin-right: 1rem; }
 	</style>
 </head>
-<body id="body">
+<header id="header"><super></header>
+<main id="main">
 	<div>
 		<h1 :text="$page.custom.get('about').get('name')"></h1>
 		<p :text="$page.custom.get('about').get('description')"></p>
@@ -18,26 +19,6 @@
 					<strong :text="$loop.it.get('degree')"></strong>
 					- <span :text="$loop.it.get('institution')"></span>
 					(<span :text="$loop.it.get('year')"></span>)
-				</li>
-			</ul>
-		</div>
-
-		<div class="about-section">
-			<h2>Projects</h2>
-			<ul :loop="$page.custom.get('about').get('projects')">
-				<li>
-					<a :href="$loop.it.get('url')" :text="$loop.it.get('name')"></a>:
-					<span :text="$loop.it.get('description')"></span>
-				</li>
-			</ul>
-		</div>
-
-		<div class="about-section">
-			<h2>Skills</h2>
-			<ul :loop="$page.custom.get('about').get('skills')">
-				<li>
-					<strong :text="$loop.it.get('category')"></strong>:
-					<span :text="$loop.it.get('items')"></span>
 				</li>
 			</ul>
 		</div>
@@ -80,4 +61,6 @@
 
 	<hr>
 	<div :html="$page.content()"></div>
-</body>
+</main>
+
+<footer id="footer"></footer>

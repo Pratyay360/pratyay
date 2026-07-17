@@ -1,0 +1,15 @@
+<extend template="base.shtml">
+<head id="head"></head>
+<header id="header"></header>
+<main id="main">
+	<h1>Error 404</h1>
+	<h1 :text="$page.title"></h1>
+	<ctx :html="$page.content()"></ctx>
+	<p>The page you are looking for does not exist or got deleted.</p>
+	<p>Perhaps you need a <a href="/sitemap">Map</a>.</p>
+	<p>
+		If you are looking for something specific then you can
+		<a href="/search">search it</a>.
+	</p>
+</main>
+<footer id="footer"></footer>

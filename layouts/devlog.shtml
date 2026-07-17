@@ -4,35 +4,36 @@
 		.feed {
 			margin-top: 2em;
 		}
-		
+
 		.feed>div {
 			margin: 0 -20px;
 			padding: 5px 20px;
 			margin-bottom: 1em;
 		}
-		
+
 		.feed>div>h2 {
 			margin-top: 0.4em;
 		}
-		
+
 		.feed>div[id]:target {
 			animation: pulse-div 2s ease-in-out 1 forwards;
 		}
-		
+
 		@keyframes pulse-div {
-			
+
 			0%,
 			100% {
 				background-color: #222;
 			}
-			
+
 			50% {
 				background-color: #111;
 			}
 		}
 	</style>
 </head>
-<body id="body">
+<header id="header"><super></header>
+<main id="main">
 	<h1 class="title" :text="$page.title"></h1>
 	<div :html="$page.contentSection('about')"></div>
 	<div class="feed" :loop="$page.contentSections().slice(1)">
@@ -42,4 +43,7 @@
 			<ctx :html="$loop.it.htmlNoHeading()"></ctx>
 		</div>
 	</div>
-</body>
+
+</main>
+<footer id="footer"><super></footer>
+

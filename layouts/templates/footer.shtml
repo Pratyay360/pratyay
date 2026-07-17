@@ -1,0 +1,34 @@
+<extend template="header.shtml">
+
+<head id="head"><super></head>
+<header id="header"><super></header>
+<main id="main"><super></main>
+
+<footer id="footer">
+	<div class="flx gap-l wt-600 flx-ctr">
+		<nav class="flx flx-col">
+			<a href="https://github.com/pratyay360">GitHub</a>
+			&nbsp; • &nbsp;
+			<a href="https://www.linkedin.com/in/pratyaymustafi/">LinkedIn</a>
+			&nbsp; • &nbsp;
+			<a href="https://mastodon.social/@pratyay360">Mastodon</a>
+			&nbsp; • &nbsp;
+			<a href="mailto:pratyaymustafi@outlook.com">Email</a>
+			&nbsp; • &nbsp;
+			<a href="https://gitlab.com/pratyay360">Gitlab</a>
+			&nbsp; • &nbsp;
+			<a href="https://twitter.com/pratyay360">Twitter</a>
+			&nbsp; • &nbsp;
+			<a href="https://codeberg.org/pratyay360">Codeberg</a>
+		</nav>
+		<br>
+		<span class="text-center">
+			<p>Don't hesitate to send a lil' message, I'm looking to learn a thing or two from people.</p>
+		</span>
+
+		<p>
+			2026 Pratyay Mustafi
+		</p>
+	</div>
+	<super>
+</footer>
