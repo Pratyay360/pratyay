@@ -1,18 +1,13 @@
 <extend template="base.shtml">
-<head id="head"><super></head>
-<header id="header"><super></header>
-<main id="content">
-	<article id="$page.id">
-		<super>
+<main id="main">
+	<article>
+		<h1 :text="$page.title" class="txt-ctr"></h1>
+		<div class="subtitle-wrp txt-ctr">
+			<time
+				class="fgshade3"
+				:text="$page.date.format('January 02, 2006')"
+			></time>
+		</div>
+		<div :html="$page.content()"></div>
 	</article>
-	<h3 style="font-size: 1.2em;">
-		Comments
-	</h3>
-	<div class="comment">
-		<script src="https://utteranc.es/client.js" repo="Pratyay360/blog_md" :text="$site.title" label="new comment" :theme="photon-dark" crossorigin="anonymous" async></script>
-	</div>
-	<super>
 </main>
-<footer id="footer">
-	<super>
-</footer>

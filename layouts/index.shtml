@@ -1,22 +1,20 @@
-<extend template="footer.shtml">
-<head id="head"></head>
-<header id="header"></header>
+<extend template="base.shtml">
 <main id="main">
 	<h1 :text="$page.title" class="txt-ctr"></h1>
 	<div :html="$page.content()"></div>
 	<p class="wt-600">latest posts</p>
-	<ul :loop="$site.page('blog').leaves(3)">
+	<ul :loop="$site.page('blog').subpages()">
 		<li>
 			<time
 				class="flt-r fgshade3 font-mono wt-300 ft-size-s"
 				datetime="$loop.it.date.format('2006-01-02')"
 				:text="$loop.it.date.format('Jan 02, 2006')"
 			></time>
-			<a class="wt-500" href="$loop.it.link()" text="$loop.it.title()"></a>
+			<a class="wt-500" href="$loop.it.link()" :text="$loop.it.title"></a>
 		</li>
 	</ul>
 	<p class="wt-600">Notes </p>
-	<ul :loop="$site.page('notes').leaves(3)">
+	<ul :loop="$site.page('notes').subpages()">
 		<li>
 			<time
 				class="flt-r fgshade3 font-mono wt-300 ft-size-s"
@@ -27,4 +25,3 @@
 		</li>
 	</ul>
 </main>
-<footer id="footer"></footer>

@@ -2,7 +2,7 @@
 <head id="head"><super></head>
 
 <header id="header">
-	<nav>
+    <nav>
 		<a href="$site.page('').link()">Home</a>
 		&nbsp; • &nbsp;
 		<a href="$site.page('about').link()">about</a>

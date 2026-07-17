@@ -1,17 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head id="head">
-		<super>
+		<meta charset="utf-8" >
+		<meta name="viewport" content="initial-scale=1" >
+		<meta name="generator" content="Zine" >
+		<meta property="og:title" content="$page.title">
+		<meta property="og:url" content="$site.host_url" >
+		<meta property="og:type" content="personal website" >
+		<meta property="og:site_name" content="Pratyay" >
+		<meta property="og:locale" content="en_US" >
+		<ctx :if="$site.page('').isCurrent()">
+			<title :text="$site.title"></title>
+		</ctx>
+		<ctx :if="$site.page('').isCurrent().not()">
+			<title :text="$site.title.prefix($page.title, ' - ')"></title>
+		</ctx>
+		<link type="text/css" rel="stylesheet" href="$site.asset('css/style.css').link()">
+		<link type="text/css" rel="stylesheet" href="$site.asset('css/highlight.css').link()">
+		<link type="text/css" rel="stylesheet" href="$site.asset('css/Temml-Local.css').link()">
+		<script defer src="$site.asset('js/render-mathtex.js').link()"></script>
+		<script data-goatcounter="https://pratyay.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 	</head>
 	<body>
 		<header id="header" class="no-print">
-			<super>
+			<nav>
+				<a href="$site.page('').link()">Home</a>
+				&nbsp; • &nbsp;
+				<a href="$site.page('about').link()">about</a>
+				&nbsp; • &nbsp;
+				<a href="$site.page('blog').link()">Blog</a>
+				&nbsp; • &nbsp;
+				<a href="$site.page('projects').link()">Projects</a>
+				&nbsp; • &nbsp;
+				<a href="$site.page('notes').link()">Notes</a>
+				&nbsp; • &nbsp;
+				<a href="$site.page('devlog').link()">Devlogs</a>
+				&nbsp; • &nbsp;
+				<a href="$site.page('search').link()">search</a>
+			</nav>
 		</header>
 		<main id="main">
 			<super>
 		</main>
 		<footer id="footer">
-			<super>
+			<div class="flx gap-l wt-600 flx-ctr">
+				<nav class="flx flx-col">
+					<a href="https://github.com/pratyay360">GitHub</a>
+					&nbsp; • &nbsp;
+					<a href="https://www.linkedin.com/in/pratyaymustafi/">LinkedIn</a>
+					&nbsp; • &nbsp;
+					<a href="https://mastodon.social/@pratyay360">Mastodon</a>
+					&nbsp; • &nbsp;
+					<a href="mailto:pratyaymustafi@outlook.com">Email</a>
+					&nbsp; • &nbsp;
+					<a href="https://gitlab.com/pratyay360">Gitlab</a>
+					&nbsp; • &nbsp;
+					<a href="https://twitter.com/pratyay360">Twitter</a>
+					&nbsp; • &nbsp;
+					<a href="https://codeberg.org/pratyay360">Codeberg</a>
+				</nav>
+				<br>
+				<p>
+					2026 Pratyay Mustafi
+				</p>
+			</div>
 		</footer>
 	</body>
 </html>

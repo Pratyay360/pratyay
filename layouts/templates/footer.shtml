@@ -1,6 +1,10 @@
 <extend template="base.shtml">
-<head id="head"><super></head>
-<header id="header"><super></header>
+<head id="head">
+	<super>
+</head>
+<header id="header">
+<super>
+</header>
 <main id="main"><super></main>
 <footer id="footer">
 	<div class="flx gap-l wt-600 flx-ctr">
@@ -24,5 +28,4 @@
 			2026 Pratyay Mustafi
 		</p>
 	</div>
-	<super>
 </footer>

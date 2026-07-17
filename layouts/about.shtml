@@ -1,16 +1,5 @@
-<extend template="footer.shtml">
-<head id="head"></head>
-<header id="header"></header>
+<extend template="base.shtml">
 <main id="main">
 	<h1 :text="$page.title" class="txt-ctr"></h1>
-	<!--<img
-		src="$site.asset('imgs/windsurf-dithered.png').link()"
-		alt="Dithered picture of me windsurfing"
-		width="150"
-		height="150"
-		class="flt-r"
-		style="margin: 1rem;"
-	>-->
 	<ctx :html="$page.content()"></ctx>
 </main>
-<footer id="footer"></footer>

@@ -1,0 +1,12 @@
+<extend template="base.shtml">
+<main id="main">
+	<h1 class="title" :text="$page.title"></h1>
+	<div :html="$page.contentSection('about')"></div>
+	<div class="feed" :loop="$page.contentSections().slice(1)">
+		<div id="$loop.it.id">
+			<span :text="$loop.it.id.parseDate().format('January 02, 2006')"></span>
+			<h2><a href="$loop.it.id.prefix('#')" :html="$loop.it.heading()"></a></h2>
+			<ctx :html="$loop.it.htmlNoHeading()"></ctx>
+		</div>
+	</div>
+</main>

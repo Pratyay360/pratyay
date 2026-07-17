@@ -1,18 +1,4 @@
-<extend template="footer.shtml">
-<head id="head">
-	<!-- Octothorpes protocol -->
-	<link
-		rel="preload"
-		as="fetch"
-		href="$page.link().prefix($site.host_url).prefix('https://octothorp.es/?uri=')"
-	>
-	<ctx :if="$page.tags.empty.not()">
-		<ctx :loop="$page.tags">
-			<link rel="octo:octothorpes" href="$loop.it">
-		</ctx>
-	</ctx>
-</head>
-<header id="header"></header>
+<extend template="base.shtml">
 <main id="main">
 	<h1 :text="$page.title" class="txt-ctr"></h1>
 	<div class="subtitle-wrp txt-ctr">
@@ -24,7 +10,6 @@
 			:text="$page.date.format('January 02, 2006')"
 		></time>
 	</div>
-	<!-- TOC's are broken at the moment -->
 	<ctx :if="$page.custom.get?('toc')">
 		<details>
 			<summary>Table of Contents</summary>
@@ -59,4 +44,3 @@
 		</nav>
 	</div>
 </main>
-<footer id="footer"></footer>
