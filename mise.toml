@@ -1,4 +1,5 @@
 [tools]
+actionlint = "latest"
 "github:kristoff-it/superhtml" = "latest"
 "github:kristoff-it/ziggy" = "latest"
 "github:kristoff-it/zine" = "latest"

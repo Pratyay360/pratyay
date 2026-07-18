@@ -29,3 +29,8 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy public/ --project-name pratyay
           githubToken: ${{ github.token }}
+
+      - name: Deploy to git-pages
+        uses: actions/git-pages@v2       # Points to the integrated git-pages action
+        with:
+          source: public/
