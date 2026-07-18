@@ -31,6 +31,6 @@ jobs:
           githubToken: ${{ github.token }}
 
       - name: Deploy to git-pages
-        uses: actions/git-pages@v2       # Points to the integrated git-pages action
+        uses: actions/deploy-pages@main
         with:
           source: public/
