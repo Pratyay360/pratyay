@@ -35,7 +35,9 @@ jobs:
           command: pages deploy public/ --project-name pratyay
           githubToken: ${{ github.token }}
 
-      - name: Deploy to git-pages
-        uses: actions/deploy-pages@main
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: public/
+          github_token: ${{ github.token }}
+          publish_dir: ./public
