@@ -1,8 +1,6 @@
 <extend template="head.shtml">
-<head id="head"><super></head>
-
 <header id="header">
-    <nav>
+	<nav>
 		<a href="$site.page('').link()">Home</a>
 		&nbsp; • &nbsp;
 		<a href="$site.page('about').link()">about</a>
@@ -17,8 +15,6 @@
 		&nbsp; • &nbsp;
 		<a href="$site.page('search').link()">search</a>
 	</nav>
-	<super>
 </header>
-
 <main id="main"><super></main>
 <footer id="footer"><super></footer>

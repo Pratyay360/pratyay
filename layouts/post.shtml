@@ -1,4 +1,0 @@
-<extend template="base.shtml">
-<main id="main">
-	<div :html="$page.content()"></div>
-</main>

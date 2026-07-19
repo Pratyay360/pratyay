@@ -22,6 +22,10 @@ async function main() {
   console.log(`Fetching notes from ${GITHUB_OWNER}/${GITHUB_REPO}/${NOTES_PATH}...`);
 
   const response = await fetch(`${API_BASE}/contents/${NOTES_PATH}`);
+  if (response.status === 404) {
+    console.warn(`Warning: Directory not found on GitHub (${NOTES_PATH})`);
+    return;
+  }
   if (!response.ok) {
     throw new Error(`GitHub API returned ${response.status}`);
   }

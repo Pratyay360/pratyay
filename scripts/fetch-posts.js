@@ -18,6 +18,10 @@ async function main() {
   console.log(`Fetching posts from ${GITHUB_OWNER}/${GITHUB_REPO}...`);
 
   const response = await fetch(`${API_BASE}/contents/${POSTS_PATH}`);
+  if (response.status === 404) {
+    console.warn(`Warning: Directory not found on GitHub (${POSTS_PATH})`);
+    return;
+  }
   if (!response.ok) {
     throw new Error(`GitHub API returned ${response.status}`);
   }

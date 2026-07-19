@@ -12,6 +12,10 @@ async function main() {
   console.log(`Fetching devlogs from ${GITHUB_OWNER}/${GITHUB_REPO}/${DEVLOG_PATH}...`);
 
   const response = await fetch(`${API_BASE}/contents/${DEVLOG_PATH}`);
+  if (response.status === 404) {
+    console.warn(`Warning: Directory not found on GitHub (${DEVLOG_PATH})`);
+    return;
+  }
   if (!response.ok) {
     throw new Error(`GitHub API returned ${response.status}`);
   }

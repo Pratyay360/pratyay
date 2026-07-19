@@ -1,4 +1,4 @@
-<extend template="base.shtml">
+<extend template="footer.shtml">
 <main id="main">
 	<article>
 		<h1 :text="$page.title" class="txt-ctr"></h1>
@@ -10,4 +10,28 @@
 		</div>
 		<div :html="$page.content()"></div>
 	</article>
+	<div id="comments"></div>
+	<script type="module" async>
+	let initialized = false;
+	const root = document.getElementById("comments");
+	const observer = new IntersectionObserver(async ([entry]) => {
+		if (!entry.isIntersecting || initialized) return;
+
+		initialized = true;
+		observer.disconnect();
+
+		const script = document.createElement("script");
+		script.src = "https://utteranc.es/client.js";
+		script.async = true;
+		script.crossOrigin = "anonymous";
+
+		script.setAttribute("repo", "Pratyay360/blogs_md");
+		script.setAttribute("issue-term", "pathname");
+		script.setAttribute("theme", "gruvbox-dark");
+
+		root.appendChild(script);
+	});
+
+	observer.observe(root);
+	</script>
 </main>

@@ -1,11 +1,11 @@
-<extend template="base.shtml">
+<extend template="footer.shtml">
 <main id="main">
 	<script src="/pagefind/pagefind-component-ui.js" type="module"></script>
 	<link
 		type="text/css"
 		rel="stylesheet"
 		href="$site.asset('css/pagefind-media-querry.css').link()"
-		as="style"
+		itemtype="style"
 	>
 	<h1 :text="$page.title"></h1>
 	<ctx :html="$page.content()"></ctx>

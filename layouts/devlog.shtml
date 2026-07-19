@@ -1,4 +1,4 @@
-<extend template="base.shtml">
+<extend template="footer.shtml">
 <main id="main">
 	<h1 class="title" :text="$page.title"></h1>
 	<div :html="$page.contentSection('about')"></div>
