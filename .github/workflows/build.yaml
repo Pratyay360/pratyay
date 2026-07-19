@@ -2,8 +2,6 @@ name: cloudflare pages
 
 on:
   push:
-    branches:
-      - main
   workflow_dispatch:
 
 permissions:
@@ -17,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@main
         with:
-          fetch-depth: 0  # Change if you need git info
+          fetch-depth: 0
 
       - name: Setup Zine
         uses: kristoff-it/setup-zine@v1
@@ -36,8 +34,8 @@ jobs:
           githubToken: ${{ github.token }}
 
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@main
-        with:
-          github_token: ${{ github.token }}
-          publish_dir: ./public
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@main
+      #   with:
+      #     github_token: ${{ github.token }}
+      #     publish_dir: ./public
