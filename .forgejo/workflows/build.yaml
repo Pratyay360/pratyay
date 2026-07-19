@@ -1,0 +1,32 @@
+name: Deploy the website to Codeberg Pages
+
+on:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: codeberg-tiny # good enough for small sites, upgrade to 'codeberg-small' if you get timeouts
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Zine
+        uses: https://github.com/kristoff-it/setup-zine@v2
+
+      - name: Build
+        run: zine release
+
+      - uses: https://codeberg.org/git-pages/action@v2
+        with:
+          site: "https://${{ forge.repository_owner }}.codeberg.page/${{ forge.repository_name }}"
+          token: ${{ forge.token }}
+          source: public

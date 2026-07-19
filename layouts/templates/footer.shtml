@@ -17,6 +17,18 @@
 			&nbsp; • &nbsp;
 			<a href="https://codeberg.org/pratyay360">Codeberg</a>
 		</nav>
+		<div class="footer-buttons">
+			<a href="https://notbyai.fyi/"><img src="$site.asset('buttons/by_human.svg').link()" alt="By Human" height="31"></a>
+			<a href="$site.page('blog').link()"><img src="$site.asset('buttons/blogs.png').link()" alt="Blogs" width="88" height="31"></a>
+			<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="$site.asset('buttons/cc.png').link()" alt="Creative Commons" width="88" height="31"></a>
+			<img src="$site.asset('buttons/eyes.png').link()" alt="Eyes" width="88" height="31">
+			<a href="https://fedoraproject.org/"><img src="$site.asset('buttons/fedora.png').link()" alt="Fedora" width="88" height="31"></a>
+			<a href="https://pratyay.goatcounter.com/"><img src="$site.asset('buttons/goat.png').link()" alt="GoatCounter" width="88" height="31"></a>
+			<a href="https://www.kernel.org/"><img src="$site.asset('buttons/linoox.png').link()" alt="Linux" width="88" height="31"></a>
+			<img src="$site.asset('buttons/milkandcookies.png').link()" alt="Milk and Cookies" width="88" height="31">
+			<img src="$site.asset('buttons/nosmoking.png').link()" alt="No Smoking" width="88" height="31">
+			<a href="$site.page('blog').alternative('rss').link()"><img src="$site.asset('buttons/rss.png').link()" alt="RSS Feed" width="88" height="31"></a>
+		</div>
 		<div>
 		<link rel="preconnect" href="https://townsquare.cauenapier.com" crossorigin>
 		<link rel="stylesheet" href="https://townsquare.cauenapier.com/widget.css">

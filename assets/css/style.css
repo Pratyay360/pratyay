@@ -117,6 +117,21 @@ footer hr {
   margin: 5px 0 0;
 }
 
+.footer-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.footer-buttons img {
+  border: none;
+  display: block;
+}
+
 /* Dynamic Content Styles */
 #dynamic-content {
   margin-top: 20px;
