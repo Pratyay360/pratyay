@@ -2,7 +2,8 @@ name: Deploy the website to Codeberg Pages
 
 on:
   push:
-    branches: ["main"]
+  pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -13,7 +14,7 @@ concurrency:
 
 jobs:
   deploy:
-    runs-on: codeberg-tiny # good enough for small sites, upgrade to 'codeberg-small' if you get timeouts
+    runs-on: codeberg-tiny
     steps:
       - uses: actions/checkout@v2
         with:
