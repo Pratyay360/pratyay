@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Zine
-        uses: kristoff-it/setup-zine@v1
+        uses: kristoff-it/setup-zine@main
         with:
           version: v0.12.0
 
@@ -26,7 +26,7 @@ jobs:
         run: zine release
 
       - name: Deploy
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@main
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
