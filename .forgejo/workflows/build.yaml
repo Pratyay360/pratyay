@@ -16,7 +16,7 @@ jobs:
   deploy:
     runs-on: codeberg-tiny
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
@@ -25,6 +25,14 @@ jobs:
 
       - name: Build
         run: zine release
+
+      - name: Setup Nodejs
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+
+      - name: Index site with Pagefind
+        run: npx pagefind --site public
 
       - uses: https://codeberg.org/git-pages/action@v2
         with:

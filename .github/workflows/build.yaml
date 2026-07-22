@@ -25,6 +25,15 @@ jobs:
       - name: Build
         run: zine release
 
+
+      - name: Setup Nodejs
+        uses: actions/setup-node@main
+        with:
+          node-version: '24'
+
+      - name: Index site with Pagefind
+        run: npx pagefind --site public
+
       - name: Deploy
         uses: cloudflare/wrangler-action@main
         with:
