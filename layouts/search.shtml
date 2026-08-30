@@ -1,0 +1,13 @@
+<extend template="footer.shtml">
+<main id="main">
+	<div data-pagefind-ignore="all">
+		<link type="text/css"
+		      rel="stylesheet"
+		      href="$site.asset('css/pagefind-media-querry.css').link()"
+		>
+		<script type="module" src="/pagefind/pagefind-component-ui.js"></script>
+		<h1 :text="$page.title"></h1>
+		<ctx :html="$page.content()"></ctx>
+		<pagefind-searchbox excerpt-length="20" show-sub-results></pagefind-searchbox>
+	</div>
+</main>

@@ -1,0 +1,19 @@
+[tools]
+fd = "latest"
+"github:kristoff-it/ziggy" = "latest"
+"github:kristoff-it/zine" = "latest"
+"github:neurocyte/flow" = "latest"
+"github:pratyay360/md2smd" = "latest"
+node = "latest"
+superhtml = "latest"
+wrangler = { version = "latest", allow_builds = ["esbuild", "sharp", "workerd"] }
+
+[settings]
+experimental = true
+
+[tasks]
+fetch = "node scripts/fetch.js"
+build = { run = ["node scripts/fetch.js", "zine release -f", "npx -y pagefind --site public"] }
+dev = "zine"
+deploy = "wrangler pages deploy public/ --project-name pratyay"
+

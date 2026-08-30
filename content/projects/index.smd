@@ -1,0 +1,11 @@
+---
+.title = "Projects",
+.date = .date("1990-01-01T00:00:00"),
+.layout = "project.shtml",
+.alternatives = [.{
+    .name = "rss",
+    .layout = "project.xml",
+    .output = "section.xml",
+}],
+---
+

@@ -1,0 +1,5 @@
+<extend template="footer.shtml">
+<main id="main">
+	<h1 :text="$page.title" class="txt-ctr"></h1>
+	<ctx :html="$page.content()"></ctx>
+</main>

@@ -1,0 +1,15 @@
+name: Webhook Trigger
+
+on:
+  repository_dispatch:
+    types: [deploy]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@main
+      - run: ./build.yaml
+
+      - run: echo "Triggered!"
