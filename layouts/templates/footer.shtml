@@ -11,11 +11,11 @@
 			&nbsp; • &nbsp;
 			<a href="mailto:pratyaymustafi@outlook.com">Email</a>
 			&nbsp; • &nbsp;
-			<a href="https://gitlab.com/pratyay360">Gitlab</a>
-			&nbsp; • &nbsp;
-			<a href="https://twitter.com/pratyay360">Twitter</a>
+			<a href="https://x.com/pratyay360">Twitter</a>
 			&nbsp; • &nbsp;
 			<a href="https://codeberg.org/pratyay360">Codeberg</a>
+			&nbsp; • &nbsp;
+			<a href="https://pratyayupi.surge.sh">Support Me</a>
 		</nav>
 		<div class="footer-buttons">
 			<a href="https://notbyai.fyi/"><img src="$site.asset('buttons/by_human.svg').link()" alt="By Human" height="31"></a>
