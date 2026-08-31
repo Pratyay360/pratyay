@@ -32,12 +32,10 @@ async function convertFile(sourceFilePath, targetSmdPath, defaultLayout) {
   // Create destination directory if needed
   await fs.mkdir(path.dirname(targetSmdPath), { recursive: true });
 
-  // Copy temporary .md file to destination folder to let md2smd generate the .smd next to it
   const tempMdPath = targetSmdPath.replace(/\.smd$/, ".md");
   await fs.copyFile(sourceFilePath, tempMdPath);
 
   try {
-    // Run md2smd
     execSync(`md2smd "${tempMdPath}"`, { stdio: "inherit" });
   } finally {
     // Clean up temporary .md file

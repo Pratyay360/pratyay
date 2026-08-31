@@ -23,9 +23,9 @@ jobs:
 
       - name: Setup mise
         uses: jdx/mise-action@main
-
       - name: Fetch content & build
         run: |
+          mise deps
           node ./scripts/fetch.js
           zine release -f
           npx -y pagefind --site public
