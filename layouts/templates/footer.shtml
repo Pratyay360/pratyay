@@ -15,6 +15,8 @@
 			&nbsp; • &nbsp;
 			<a href="https://codeberg.org/pratyay360">Codeberg</a>
 			&nbsp; • &nbsp;
+			<a href="">Resume</a>
+			&nbsp; • &nbsp;
 			<a href="https://pratyayupi.surge.sh">Support Me</a>
 		</nav>
 		<div class="footer-buttons">
@@ -107,7 +109,7 @@
 
 						mountTownSquare(document.getElementById("townsquare-root"), {
 							serverOrigin: "https://townsquare.cauenapier.com",
-							siteKey: "site_Wc05EmFtdLUfvn00",
+							siteKey: "site_yUlosxis4iwvEqt0",
 							theme: "host"
 						});
 				}
