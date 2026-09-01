@@ -26,9 +26,7 @@ jobs:
       - name: Fetch content & build
         run: |
           mise deps
-          node ./scripts/fetch.js
-          zine release -f
-          npx -y pagefind --site public
+          mise run build
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
