@@ -4,6 +4,12 @@
 .authors = ["Pratyay Mustafi"],
 .layout = "index.shtml",
 .description = "The blog of a hobbyist navigating the seas of the internet",
+.alternatives = [.{
+    .name = "sitemap",
+    .layout = "sitemap.xml",
+    .output = "/sitemap.xml",
+    .type = "application/xml",
+}],
 ---
 
 Hello there, this is my little corner of the internet.

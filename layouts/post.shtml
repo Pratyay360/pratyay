@@ -72,6 +72,6 @@
 	observer.observe(root);
 	</script>
 	<div class="txt-ctr" style="margin: 2rem 0;">
-		<a href="https://github.com/Pratyay360/pratyay/issues/13" target="_blank" rel="noopener noreferrer" style="display:inline-block;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:600;line-height:1.25;text-align:center;text-decoration:none;cursor:pointer;padding:10px 20px;font-size:16px;border-radius:8px;background:#0969da;color:#ffffff;border:1px solid rgba(27, 31, 36, 0.15);box-shadow:none;transition:background .15s ease, transform .15s ease">Subscribe on GitHub</a>
+		<a href="https://github.com/Pratyay360/blogs_md/issues/1" target="_blank" rel="noopener noreferrer" style="display:inline-block;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:600;line-height:1.25;text-align:center;text-decoration:none;cursor:pointer;padding:10px 20px;font-size:16px;border-radius:8px;background:#0969da;color:#ffffff;border:1px solid rgba(27, 31, 36, 0.15);box-shadow:none;transition:background .15s ease, transform .15s ease">Subscribe on GitHub</a>
 	</div>
 </main>

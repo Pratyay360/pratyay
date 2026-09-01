@@ -1,0 +1,8 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <ctx :loop="$site.pages()">
+    <url>
+      <loc :text="$site.host_url.addPath($loop.it.link())"></loc>
+      <lastmod :text="$loop.it.date.format('2006-01-02')"></lastmod>
+    </url>
+  </ctx>
+</urlset>

@@ -1,0 +1,14 @@
+<extend template="footer.shtml">
+<main id="main">
+  <h1 :text="$page.title" class="txt-ctr"></h1>
+  <div :html="$page.content()"></div>
+  <ul :loop="$site.pages()">
+    <li>
+      <a href="$loop.it.link()" :text="$loop.it.title"></a>
+      <span class="fgshade3 ft-size-s"> — </span>
+      <span :text="$loop.it.link()" class="fgshade3 font-mono ft-size-s"></span>
+      <br>
+      <span :text="$loop.it.description" class="italic fgshade2 ft-size-s"></span>
+    </li>
+  </ul>
+</main>
