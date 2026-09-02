@@ -5,8 +5,8 @@ const path = require("node:path");
 const { execSync } = require("node:child_process");
 const os = require("node:os");
 
-const REPO_URL = process.env.CONTENT_REPO_URL || "https://github.com/Pratyay360/blogs_md.git";
-const REPO_BRANCH = process.env.CONTENT_REPO_BRANCH || "main";
+const REPO_URL = "https://github.com/Pratyay360/blogs_md.git";
+const REPO_BRANCH = "main";
 
 // Mapping from source directory in blogs_md to destination directory in blog and default layout
 const DIRECTORY_MAPPINGS = [
@@ -27,11 +27,8 @@ async function fileExists(p) {
 }
 
 async function convertFile(sourceFilePath, targetSmdPath, defaultLayout) {
-  console.log(`  -> Converting: ${sourceFilePath} -> ${targetSmdPath}`);
-
-  // Create destination directory if needed
+  // console.log(`  -> Converting: ${sourceFilePath} -> ${targetSmdPath}`);
   await fs.mkdir(path.dirname(targetSmdPath), { recursive: true });
-
   const tempMdPath = targetSmdPath.replace(/\.smd$/, ".md");
   await fs.copyFile(sourceFilePath, tempMdPath);
 
@@ -39,14 +36,12 @@ async function convertFile(sourceFilePath, targetSmdPath, defaultLayout) {
     execSync(`md2smd "${tempMdPath}"`, { stdio: "inherit" });
   } finally {
     // Clean up temporary .md file
-    await fs.unlink(tempMdPath).catch(() => {});
+    await fs.unlink(tempMdPath).catch(() => { });
   }
 
   // Verify .smd was generated and ensure layout is defined
   if (await fileExists(targetSmdPath)) {
     let content = await fs.readFile(targetSmdPath, "utf-8");
-
-    // Add layout if not present in frontmatter
     if (content.startsWith("---") && !content.includes(".layout =")) {
       content = content.replace(/^---\n/, `---\n.layout = "${defaultLayout}",\n`);
       await fs.writeFile(targetSmdPath, content, "utf-8");
@@ -93,8 +88,7 @@ async function main() {
 
     console.log("Successfully fetched and converted all content!");
   } finally {
-    // Clean up temporary clone directory
-    await fs.rm(tmpDir, { recursive: true, force: true }).catch(() => {});
+    await fs.rm(tmpDir, { recursive: true, force: true }).catch(() => { });
   }
 }
 

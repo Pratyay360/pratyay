@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head id="head">
+
+<head id="head">
+	<super>
+</head>
+
+<body id="body">
+	<header id="header">
 		<super>
-	</head>
-	<body id="body">
-		<header id="header">
-		    <super>
-		</header>
-		<main id="main">
-			<super>
-		</main>
-		<footer id="footer">
-			<super>
-		</footer>
-	</body>
+	</header>
+	<main id="main">
+		<super>
+	</main>
+	<footer id="footer">
+		<super>
+	</footer>
+</body>
+
 </html>

@@ -19,11 +19,11 @@ a {
 html {
   color: #ccc;
   font-family: "Georgia", serif;
-  font-size: 1.2em;
+  font-size: 1.5em;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: #111;
+  background-color: #26391d;
 }
 
 body {
@@ -104,7 +104,7 @@ footer hr {
 }
 
 .footer-links a {
-  color: #999;
+  color: #9999996a;
 }
 
 .footer-links a:hover {
@@ -173,7 +173,8 @@ footer hr {
   text-decoration: underline;
 }
 
-.dynamic-post ul, .dynamic-post ol {
+.dynamic-post ul,
+.dynamic-post ol {
   margin-left: 20px;
   margin-bottom: 15px;
 }

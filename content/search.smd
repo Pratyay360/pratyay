@@ -5,10 +5,4 @@
 .layout = "search.shtml",
 ---
 
-Search anything on my site thanks to [Pagefind](https://pagefind.app/).
-
-
-
-
-
-
+Search powered by [Pagefind]($link.url("https://pagefind.app/")).

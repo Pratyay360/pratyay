@@ -12,9 +12,18 @@ wrangler = { version = "latest", allow_builds = ["esbuild", "sharp", "workerd"] 
 experimental = true
 
 
+[tasks.fetch]
+run = "node scripts/fetch.js"
+description = "fetch the latest posts"
 
-[tasks]
-fetch = "node scripts/fetch.js"
-build = { run = ["zine release -f", "npx -y pagefind --site public"] }
-dev = "zine"
-deploy = "wrangler pages deploy public/ --project-name pratyay"
+[tasks.build]
+run = ["zine release -f", "npx -y pagefind --site public"]
+description = "build the site"
+
+[tasks.dev]
+run = "zine"
+description = "start the dev server"
+
+[tasks.deploy]
+run = "wrangler pages deploy public/ --project-name pratyay"
+description = "deploy the site"

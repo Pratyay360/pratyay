@@ -1,0 +1,24 @@
+---
+.title = "Contact",
+.date = .date("2026-01-01T00:00:00"),
+.authors = ["Pratyay Mustafi"],
+.layout = "page.shtml",
+.draft = false,
+---
+
+Don't hesitate to drop a little message, I'm looking to learn alot from people.
+
+- [Email](mailto:pratyaymustafi@outlook.com): pratyaymustafi@outlook.com
+- [GitHub]($link.url("https://github.com/pratyay360").new(true)): GitHub
+- [GitLab]($link.url("https://gitlab.com/pratyay360").new(true)): GitLab
+- [Codeberg]($link.url("https://codeberg.org/pratyay360").new(true)): Codeberg
+- [LinkedIn]($link.url("https://www.linkedin.com/in/pratyay360").new(true)): LinkedIn
+- [Mastodon]($link.url("https://mastodon.social/@realpratyay").new(true)): Mastodon
+- [Twitter]($link.url("https://x.com/realpratyay").new(true)): Twitter
+- [Bluesky]($link.url("https://bsky.app/profile/pratyaymustafi.bsky.social").new(true)): Bluesky
+- [Resume]($link.url("https://www.dropbox.com/scl/fo/1wtu0usazywvp64y7kcbq/ABvH9jWZGzaGdfMP38mkMcE?rlkey=lyfzar4bw3trg9k47hpt66k9w&st=fha8i1o1&dl=0").new(true)): Also you can refer me    to your company
+- [Support Me]($link.url("https://pratyayupi.surge.sh").new(true)): Support Me (financially)
+
+
+*Hmmm, I have to figure out how not to automagically render links in super
+markdown.*

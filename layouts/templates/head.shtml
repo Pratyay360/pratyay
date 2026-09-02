@@ -1,47 +1,38 @@
 <extend template="base.shtml">
-<head id="head">
-	<meta charset="utf-8">
-	<meta name="viewport"
-	      content="initial-scale=1"
-	>
-	<meta name="generator"
-	      content="Zine"
-	>
-	<meta property="og:title" content="$page.title">
-	<meta property="og:url"
-	      content="$site.host_url"
-	>
-	<meta property="og:type"
-	      content="personal website"
-	>
-	<meta property="og:site_name"
-	      content="Pratyay"
-	>
-	<meta property="og:description"
-	      content="pratyay mitra mustafi's personal website"
-	>
-	<meta property="og:image"
-	      content="https://gravatar.com/avatar/2848bae477ab10b91ad63c0c96ad02e9832425ef0de7b24bcb6cb6ea6d3f0bc0?v=1770259962000&size=256&d=initials"
-	>
-	<meta property="og:gravatar"
-	      content="https://gravatar.com/almost81692c7c17"
-	>
-	<meta property="og:locale"
-	      content="en_US"
-	>
-	<ctx :if="$site.page('').isCurrent()">
-		<title :text="$site.title"></title>
-	</ctx>
-	<ctx :if="$site.page('').isCurrent().not()">
-		<title :text="$site.title.prefix($page.title, ' - ')"></title>
-	</ctx>
-	<link type="text/css" rel="stylesheet" href="$site.asset('css/style.css').link()">
-	<link type="text/css" rel="stylesheet" href="$site.asset('css/highlight.css').link()">
-	<link type="text/css" rel="stylesheet" href="$site.asset('css/Temml-Local.css').link()">
-	<meta name="index" href="$site.asset('69be26d93fe446a386772b6d7b3d9781.txt').link()">
-	<script defer src="$site.asset('js/render-mathtex.js').link()"></script>
-	<script data-goatcounter="https://pratyay.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-</head>
-<header id="header"><super></header>
-<main id="main"><super></main>
-<footer id="footer"><super></footer>
+
+	<head id="head">
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1">
+		<meta name="generator" content="Zine">
+		<meta property="og:title" content="$page.title">
+		<meta property="og:url" content="$site.host_url">
+		<meta property="og:type" content="personal website">
+		<meta property="og:site_name" content="Pratyay">
+		<meta property="og:description" content="pratyay mitra mustafi's personal website">
+		<meta property="og:image"
+			content="https://gravatar.com/avatar/2848bae477ab10b91ad63c0c96ad02e9832425ef0de7b24bcb6cb6ea6d3f0bc0?v=1770259962000&size=256&d=initials">
+		<meta property="og:gravatar" content="https://gravatar.com/almost81692c7c17">
+		<meta property="og:locale" content="en_US">
+		<ctx :if="$site.page('').isCurrent()">
+			<title :text="$site.title"></title>
+		</ctx>
+		<ctx :if="$site.page('').isCurrent().not()">
+			<title :text="$site.title.prefix($page.title, ' - ')"></title>
+		</ctx>
+		<link type="text/css" rel="stylesheet" href="$site.asset('css/style.css').link()">
+		<link type="text/css" rel="stylesheet" href="$site.asset('css/highlight.css').link()">
+		<link type="text/css" rel="stylesheet" href="$site.asset('css/Temml-Local.css').link()">
+		<meta name="index" href="$site.asset('69be26d93fe446a386772b6d7b3d9781.txt').link()">
+		<script defer src="$site.asset('js/render-mathtex.js').link()"></script>
+		<script data-goatcounter="https://pratyay.goatcounter.com/count" async
+			src="https://gc.zgo.at/count.js"></script>
+	</head>
+	<header id="header">
+		<super>
+	</header>
+	<main id="main">
+		<super>
+	</main>
+	<footer id="footer">
+		<super>
+	</footer>

@@ -3,15 +3,13 @@
 	<nav>
 		<a href="$site.page('').link()">Home</a>
 		&nbsp; • &nbsp;
-		<a href="$site.page('about').link()">About</a>
-		&nbsp; • &nbsp;
 		<a href="$site.page('blog').link()">Blog</a>
 		&nbsp; • &nbsp;
 		<a href="$site.page('projects').link()">Projects</a>
 		&nbsp; • &nbsp;
 		<a href="$site.page('notes').link()">Notes</a>
 		&nbsp; • &nbsp;
-		<a href="$site.page('devlog').link()">Devlogs</a>
+		<a href="$site.page('contactme').link()">Contact Me</a>
 		&nbsp; • &nbsp;
 		<a href="$site.page('search').link()">Search</a>
 	</nav>
