@@ -1,0 +1,38 @@
+name: Deploy the website to Codeberg Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: codeberg-medium-lazy
+    container:
+      image: ghcr.io/jdx/mise:latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out source code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          mise deps
+          mise run fetch
+          mise run build
+
+
+      - uses: https://codeberg.org/git-pages/action@v2
+        with:
+          site: "https://${{ forge.repository_owner }}.codeberg.page/YOUR_REPO_NAME"
+          token: ${{ forge.token }}
+          source: public
