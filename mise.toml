@@ -12,7 +12,7 @@ wrangler = { version = "latest", allow_builds = ["esbuild", "sharp", "workerd"] 
 experimental = true
 
 [tasks]
-fetch = "mise deps && node scripts/fetch.js"
-build = { run = ["mise run fetch", "zine release -f", "npx -y pagefind --site public"] }
+fetch = "node scripts/fetch.js"
+build = { run = ["zine release -f", "npx -y pagefind --site public"] }
 dev = "zine"
 deploy = "wrangler pages deploy public/ --project-name pratyay"

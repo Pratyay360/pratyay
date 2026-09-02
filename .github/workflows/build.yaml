@@ -16,24 +16,21 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    container:
+        image: ghcr.io/jdx/mise:latest
     steps:
-      - uses: actions/checkout@main
-        with:
-          fetch-depth: 0
+      - name: checkout code
+        uses: actions/checkout@main
 
-      - name: Setup mise
-        uses: jdx/mise-action@main
-      - name: Fetch content & build
+      - name: Install dependencies & deploy
         run: |
-          mise deps
-          mise run build
-
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
+            mise deps
+            mise run fetch
+            mise run build
+            mise run deploy
+        env:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy public/ --project-name pratyay
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@main
