@@ -3,7 +3,7 @@
 	<nav>
 		<a href="$site.page('').link()">Home</a>
 		&nbsp; • &nbsp;
-		<a href="$site.page('about').link()">about</a>
+		<a href="$site.page('about').link()">About</a>
 		&nbsp; • &nbsp;
 		<a href="$site.page('blog').link()">Blog</a>
 		&nbsp; • &nbsp;
@@ -13,7 +13,7 @@
 		&nbsp; • &nbsp;
 		<a href="$site.page('devlog').link()">Devlogs</a>
 		&nbsp; • &nbsp;
-		<a href="$site.page('search').link()">search</a>
+		<a href="$site.page('search').link()">Search</a>
 	</nav>
 </header>
 <main id="main"><super></main>
