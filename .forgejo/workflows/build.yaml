@@ -33,6 +33,6 @@ jobs:
 
       - uses: https://codeberg.org/git-pages/action@v2
         with:
-          site: "https://${{ forge.repository_owner }}.codeberg.page/YOUR_REPO_NAME"
+          site: "https://${{ forge.repository_owner }}.codeberg.page/pratyay"
           token: ${{ forge.token }}
           source: public
