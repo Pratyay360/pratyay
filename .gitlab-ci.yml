@@ -1,0 +1,19 @@
+image: ghcr.io/jdx/mise:latest
+
+stages:
+  - build
+  - deploy
+
+
+build:
+  stage: build
+  script:
+    - mise deps
+    - mise run fetch
+    - mise run build
+
+pages:
+  stage: deploy
+  artifacts:
+    paths:
+      - public
