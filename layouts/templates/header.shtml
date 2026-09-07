@@ -5,7 +5,7 @@
 		&nbsp; • &nbsp;
 		<a href="$site.page('blog').link()">Blog</a>
 		&nbsp; • &nbsp;
-		<a href="$site.page('projects').link()">Projects</a>
+		<a href="https://pratyay360.github.io/docs">Projects</a>
 		&nbsp; • &nbsp;
 		<a href="$site.page('notes').link()">Notes</a>
 		&nbsp; • &nbsp;
