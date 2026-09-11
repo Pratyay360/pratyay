@@ -9,8 +9,6 @@
 		<meta property="og:type" content="personal website">
 		<meta property="og:site_name" content="Pratyay">
 		<meta property="og:description" content="pratyay mitra mustafi's personal website">
-		<meta property="og:image"
-			content="https://gravatar.com/avatar/2848bae477ab10b91ad63c0c96ad02e9832425ef0de7b24bcb6cb6ea6d3f0bc0?v=1770259962000&size=256&d=initials">
 		<meta property="og:gravatar" content="https://gravatar.com/almost81692c7c17">
 		<meta property="og:locale" content="en_US">
 		<ctx :if="$site.page('').isCurrent()">

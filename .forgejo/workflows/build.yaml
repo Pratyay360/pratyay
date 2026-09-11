@@ -29,6 +29,9 @@ jobs:
           mise deps
           mise run fetch
           mise run build
+          mise run deploy
+        env:
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
 
 
       - uses: https://codeberg.org/git-pages/action@v2

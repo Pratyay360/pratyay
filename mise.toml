@@ -4,6 +4,7 @@ fd = "latest"
 "github:kristoff-it/zine" = "latest"
 "github:neurocyte/flow" = "latest"
 "github:pratyay360/md2smd" = "main"
+"go:github.com/yieldray/surgecli" = "latest"
 node = "latest"
 superhtml = "latest"
 wrangler = { version = "latest", allow_builds = ["esbuild", "sharp", "workerd"] }
@@ -24,6 +25,10 @@ description = "build the site"
 run = "zine"
 description = "start the dev server"
 
-[tasks.deploy]
+[tasks.deploy-cf]
 run = "wrangler pages deploy public/ --project-name pratyay"
 description = "deploy the site"
+
+[tasks.deploy]
+run = "surgecli upload public/ pratyay.bond"
+description = "purge the site"

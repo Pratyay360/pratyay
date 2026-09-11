@@ -27,16 +27,9 @@ jobs:
             mise deps
             mise run fetch
             mise run build
+            # mise run deploy-cf
             mise run deploy
         env:
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@main
-        with:
-          path: ./public
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@main
