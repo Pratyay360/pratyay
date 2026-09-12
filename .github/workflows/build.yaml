@@ -28,7 +28,8 @@ jobs:
             mise run fetch
             mise run build
             mise run deploy
-            mise run deploy1
+            # mise run deploy1
+
         env:
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
