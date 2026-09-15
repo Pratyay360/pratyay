@@ -21,8 +21,8 @@
 				<img src="$site.asset('buttons/milkandcookies.png').link()" alt="Milk and Cookies" width="88"
 					height="31">
 				<img src="$site.asset('buttons/nosmoking.png').link()" alt="No Smoking" width="88" height="31">
-				<a href="$site.page('blog').alternative('rss').link()"><img src="$site.asset('buttons/rss.png').link()"
-						alt="RSS Feed" width="88" height="31"></a>
+				<a href="$site.index().alternative('rss-all').link()"><img src="$site.asset('buttons/rss.png').link()"
+						alt="RSS Feed (all posts)" width="88" height="31"></a>
 			</div>
 			<div>
 				<a href="https://codeberg.org/Pratyay360/blogs_md" alt="get all the blogs"><span>Contents available

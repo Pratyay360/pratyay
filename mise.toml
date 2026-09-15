@@ -7,7 +7,6 @@ fd = "latest"
 node = "latest"
 "npm:surge" = "latest"
 superhtml = "latest"
-wrangler = { version = "latest", allow_builds = ["esbuild", "sharp", "workerd"] }
 
 [settings]
 experimental = true

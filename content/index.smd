@@ -5,6 +5,10 @@
 .layout = "index.shtml",
 .description = "The blog of a hobbyist navigating the seas of the internet",
 .alternatives = [.{
+    .name = "rss-all",
+    .layout = "feed.xml",
+    .output = "rss.xml",
+}, .{
     .name = "sitemap",
     .layout = "sitemap.xml",
     .output = "/sitemap.xml",

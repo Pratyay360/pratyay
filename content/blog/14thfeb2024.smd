@@ -1,0 +1,76 @@
+---
+.date = .date("2024-02-14T14:55:00Z"),
+.description = "Deploying nextjs app on cloudflare pages (hashnode archive)",
+.draft = false,
+.layout = "post.shtml",
+.title = "Deploying nextjs app on cloudflare pages",
+---
+
+Cloudflare pages is the best alternative when it comes to serverless platforms like Vercel or Netlify . Because cloudflare pages is virtually free and unlimited where others are limited for 100Gb bandwidth. Also there is no limitation like no commercial use on free version like Vercel.
+
+You can compare the pricing of [vercel]($link.url("https://vercel.com/pricing").new(true)),
+[netlify]($link.url("https://www.netlify.com/pricing").new(true)), [cloudflare pages]($link.url("https://www.cloudflare.com/en-in/plans/developer-platform/").new(true)) .
+
+To be honest though cloudflare pages is free and unlimited but SSR (Server Side Rendering) is not supported by it which is the only visible downside of using cloudflare pages all pages are statically rendered on client machine. Cloudflare pages has unlimited bandwidth and requests for free which is great for some serious apps to casual side projects. It's better compared to paying $20 for some server side rendering and proprietary Vercel optimization.
+
+Now let's see how to use cloudflare pages along with NEXT.JS,
+
+# Create a [next]($link.url("https://nextjs.org/docs").new(true)) project with
+
+`npx create-next-app@latest`
+
+[Terminal Next]($image.url("https://cdn.hashnode.com/res/hashnode/image/upload/v1707913117934/664bb591-d118-4194-a2a3-ceace1a04c56.png"))
+
+upload project to [github]($link.url("https://github.com/Pratyay360/test-app").new(true))
+
+[github page]($image.url("https://cdn.hashnode.com/res/hashnode/image/upload/v1707913665642/98789bc9-d8ff-4a84-8a5a-5e3d8f92fc2b.png"))
+
+Open [cloudflare homepage]($link.url("https://www.cloudflare.com/").new(true)) login and in dashboard go to workers and pages
+
+[cloudflare dashoard]($image.url("https://cdn.hashnode.com/res/hashnode/image/upload/v1707913912594/7f2ec47c-58cb-4eab-8f87-22388289dcfb.png"))
+
+click on create application
+
+[workers and pages]($image.url("https://cdn.hashnode.com/res/hashnode/image/upload/v1707914039120/52ed78aa-17a3-4d47-9a78-2abfd5e0d252.png"))
+
+click on pages and on connect to git
+
+[create application]($image.url("https://cdn.hashnode.com/res/hashnode/image/upload/v1707914223044/0cd32b05-f5fc-496f-82ba-431edd6e8194.png"))
+
+Link your git repository and begin setup and choose Next.Js in the framework section
+
+[deploy options]($image.url("https://cdn.hashnode.com/res/hashnode/image/upload/v1707914357980/be577f2e-5a2f-4c29-b6c2-7b498e1cb9e5.png"))
+
+leave everything as it is if you are not using environment variables. If you are using environment variables then click on the option and add your environment variables.
+
+Hit the `Save and Deploy` button.
+
+There will be a error while opening the generated site like
+
+[Flag error]($image.url("https://cdn.hashnode.com/res/hashnode/image/upload/v1707914929214/73c90bb4-8ed5-4d77-8646-7c48a387cc35.png"))
+
+you have to copy the flag `nodejs_compat` and go to settings of the deployment and open functions window in it.
+
+[settings]($image.url("https://cdn.hashnode.com/res/hashnode/image/upload/v1707915246626/ba8527d6-4eef-48fa-a3c0-32b3f6877fa6.png"))
+
+In functions window there is a option to add compatibility flags add the copied text in both Production and Preview Options.
+
+[flags]($image.url("https://cdn.hashnode.com/res/hashnode/image/upload/v1707915352071/1ef9d53d-a0c4-4cc8-97f5-a0addf38bd30.png"))
+
+Also change the Compatibility date to the nearest one (if not configured automatically)
+
+[compatibility date]($image.url("https://cdn.hashnode.com/res/hashnode/image/upload/v1707915435201/e5f8a643-8c37-46ac-ac5a-4a25c5b38423.png"))
+
+After Doing everything thoroughly you have to re deploy the app by clicking on retry deployment.
+
+[retry deployment]($image.url("https://cdn.hashnode.com/res/hashnode/image/upload/v1707915677923/cc8eca20-0e03-42e3-849e-c04d975cf3d7.png"))
+
+After doing all the steps correctly the Next.Js app will be deployed in Cloudflare Pages [link]($link.url("https://test-app-kjx.pages.dev/").new(true))
+
+# Result
+
+[result]($image.url("https://cdn.hashnode.com/res/hashnode/image/upload/v1707916073390/77824d3d-b306-42f4-962c-6ef9474431ce.png"))
+
+Feel free to comment if you are facing any problem.
+
+Happy coding `:)`

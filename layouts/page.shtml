@@ -32,14 +32,53 @@
 				<span :text="$loop.it.prefix('#')" class="italic fgshade3"></span>
 			</p>
 		</ctx>
-		<nav id="prev_next" class="flx flx-sp-bw no-print ft-size-s">
+		<ctx :if="$page.parentSection().link().eql('/').not()">
+		<nav class="post-nav" aria-label="Post navigation">
 			<ctx :if="$page.prevPage?()">
-				<a href="$if.link()" title="$if.title">← Previous</a>
+				<a class="post-nav-card post-nav-prev" href="$if.link()" :title="$if.title">
+					<span class="post-nav-dir">← Previous</span>
+					<span class="post-nav-title" :text="$if.title"></span>
+					<time class="post-nav-date" :text="$if.date.format('Jan 02, 2006')"></time>
+				</a>
 			</ctx>
-			<a href="#">↑ Top</a>
+			<ctx :if="$page.hasPrev().not()">
+				<span class="post-nav-card post-nav-disabled" aria-hidden="true">
+					<span class="post-nav-dir">← Previous</span>
+					<span class="post-nav-title" style="opacity:.4">No previous post</span>
+				</span>
+			</ctx>
+			<div class="post-nav-center">
+				<a href="$page.parentSection().link()" title="Back to section">↑ All</a>
+				<span style="opacity:.3; margin:0 4px">·</span>
+				<a href="#" title="Back to top">Top</a>
+			</div>
 			<ctx :if="$page.nextPage?()">
-				<a href="$if.link()" title="$if.title">Next →</a>
+				<a class="post-nav-card post-nav-next" href="$if.link()" :title="$if.title">
+					<span class="post-nav-dir">Next →</span>
+					<span class="post-nav-title" :text="$if.title"></span>
+					<time class="post-nav-date" :text="$if.date.format('Jan 02, 2006')"></time>
+				</a>
+			</ctx>
+			<ctx :if="$page.hasNext().not()">
+				<span class="post-nav-card post-nav-disabled" aria-hidden="true">
+					<span class="post-nav-dir">Next →</span>
+					<span class="post-nav-title" style="opacity:.4">No next post</span>
+				</span>
 			</ctx>
 		</nav>
+		<script>
+			document.addEventListener('keydown', (e) => {
+				if (e.target.closest('input, textarea, [contenteditable="true"]')) return;
+				if (e.key === 'ArrowLeft') {
+					const a = document.querySelector('a.post-nav-prev');
+					if (a) window.location.href = a.href;
+				}
+				if (e.key === 'ArrowRight') {
+					const a = document.querySelector('a.post-nav-next');
+					if (a) window.location.href = a.href;
+				}
+			});
+		</script>
+		</ctx>
 	</div>
 </main>

@@ -1,0 +1,94 @@
+---
+.date = .date("2023-07-17T00:00:00Z"),
+.description = "Speed Up Compilation of React.js and Next.js Apps(hashnode archive)",
+.draft = false,
+.layout = "post.shtml",
+.title = "Speed Up Compilation of React.js and Next.js Apps",
+---
+# **Introduction:**
+
+Million js is a library that can be used to speed up the compilation of React and Next js apps. It does this by using a custom compiler that is optimized for performance. Million js also uses a custom virtual DOM that is more efficient than the default React virtual DOM Million js enhances React / Next js performance up to 70%.
+
+# **How to use Million js:**
+
+To use Million js, you need to install it and then add the `block()` function to your React code. The `block()` function takes a React component as its input and returns a new component that is optimized for performance.
+
+Here is an example of how to use Million.js:
+
+# Normal react snippet
+
+```javascript
+export default function App() {
+  return (
+    <>
+      <p>Hello world</p>
+    </>
+  );
+}
+```
+
+# Same code snippet with Million.js
+
+```javascript
+import { block } from "million/react";
+export default block(function App() {
+  return (
+    <>
+      <p>Hello world</p>
+    </>
+  );
+});
+```
+
+The `block()` function will optimize the `App` component for performance. This will make the compilation of the React app faster.
+
+# **How Million.js works:**
+
+Million.js works by using a custom compiler that is optimized for performance. The compiler uses several techniques to speed up the compilation of React code, including:
+
+- Using a custom virtual DOM that is more efficient than the default React virtual DOM.
+- Optimizing the code for specific browsers and devices.
+- Reducing the amount of code that needs to be compiled.
+
+# **Installing Million.js:**
+
+You can install Million.js using the following command:
+
+`npm`
+
+```javascript
+npm install million
+```
+
+`pnpm`
+
+```javascript
+pnpm install million
+```
+
+`yarn`
+
+```javascript
+yarn add million
+```
+
+# **Using Million.js with Next.js:**
+
+If you are using Next.js, you need to rename your `Next.config.js` file to `Next.config.mjs`
+and then add the following code to the file:
+
+```javascript
+import million from "million/compiler";
+
+const nextConfig = {
+  reactStrictMode: true,
+};
+
+export default million.next(nextConfig);
+```
+
+This will make Next js use the Million js compiler and you can easily compile react code up to 70% faster.
+
+[For more information visit the official Million Js website]($link.url("https://million.dev/").new(true))
+
+Happy coding `:)`

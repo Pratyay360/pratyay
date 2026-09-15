@@ -1,0 +1,137 @@
+---
+.date = .date("2026-09-07T17:50:00Z"),
+.description = "some tarball install scripts for future reference by someone..",
+.draft = false,
+.layout = "post.shtml",
+.tags = ["tar", "firefox", "zen", "betterbird", "helium", "antigravity", "vscode", "flow control"],
+.title = "Tarball install on linux",
+---
+First and foremost, a tarball is not an installer. It is simply an archive containing an application and its component files. Unlike .deb or .rpm packages, a tarball generally does not tell the system where the application should live, how it should be exposed in your 
+$PATH, or how it should appear in your application launcher.
+
+That is both its strength and its weakness. For user space installations, we can choose where the application lives without modifying the system at all.
+
+I am using     `$HOME/.tarball-installations`
+
+[by taking inspiration from Github user spookyorange]($link.url("https://github.com/spookyorange").new(true)).
+
+We will use:
+
+```bash
+$HOME/.tarball-installations/
+```
+
+as the root directory for installed applications using the tarball method.
+
+For example:
+
+```bash
+~/.tarball-installations/
+├── app-one/
+├── app-two/
+└── app-three/
+```
+
+Each application gets its own directory, keeping the installation isolated from the rest of the system.
+
+The next step is making these applications feel like normal Linux applications.
+
+There are essentially three things we need to handle:
+
+Extract the tarball somewhere under \~/.tarball-installations/.
+
+Expose the executable through 
+$PATH, 
+
+so we can launch it from a terminal without typing its full path. To achieve this, we can create a symlink in the system. For example:
+
+```bash
+ln -s $HOME/.tarball-installations/app1/bin/app1 $HOME/.local/bin/app1
+```
+
+Create a .desktop entry, when appropriate, so graphical applications appear in the application launcher. These often come included with the tarballs.
+
+None of this requires sudo.
+
+And that, in my opinion, the important part of this approach is that the application belongs to the user, so the installation should belong to the user too.
+
+Process in simple.
+
+1. Download the tarball
+
+Let's assume we have downloaded:
+
+`some-app-1.2.3-linux-x86_64.tar.gz`
+
+Instead of extracting it into /opt, /usr/local, or /usr/bin, we create our user-owned installation directory:
+
+```bash
+mkdir -p $HOME/.tarball-installations
+```
+
+Then extract the application:
+
+```bash
+tar -xf some-app-1.2.3-linux-x86_64.tar.gz
+    -C "
+$HOME/.tarball-installations"
+```
+
+Depending on how the archive was created, this might produce:
+
+```dockerfile
+~/.tarball-installations/
+└── some-app-1.2.3/
+    ├── some-app
+    ├── lib/
+    └── ...
+```
+
+That works, but there is an immediate problem: typing the following command...
+
+some-app
+
+.will not work from the terminal yet because it isn't in your  
+$PATH.
+
+Automation Scripts
+
+Using this method, I have written and modified some shell scripts so that future me and others can refer to them.
+
+# Firefox:
+
+```bash
+curl -fsSL https://codeberg.org/Pratyay360/tarballs/raw/branch/main/firefox.sh | sh
+```
+
+# Better Bird:
+
+```bash
+curl -fsSL https://codeberg.org/Pratyay360/tarballs/raw/branch/main/betterbird.sh | sh
+```
+
+# Flow Control (text editor):
+
+```bash
+curl -fsSL https://codeberg.org/Pratyay360/tarballs/raw/branch/main/flow.sh | sh
+```
+
+# AntigravityIDE:
+
+```bash
+curl -fsSL https://codeberg.org/Pratyay360/tarballs/raw/branch/main/antigravity.sh | sh
+```
+
+# Vscode:
+
+```bash
+curl -fsSL https://codeberg.org/Pratyay360/tarballs/raw/branch/main/vscode.sh | sh
+```
+
+# helium browser
+
+```bash
+curl -fsSL https://codeberg.org/Pratyay360/tarballs/raw/branch/main/helium.sh | sh
+```
+
+> Safety Warning: Generally, it is recommended not to run random scripts from the internet on your machine. Always verify the contents of a script before executing it. You can do this by running curl [https://some]($link.url("https://some").new(true))script.sh to inspect the code safely from your terminal.

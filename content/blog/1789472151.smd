@@ -1,0 +1,17 @@
+---
+.date = .date("2026-09-15T11:35:00Z"),
+.description = "setup redirect rules in domain",
+.draft = true,
+.layout = "post.shtml",
+.tags = ["domain", "redirect", "dns"],
+.title = "setting up redirect rules in dns",
+---
+# So how does google/Microsoft like companies do redirections like we see on a daily basis.
+
+most notable one I can remember was [perplexity.in]($link.url("http://perplexity.in").new(true)) —→ redirecting to gemini.
+
+On a technical stand point how to redirect to a completely separate dns zone without even having control over that zone. + how are tls certs served in such a way. 
+
+[google.co.in]($link.url("http://google.co.in").new(true)) [google.in]($link.url("http://google.in").new(true)) + whatever parameters resolves without showing any insecure screen .
+
+and all the request methods like get post delete put works as fine as possible.

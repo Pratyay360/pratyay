@@ -2,8 +2,9 @@
 .title = "Sitemap",
 .date = .date("1990-01-01T00:00:00"),
 .layout = "sitemap.shtml",
-.description = "Sitemap of pratyay.bond",
+.description = "Sitemap",
 ---
 
 Sitemap of the entire site:
+
 
