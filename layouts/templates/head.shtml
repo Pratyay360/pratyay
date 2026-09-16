@@ -21,6 +21,7 @@
 		<link type="text/css" rel="stylesheet" href="$site.asset('css/highlight.css').link()">
 		<link type="text/css" rel="stylesheet" href="$site.asset('css/Temml-Local.css').link()">
 		<link rel="alternate" type="application/rss+xml" title="All posts" href="$site.index().alternative('rss-all').link()">
+		<link rel="me" href="https://mastodon.social/@realPratyay">
 		<meta name="index" href="$site.asset('69be26d93fe446a386772b6d7b3d9781.txt').link()">
 		<script defer src="$site.asset('js/render-mathtex.js').link()"></script>
 		<script data-goatcounter="https://pratyay.goatcounter.com/count" async
