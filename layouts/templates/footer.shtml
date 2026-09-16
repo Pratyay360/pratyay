@@ -24,15 +24,13 @@
 				<a href="$site.index().alternative('rss-all').link()"><img src="$site.asset('buttons/rss.png').link()"
 						alt="RSS Feed (all posts)" width="88" height="31"></a>
 			</div>
+			<div id="wcb" class="carbonbadge"></div>
 			<div>
-				<a href="https://codeberg.org/Pratyay360/blogs_md" alt="get all the blogs"><span>Contents available
-						at</span></a>
-				<a></a>
-			</div>
-			<div>
-				<link rel="preconnect" href="https://townsquare.cauenapier.com" crossorigin>
+
 				<link rel="stylesheet" href="https://townsquare.cauenapier.com/widget.css">
 				<div id="townsquare-root"></div>
+				<link rel="preconnect" href="https://townsquare.cauenapier.com" crossorigin>
+			    <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
 				<script type="module" async>
 					import { mountTownSquare } from "https://townsquare.cauenapier.com/townsquare.mjs";
 
