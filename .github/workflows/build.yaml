@@ -18,60 +18,23 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/jdx/mise:2026.9.6
-    env:
-      MISE_DATA_DIR: ${{ github.workspace }}/.ci-cache/mise/data
-      MISE_CACHE_DIR: ${{ github.workspace }}/.ci-cache/mise/cache
-      NPM_CONFIG_CACHE: ${{ github.workspace }}/.ci-cache/npm
     steps:
       - name: checkout code
         uses: actions/checkout@main
-
-      - name: Set cache refresh period
-        id: cache-period
-        # Rolling keys let immutable caches pick up updates to unpinned tools.
-        run: echo "week=$(date -u +%G-%V)" >> "$GITHUB_OUTPUT"
-
-      - name: Restore mise tools
-        id: mise-cache
-        uses: actions/cache/restore@main
+      - name: cache mise dependencies
+        uses: actions/cache@main
         with:
           path: |
-            ${{ env.MISE_DATA_DIR }}
-            ${{ env.MISE_CACHE_DIR }}
-          key: mise-v2-2026.9.6-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('mise.toml', '.mise.toml', 'mise.lock', '.mise.lock') }}-${{ steps.cache-period.outputs.week }}
+            ~/.local/share/mise/installs
+            ~/.local/share/mise/cache
+          key: mise-${{ runner.os }}-${{ hashFiles('mise.toml') }}
           restore-keys: |
-            mise-v2-2026.9.6-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('mise.toml', '.mise.toml', 'mise.lock', '.mise.lock') }}-
-            mise-v2-2026.9.6-${{ runner.os }}-${{ runner.arch }}-
-
-      - name: Restore npm downloads
-        id: npm-cache
-        uses: actions/cache/restore@main
-        with:
-          path: ${{ env.NPM_CONFIG_CACHE }}
-          key: npm-v2-2026.9.6-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('mise.toml', 'mise.lock', 'package.json', 'package-lock.json', 'npm-shrinkwrap.json') }}-${{ steps.cache-period.outputs.week }}
-          restore-keys: |
-            npm-v2-2026.9.6-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('mise.toml', 'mise.lock', 'package.json', 'package-lock.json', 'npm-shrinkwrap.json') }}-
-            npm-v2-2026.9.6-${{ runner.os }}-${{ runner.arch }}-
-
+            mise-${{ runner.os }}-
       - name: Install dependencies
-        # Always reconcile tools with the config, including partial cache hits.
         run: |
+            mise trust
             mise deps
             mise install
-
-      - name: Save mise tools
-        if: steps.mise-cache.outputs.cache-hit != 'true'
-        uses: actions/cache/save@main
-        with:
-          path: |
-            ${{ env.MISE_DATA_DIR }}
-            ${{ env.MISE_CACHE_DIR }}
-          key: ${{ steps.mise-cache.outputs.cache-primary-key }}
-
-
-      - name: Build site
-        # The build task already runs fetch; never cache externally updated content.
-        run: |
             mise run build
             mise run deploy
         env:

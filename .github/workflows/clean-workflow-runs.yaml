@@ -36,4 +36,3 @@ jobs:
         uses: robotology/gh-action-squash@master
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          # <user>_TOKEN: ${{ secrets.<user>_TOKEN }}
