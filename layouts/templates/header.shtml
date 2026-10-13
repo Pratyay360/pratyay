@@ -2,17 +2,17 @@
 <header id="header">
 	<nav aria-label="Main Navigation">
 		<a href="$site.page('').link()">Home</a>
-		&nbsp; • &nbsp;
+		<span class="nav-separator" aria-hidden="true">&nbsp; • &nbsp;</span>
 		<a href="$site.page('blog').link()">Blog</a>
-		&nbsp; • &nbsp;
+		<span class="nav-separator" aria-hidden="true">&nbsp; • &nbsp;</span>
 		<a href="https://docs.pratyay.qzz.io">Projects</a>
-		&nbsp; • &nbsp;
+		<span class="nav-separator" aria-hidden="true">&nbsp; • &nbsp;</span>
 		<a href="$site.page('devlog').link()">Devlog</a>
-		&nbsp; • &nbsp;
+		<span class="nav-separator" aria-hidden="true">&nbsp; • &nbsp;</span>
 		<a href="$site.page('notes').link()">Notes</a>
-		&nbsp; • &nbsp;
+		<span class="nav-separator" aria-hidden="true">&nbsp; • &nbsp;</span>
 		<a href="$site.page('contactme').link()">Contact Me</a>
-		&nbsp; • &nbsp;
+		<span class="nav-separator" aria-hidden="true">&nbsp; • &nbsp;</span>
 		<a href="$site.page('search').link()">Search</a>
 	</nav>
 </header>

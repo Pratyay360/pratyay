@@ -88,6 +88,18 @@ pre > code {
   font-size: 0.85em;
 }
 
+@media (pointer: coarse) {
+  .code-copy-btn {
+    min-width: 44px;
+    min-height: 44px;
+    opacity: 1;
+  }
+
+  .code-block-container pre {
+    padding-top: 60px;
+  }
+}
+
 /* Dual-theme fallback safety: ensure dark vars take precedence over inline light styles */
 @media (prefers-color-scheme: dark) {
   .shiki,
