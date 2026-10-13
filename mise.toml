@@ -35,8 +35,8 @@ run = "surge public/ publish www.pratyay.qzz.io"
 description = "deploy the site"
 
 
-# [tasks.deploy]
-# run = [
-#     "surge public/ publish pratyay.online",
-# ]
+[tasks.deploy]
+run = [
+    "surge public/ publish pratyay.online",
+]
 description = "deploy the site"
