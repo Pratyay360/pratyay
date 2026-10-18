@@ -14,6 +14,7 @@
 	<meta name="description" content="$page.description.len().gt(0).then($page.description, 'The blog of a hobbyist navigating the seas of the internet')">
 	<link rel="canonical" href="$site.host_url.addPath($page.link())">
 	<meta property="og:title" content="$page.title">
+	<meta name="ahrefs-site-verification" content="d3773a4e761cae81cfc313a1f250e863c527544e86f99edc96fd82d01cceb2cb">
 	<meta property="og:description" content="$page.description.len().gt(0).then($page.description, 'The blog of a hobbyist navigating the seas of the internet')">
 	<meta property="og:url" content="$site.host_url.addPath($page.link())">
 	<meta property="og:type" content="$page.isSection().then('website', 'article')">
@@ -61,33 +62,33 @@
 	<script data-goatcounter="https://pratyay.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 	<ctx :if="$site.page('').isCurrent()">
 		<script type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@graph": [
-				{
-					"@type": "WebSite",
-					"@id": "https://www.pratyay.online/#website",
-					"url": "https://www.pratyay.online/",
-					"name": "Pratyay writes",
-					"description": "The blog of a hobbyist navigating the seas of the internet",
-					"inLanguage": "en-US",
-					"publisher": {
-						"@id": "https://www.pratyay.online/#person"
+			{
+				"@context": "https://schema.org",
+				"@graph": [
+					{
+						"@type": "WebSite",
+						"@id": "https://www.pratyay.online/#website",
+						"url": "https://www.pratyay.online/",
+						"name": "Pratyay writes",
+						"description": "The blog of a hobbyist navigating the seas of the internet",
+						"inLanguage": "en-US",
+						"publisher": {
+							"@id": "https://www.pratyay.online/#person"
+						}
+					},
+					{
+						"@type": "Person",
+						"@id": "https://www.pratyay.online/#person",
+						"name": "Pratyay Mustafi",
+						"url": "https://www.pratyay.online/",
+						"sameAs": [
+							"https://mastodon.social/@realPratyay",
+							"https://github.com/Pratyay360",
+							"https://bsky.app/profile/pratyaymustafi.bsky.social"
+						]
 					}
-				},
-				{
-					"@type": "Person",
-					"@id": "https://www.pratyay.online/#person",
-					"name": "Pratyay Mustafi",
-					"url": "https://www.pratyay.online/",
-					"sameAs": [
-						"https://mastodon.social/@realPratyay",
-						"https://github.com/Pratyay360",
-						"https://bsky.app/profile/pratyaymustafi.bsky.social"
-					]
-				}
-			]
-		}
+				]
+			}
 		</script>
 		<script src="https://analytics.ahrefs.com/analytics.js" data-key="GYIovnnXwTlF25Efzy2rrw" async></script>
 	</ctx>
