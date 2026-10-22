@@ -25,6 +25,9 @@
 						alt="RSS Feed (all posts)" width="80" height="15" loading="lazy" decoding="async"></a>
 				<a href="https://app.youform.com/forms/8kgi7jvm"><img src="$site.asset('buttons/contact.png').link()"
 						alt="Contact" width="88" height="31" loading="lazy" decoding="async"></a>
+				<a href="https://buymeacoffee.com/Pratyay360" target="_blank" rel="noopener noreferrer"><img
+						src="$site.asset('buttons/buymeacoffee.svg').link()" alt="Buy Me A Coffee"
+						width="88" height="31" loading="lazy" decoding="async"></a>
 			</div>
 			<div id="wcb" class="carbonbadge"></div>
 			<div>
@@ -33,6 +36,7 @@
 				<div id="townsquare-root"></div>
 				<link rel="preconnect" href="https://townsquare.cauenapier.com" crossorigin>
 			    <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
+
 				<script type="module" async>
 					import { mountTownSquare } from "https://townsquare.cauenapier.com/townsquare.mjs";
 
