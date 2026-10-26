@@ -8,6 +8,7 @@ argc = "latest"
 node = "24"
 "npm:surge" = "latest"
 superhtml = "latest"
+wrangler = { version = "latest", allow_builds = ["esbuild", "sharp", "workerd"] }
 
 [settings]
 experimental = true
@@ -25,18 +26,18 @@ description = "build the site"
 run = "zine"
 description = "start the dev server"
 
-[tasks.deploy-cf]
+[tasks.deploy]
 run = "wrangler pages deploy public/ --project-name pratyay"
 description = "deploy the site"
 
 
-[tasks.deploy1]
-run = "surge public/ publish www.pratyay.qzz.io"
-description = "deploy the site"
+# [tasks.deploy1]
+# run = "surge public/ publish www.pratyay.qzz.io"
+# description = "deploy the site"
 
 
-[tasks.deploy]
-run = [
-    "surge public/ publish pratyay.online",
-]
-description = "deploy the site"
+# [tasks.deploy]
+# run = [
+#     "surge public/ publish pratyay.online",
+# ]
+# description = "deploy the site"

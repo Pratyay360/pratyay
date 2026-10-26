@@ -85,9 +85,9 @@
 					},
 					{
 						"@type": "Person",
-						"@id": "https://www.pratyay.online/#person",
+						"@id": "https://pratyay.online/#person",
 						"name": "Pratyay Mustafi",
-						"url": "https://www.pratyay.online/",
+						"url": "https://pratyay.online/",
 						"sameAs": [
 							"https://mastodon.social/@realPratyay",
 							"https://github.com/Pratyay360",
