@@ -3,4 +3,4 @@
     .auto_target_blank = true,
     .headings_h2 = true
 },
-.site = .simple(.{ .title = "Pratyay writes", .host_url = "https://pratyay.online", .content_dir_path = "content", .layouts_dir_path = "layouts", .assets_dir_path = "assets", .static_assets = ["font/Temml.woff2", "robots.txt", "CNAME"], .image_size_attributes = true }),
+.site = .simple(.{ .title = "Pratyay writes", .host_url = "https://pratyay.online", .content_dir_path = "content", .layouts_dir_path = "layouts", .assets_dir_path = "assets", .static_assets = ["font/Temml.woff2", "robots.txt", "CNAME", "pgp.pub"], .image_size_attributes = true }),
