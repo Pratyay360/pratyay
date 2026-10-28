@@ -27,7 +27,7 @@
 	</ctx>
 	<meta property="og:site_name" content="$site.title">
 	<meta property="og:locale" content="en_US">
-	<meta property="og:image" content="$site.host_url.addPath($site.asset('fanzine.jpg').link())">
+	<meta property="og:image" content="$site.host_url.addPath($site.asset('fanzine.webp').link())">
 	<meta property="og:image:alt" content="Pratyay writes cover art">
 	<meta property="og:image:width" content="500">
 	<meta property="og:image:height" content="715">
@@ -37,11 +37,12 @@
 	<meta name="twitter:creator" content="@realPratyay">
 	<meta name="twitter:title" content="$page.title">
 	<meta name="twitter:description" content="$page.description.len().gt(0).then($page.description, 'The blog of a hobbyist navigating the seas of the internet')">
-	<meta name="twitter:image" content="$site.host_url.addPath($site.asset('fanzine.jpg').link())">
+	<meta name="twitter:image" content="$site.host_url.addPath($site.asset('fanzine.webp').link())">
 	<meta name="twitter:image:alt" content="Pratyay writes cover art">
 	<meta name="theme-color" content="#1a1a1a">
 	<link rel="icon" type="image/x-icon" href="$site.asset('favicon.ico').link()">
 	<link rel="apple-touch-icon" href="$site.asset('favicon.ico').link()">
+	<link rel="manifest" href="/manifest.json">
 	<ctx :if="$site.page('').isCurrent()">
 		<title :text="$site.title"></title>
 	</ctx>
@@ -68,19 +69,19 @@
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "z1cwuajayp");
       </script>
-		<script type="application/ld+json">
+				<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
 				"@graph": [
 					{
 						"@type": "WebSite",
-						"@id": "https://www.pratyay.online/#website",
-						"url": "https://www.pratyay.online/",
+						"@id": "https://pratyay.online/#website",
+						"url": "https://pratyay.online/",
 						"name": "Pratyay writes",
 						"description": "The blog of a hobbyist navigating the seas of the internet",
 						"inLanguage": "en-US",
 						"publisher": {
-							"@id": "https://www.pratyay.online/#person"
+							"@id": "https://pratyay.online/#person"
 						}
 					},
 					{
@@ -92,6 +93,34 @@
 							"https://mastodon.social/@realPratyay",
 							"https://github.com/Pratyay360",
 							"https://bsky.app/profile/pratyaymustafi.bsky.social"
+						]
+					},
+					{
+						"@type": "Organization",
+						"@id": "https://pratyay.online/#organization",
+						"name": "Pratyay writes",
+						"url": "https://pratyay.online/",
+						"logo": {
+							"@type": "ImageObject",
+							"url": "https://pratyay.online/fanzine.webp"
+						},
+						"founder": {
+							"@id": "https://pratyay.online/#person"
+						},
+						"sameAs": [
+							"https://github.com/Pratyay360",
+							"https://mastodon.social/@realPratyay"
+						]
+					},
+					{
+						"@type": "BreadcrumbList",
+						"itemListElement": [
+							{
+								"@type": "ListItem",
+								"position": 1,
+								"name": "Home",
+								"item": "https://pratyay.online/"
+							}
 						]
 					}
 				]

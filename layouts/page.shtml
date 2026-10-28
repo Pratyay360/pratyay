@@ -48,12 +48,12 @@
 			<ctx :if="$page.hasPrev().not()">
 				<span class="post-nav-card post-nav-disabled" aria-hidden="true">
 					<span class="post-nav-dir">← Previous</span>
-					<span class="post-nav-title" style="opacity:.4">No previous post</span>
+					<span class="post-nav-title opacity-40">No previous post</span>
 				</span>
 			</ctx>
 			<div class="post-nav-center">
 				<a href="$page.parentSection().link()" title="Back to section">↑ All</a>
-				<span style="opacity:.3; margin:0 4px">·</span>
+				<span class="opacity-30 mx-2">·</span>
 				<a href="#" title="Back to top">Top</a>
 			</div>
 			<ctx :if="$page.nextPage?()">
@@ -66,7 +66,7 @@
 			<ctx :if="$page.hasNext().not()">
 				<span class="post-nav-card post-nav-disabled" aria-hidden="true">
 					<span class="post-nav-dir">Next →</span>
-					<span class="post-nav-title" style="opacity:.4">No next post</span>
+					<span class="post-nav-title opacity-40">No next post</span>
 				</span>
 			</ctx>
 		</nav>

@@ -1,0 +1,12 @@
+# Pratyay writes
+
+> The blog of a hobbyist navigating the seas of the internet.
+
+Pratyay Mustafi writes about Linux, dotfiles, Tauri, containers, bootc, Cloudflare, and developer tooling.
+
+## Links
+- Home: https://pratyay.online/
+- Blog: https://pratyay.online/blog/
+- Notes: https://pratyay.online/notes/
+- Devlog: https://pratyay.online/devlog/
+- RSS: https://pratyay.online/rss.xml

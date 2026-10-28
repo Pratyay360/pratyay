@@ -19,7 +19,7 @@ run = "node scripts/fetch.js"
 description = "fetch the latest posts"
 
 [tasks.build]
-run = ["mise fetch", "zine release -f", "npx -y pagefind --site public"]
+run = ["mise fetch", "zine release -f", "node scripts/fix-external-links.js", "npx -y pagefind --site public"]
 description = "build the site"
 
 [tasks.dev]

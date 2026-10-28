@@ -7,24 +7,24 @@
 			<div class="footer-buttons">
 				<a href="https://notbyai.fyi/" rel="noopener noreferrer"><img src="$site.asset('buttons/by_human.svg').link()" alt="By Human"
 						width="97" height="31" loading="lazy" decoding="async"></a>
-				<a href="$site.page('blog').link()"><img src="$site.asset('buttons/blogs.png').link()" alt="Blogs"
+				<a href="$site.page('blog').link()"><img src="$site.asset('buttons/blogs.webp').link()" alt="Blogs button"
 						width="80" height="15" loading="lazy" decoding="async"></a>
 				<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license noopener noreferrer"><img
-						src="$site.asset('buttons/cc.png').link()" alt="Creative Commons" width="88" height="31" loading="lazy" decoding="async"></a>
-				<span><img src="$site.asset('buttons/eyes.png').link()" alt="Eyes" width="88" height="31" loading="lazy" decoding="async"></span>
-				<a href="https://fedoraproject.org/" rel="noopener noreferrer"><img src="$site.asset('buttons/fedora.png').link()" alt="Fedora"
+						src="$site.asset('buttons/cc.webp').link()" alt="Creative Commons" width="88" height="31" loading="lazy" decoding="async"></a>
+				<span><img src="$site.asset('buttons/eyes.webp').link()" alt="Eyes icon" width="88" height="31" loading="lazy" decoding="async"></span>
+				<a href="https://fedoraproject.org/" rel="noopener noreferrer"><img src="$site.asset('buttons/fedora.webp').link()" alt="Fedora Project"
 						width="88" height="31" loading="lazy" decoding="async"></a>
-				<a href="https://pratyay.goatcounter.com/" rel="noopener noreferrer"><img src="$site.asset('buttons/goat.png').link()"
-						alt="GoatCounter" width="88" height="31" loading="lazy" decoding="async"></a>
-				<a href="https://www.kernel.org/" rel="noopener noreferrer"><img src="$site.asset('buttons/linoox.png').link()" alt="Linux"
+				<a href="https://pratyay.goatcounter.com/" rel="noopener noreferrer"><img src="$site.asset('buttons/goat.webp').link()"
+						alt="GoatCounter analytics" width="88" height="31" loading="lazy" decoding="async"></a>
+				<a href="https://www.kernel.org/" rel="noopener noreferrer"><img src="$site.asset('buttons/linoox.webp').link()" alt="Linux kernel"
 						width="80" height="15" loading="lazy" decoding="async"></a>
-				<img src="$site.asset('buttons/milkandcookies.png').link()" alt="Milk and Cookies" width="80"
+				<img src="$site.asset('buttons/milkandcookies.webp').link()" alt="Milk and Cookies" width="80"
 					height="15" loading="lazy" decoding="async">
-				<img src="$site.asset('buttons/nosmoking.png').link()" alt="No Smoking" width="88" height="31" loading="lazy" decoding="async">
-				<a href="$site.index().alternative('rss-all').link()"><img src="$site.asset('buttons/rss.png').link()"
+				<img src="$site.asset('buttons/nosmoking.webp').link()" alt="No Smoking" width="88" height="31" loading="lazy" decoding="async">
+				<a href="$site.index().alternative('rss-all').link()"><img src="$site.asset('buttons/rss.webp').link()"
 						alt="RSS Feed (all posts)" width="80" height="15" loading="lazy" decoding="async"></a>
-				<a href="https://app.youform.com/forms/8kgi7jvm"><img src="$site.asset('buttons/contact.png').link()"
-						alt="Contact" width="88" height="31" loading="lazy" decoding="async"></a>
+				<a href="https://app.youform.com/forms/8kgi7jvm" rel="noopener noreferrer"><img src="$site.asset('buttons/contact.webp').link()"
+						alt="Contact form" width="88" height="31" loading="lazy" decoding="async"></a>
 				<a href="https://buymeacoffee.com/Pratyay360" target="_blank" rel="noopener noreferrer"><img
 						src="$site.asset('buttons/buymeacoffee.svg').link()" alt="Buy Me A Coffee"
 						width="88" height="31" loading="lazy" decoding="async"></a>
