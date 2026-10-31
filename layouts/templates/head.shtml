@@ -75,41 +75,33 @@
 				"@graph": [
 					{
 						"@type": "WebSite",
-						"@id": "https://pratyay.online/#website",
-						"url": "https://pratyay.online/",
+						"@id": "https://www.pratyay.online/#website",
+						"url": "https://www.pratyay.online",
 						"name": "Pratyay writes",
 						"description": "The blog of a hobbyist navigating the seas of the internet",
 						"inLanguage": "en-US",
 						"publisher": {
-							"@id": "https://pratyay.online/#person"
+							"@id": "https://www.pratyay.online/#person"
 						}
 					},
 					{
 						"@type": "Person",
-						"@id": "https://pratyay.online/#person",
+						"@id": "https://www.pratyay.online/#person",
 						"name": "Pratyay Mustafi",
-						"url": "https://pratyay.online/",
+						"url": "https://www.pratyay.online",
 						"sameAs": [
-							"https://mastodon.social/@realPratyay",
-							"https://github.com/Pratyay360",
-							"https://bsky.app/profile/pratyaymustafi.bsky.social"
+							"mastodon.social/@realPratyay",
+							"github.com/Pratyay360",
+							"bsky.app/profile/pratyaymustafi.bsky.social"
 						]
 					},
 					{
-						"@type": "Organization",
-						"@id": "https://pratyay.online/#organization",
-						"name": "Pratyay writes",
-						"url": "https://pratyay.online/",
-						"logo": {
-							"@type": "ImageObject",
-							"url": "https://pratyay.online/fanzine.webp"
-						},
 						"founder": {
-							"@id": "https://pratyay.online/#person"
+							"@id": "https://www.pratyay.online/#person"
 						},
 						"sameAs": [
-							"https://github.com/Pratyay360",
-							"https://mastodon.social/@realPratyay"
+							"github.com/Pratyay360",
+							"mastodon.social/@realPratyay"
 						]
 					},
 					{
@@ -119,14 +111,13 @@
 								"@type": "ListItem",
 								"position": 1,
 								"name": "Home",
-								"item": "https://pratyay.online/"
+								"item": "/"
 							}
 						]
 					}
 				]
 			}
 		</script>
-		<script src="https://analytics.ahrefs.com/analytics.js" data-key="GYIovnnXwTlF25Efzy2rrw" async></script>
 	</ctx>
 </head>
 <header id="header">

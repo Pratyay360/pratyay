@@ -5,8 +5,8 @@
 Pratyay Mustafi writes about Linux, dotfiles, Tauri, containers, bootc, Cloudflare, and developer tooling.
 
 ## Links
-- Home: https://pratyay.online/
-- Blog: https://pratyay.online/blog/
-- Notes: https://pratyay.online/notes/
-- Devlog: https://pratyay.online/devlog/
-- RSS: https://pratyay.online/rss.xml
+- Home: https://www.pratyay.online/
+- Blog: https://www.pratyay.online/blog/
+- Notes: https://www.pratyay.online/notes/
+- Devlog: https://www.pratyay.online/devlog/
+- RSS: https://www.pratyay.online/rss.xml
