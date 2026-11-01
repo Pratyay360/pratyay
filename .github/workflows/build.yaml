@@ -36,7 +36,28 @@ jobs:
             mise deps
             mise install
             mise run build
-            mise run deploy
+
+      - name: index now key file
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          # strip whitespace: keys containing it produce an invalid filename
+          key="$(printf '%s' "${INDEXNOW_KEY:-}" | tr -d '[:space:]')"
+          if [ -z "$key" ]; then
+            echo "::error::INDEXNOW_KEY secret is unset or blank"
+            exit 1
+          fi
+          if ! printf '%s' "$key" | grep -Eq '^[A-Za-z0-9-]{8,128}$'; then
+            echo "::error::INDEXNOW_KEY must be 8-128 chars of [A-Za-z0-9-]"
+            exit 1
+          fi
+          printf '%s' "$key" > "./public/${key}.txt"
+          echo "Wrote ./public/${key}.txt"
+
+      - name: Deploy to Cloudflare
+        run: mise run deploy
         env:
           # SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -51,3 +72,71 @@ jobs:
       # - name: Deploy to GitHub Pages
       #   id: deployment
       #   uses: actions/deploy-pages@main
+
+
+
+      - name: index now (bing)
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          sitemap=./public/sitemap.xml
+          if [ ! -f "$sitemap" ]; then
+            echo "::error::missing $sitemap"
+            exit 1
+          fi
+          # Secrets pasted on Windows often carry a trailing \r. Interpolated
+          # into the request URL verbatim, that makes curl fail with
+          # "(3) URL rejected: Malformed input to a URL function", so strip
+          # whitespace and validate before use (same rule as the key-file step).
+          key="$(printf '%s' "${INDEXNOW_KEY:-}" | tr -d '[:space:]')"
+          if [ -z "$key" ]; then
+            echo "::error::INDEXNOW_KEY secret is unset or blank"
+            exit 1
+          fi
+          if ! printf '%s' "$key" | grep -Eq '^[A-Za-z0-9-]{8,128}$'; then
+            echo "::error::INDEXNOW_KEY must be 8-128 chars of [A-Za-z0-9-]"
+            exit 1
+          fi
+
+          # This sitemap emits no <lastmod>, so there is nothing to rank by and
+          # only <changefreq> is present. Submit every URL in one request
+          # instead of guessing at a "top 5" (IndexNow allows up to 10,000).
+          host="www.pratyay.online"
+          urls=()
+          while IFS= read -r url; do
+            urls+=("$url")
+          done < <(grep -o '<loc>[^<]*</loc>' "$sitemap" | sed -E 's#</?loc>##g')
+          if [ "${#urls[@]}" -eq 0 ]; then
+            echo "::error::no <loc> entries found in $sitemap"
+            exit 1
+          fi
+
+          list=""
+          for url in "${urls[@]}"; do
+            url="${url//\\/\\\\}"
+            url="${url//\"/\\\"}"
+            [ -z "$list" ] || list+=$',\n'
+            list+="    \"${url}\""
+          done
+
+          payload="$(mktemp)"
+          trap 'rm -f "$payload"' EXIT
+          printf '{\n  "host": "%s",\n  "key": "%s",\n  "keyLocation": "https://%s/%s.txt",\n  "urlList": [\n%s\n  ]\n}\n' \
+            "$host" "$key" "$host" "$key" "$list" > "$payload"
+
+          echo "Submitting ${#urls[@]} URLs to IndexNow"
+          code="$(curl -sS --retry 3 --retry-delay 2 \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            --data-binary @"$payload" \
+            -o /dev/null -w '%{http_code}' \
+            https://www.bing.com/indexnow)" || code="curl-failed"
+          echo "IndexNow response: ${code}"
+          case "$code" in
+            200|202) ;;
+            *)
+              echo "::error::IndexNow submission failed (HTTP ${code})"
+              exit 1
+              ;;
+          esac

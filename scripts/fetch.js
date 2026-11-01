@@ -26,7 +26,6 @@ async function fileExists(p) {
 }
 
 async function convertFile(sourceFilePath, targetSmdPath, defaultLayout) {
-  // console.log(`  -> Converting: ${sourceFilePath} -> ${targetSmdPath}`);
   await fs.mkdir(path.dirname(targetSmdPath), { recursive: true });
   const tempMdPath = targetSmdPath.replace(/\.smd$/, ".md");
   await fs.copyFile(sourceFilePath, tempMdPath);
