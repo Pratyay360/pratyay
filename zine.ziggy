@@ -1,4 +1,4 @@
-.zine_version = "0.14.0",
+.zine_version = "0.14.1",
 .supermd = .{
     .auto_target_blank = true,
     .headings_h2 = true
