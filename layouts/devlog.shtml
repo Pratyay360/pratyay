@@ -1,12 +1,13 @@
 <extend template="footer.shtml">
-<main id="main">
-	<h1 class="title" :text="$page.title"></h1>
+<main id="main" class="h-feed">
+	<h1 class="title p-name" :text="$page.title"></h1>
+	<a class="p-author h-card u-url" href="$site.host_url" style="display:none" rel="author">Pratyay Mustafi</a>
 	<div :html="$page.contentSection('about')"></div>
 	<div class="feed" :loop="$page.contentSections().slice(1)">
-		<div id="$loop.it.id">
-			<span :text="$loop.it.id.parseDate().format('January 02, 2006')"></span>
-			<h2><a href="$loop.it.id.prefix('#')" :html="$loop.it.heading()"></a></h2>
-			<ctx :html="$loop.it.htmlNoHeading()"></ctx>
+		<div id="$loop.it.id" class="h-entry">
+			<time class="dt-published" datetime="$loop.it.id" :text="$loop.it.id.parseDate().format('January 02, 2006')"></time>
+			<h2><a class="u-url p-name" href="$loop.it.id.prefix('#')" :html="$loop.it.heading()"></a></h2>
+			<div class="e-content"><ctx :html="$loop.it.htmlNoHeading()"></ctx></div>
 		</div>
 	</div>
 </main>

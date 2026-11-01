@@ -1,15 +1,17 @@
 <extend template="footer.shtml">
 	<main id="main">
-		<article itemscope itemtype="https://schema.org/BlogPosting">
-			<h1 :text="$page.title" class="txt-ctr" itemprop="headline"></h1>
+		<article itemscope itemtype="https://schema.org/BlogPosting" class="h-entry">
+			<h1 :text="$page.title" class="txt-ctr p-name" itemprop="headline"></h1>
 			<div class="subtitle-wrp txt-ctr">
-				<time class="fgshade3" datetime="$page.date.format('2006-01-02')" :text="$page.date.format('January 02, 2006')" itemprop="datePublished"></time>
+				<time class="fgshade3 dt-published" datetime="$page.date.format('2006-01-02')" :text="$page.date.format('January 02, 2006')" itemprop="datePublished"></time>
+				<a class="p-author h-card u-url" href="$site.host_url" style="display:none" rel="author">Pratyay Mustafi</a>
 				<meta itemprop="author" content="Pratyay Mustafi">
 				<meta itemprop="publisher" content="Pratyay Mustafi">
 				<link itemprop="mainEntityOfPage" href="$site.host_url.addPath($page.link())">
+				<link class="u-url" href="$site.host_url.addPath($page.link())">
 				<meta itemprop="image" content="$site.host_url.addPath($site.asset('fanzine.webp').link())">
 			</div>
-			<div :html="$page.content()" itemprop="articleBody"></div>
+			<div :html="$page.content()" itemprop="articleBody" class="e-content"></div>
 		</article>
 
 		<nav class="post-nav no-print" aria-label="Post navigation">
