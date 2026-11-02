@@ -39,7 +39,21 @@
 	<meta name="twitter:description" content="$page.description.len().gt(0).then($page.description, 'The blog of a hobbyist navigating the seas of the internet')">
 	<meta name="twitter:image" content="$site.host_url.addPath($site.asset('fanzine.webp').link())">
 	<meta name="twitter:image:alt" content="Pratyay writes cover art">
-	<meta name="theme-color" content="#1a1a1a">
+	<meta name="theme-color" content="#ff7800">
+	<meta name="theme-color" content="#ffa348" media="(prefers-color-scheme: dark)">
+	<style type="text/css">
+		:root {
+			--accent-color: #ff7800;
+		}
+		[data-theme="dark"] {
+			--accent-color: #ffa348;
+		}
+		@media (prefers-color-scheme: dark) {
+			:root:not([data-theme="light"]) {
+				--accent-color: #ffa348;
+			}
+		}
+	</style>
 	<link rel="icon" type="image/x-icon" href="$site.asset('favicon.ico').link()">
 	<link rel="apple-touch-icon" href="$site.asset('favicon.ico').link()">
 	<link rel="manifest" href="/manifest.json">
@@ -51,6 +65,8 @@
 	</ctx>
 	<link rel="dns-prefetch" href="https://gc.zgo.at">
 	<link rel="dns-prefetch" href="https://pratyay.goatcounter.com">
+	<link type="text/css" rel="stylesheet" href="$site.asset('css/duckquill.css').link()">
+	<link type="text/css" rel="stylesheet" href="$site.asset('css/icons.css').link()">
 	<link type="text/css" rel="stylesheet" href="$site.asset('css/style.css').link()">
 	<link type="text/css" rel="stylesheet" href="$site.asset('css/highlight.css').link()">
 	<link type="text/css" rel="stylesheet" href="$site.asset('css/Temml-Local.css').link()">
@@ -58,74 +74,76 @@
 	<link rel="me" href="https://mastodon.social/@realPratyay">
 	<link rel="me" href="https://github.com/Pratyay360">
 	<meta name="index" href="$site.asset('69be26d93fe446a386772b6d7b3d9781.txt').link()">
+	<script defer src="$site.asset('js/theme-switcher.js').link()"></script>
+	<script defer src="$site.asset('js/closable.js').link()"></script>
 	<script defer src="$site.asset('js/render-mathtex.js').link()"></script>
 	<script type="module" src="$site.asset('js/shiki-highlight.js').link()"></script>
 	<script data-goatcounter="https://pratyay.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 	<ctx :if="$site.page('').isCurrent()">
-        <script type="text/javascript">
-          (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "z1cwuajayp");
-      </script>
-				<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@graph": [
-					{
-						"@type": "WebSite",
-						"@id": "https://www.pratyay.online/#website",
-						"url": "https://www.pratyay.online",
-						"name": "Pratyay writes",
-						"description": "The blog of a hobbyist navigating the seas of the internet",
-						"inLanguage": "en-US",
-						"publisher": {
-							"@id": "https://www.pratyay.online/#person"
-						}
-					},
-					{
-						"@type": "Person",
-						"@id": "https://www.pratyay.online/#person",
-						"name": "Pratyay Mustafi",
-						"url": "https://www.pratyay.online",
-						"sameAs": [
-							"mastodon.social/@realPratyay",
-							"github.com/Pratyay360",
-							"bsky.app/profile/pratyaymustafi.bsky.social"
-						]
-					},
-					{
-						"founder": {
-							"@id": "https://www.pratyay.online/#person"
-						},
-						"sameAs": [
-							"github.com/Pratyay360",
-							"mastodon.social/@realPratyay"
-						]
-					},
-					{
-						"@type": "BreadcrumbList",
-						"itemListElement": [
-							{
-								"@type": "ListItem",
-								"position": 1,
-								"name": "Home",
-								"item": "/"
-							}
-						]
+		<script type="text/javascript">
+			(function(c,l,a,r,i,t,y){
+			c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+			t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+			y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+		})(window, document, "clarity", "script", "z1cwuajayp");
+		</script>
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@graph": [
+				{
+					"@type": "WebSite",
+					"@id": "https://www.pratyay.online/#website",
+					"url": "https://www.pratyay.online",
+					"name": "Pratyay writes",
+					"description": "The blog of a hobbyist navigating the seas of the internet",
+					"inLanguage": "en-US",
+					"publisher": {
+						"@id": "https://www.pratyay.online/#person"
 					}
-				]
-			}
+				},
+				{
+					"@type": "Person",
+					"@id": "https://www.pratyay.online/#person",
+					"name": "Pratyay Mustafi",
+					"url": "https://www.pratyay.online",
+					"sameAs": [
+						"mastodon.social/@realPratyay",
+						"github.com/Pratyay360",
+						"bsky.app/profile/pratyaymustafi.bsky.social"
+					]
+				},
+				{
+					"founder": {
+						"@id": "https://www.pratyay.online/#person"
+					},
+					"sameAs": [
+						"github.com/Pratyay360",
+						"mastodon.social/@realPratyay"
+					]
+				},
+				{
+					"@type": "BreadcrumbList",
+					"itemListElement": [
+						{
+							"@type": "ListItem",
+							"position": 1,
+							"name": "Home",
+							"item": "/"
+						}
+					]
+				}
+			]
+		}
 		</script>
 	</ctx>
 </head>
-<header id="header">
+<header id="site-nav">
 	<super>
 </header>
-<main id="main">
+<main id="main-content">
 	<super>
 </main>
-<footer id="footer">
+<footer id="site-footer">
 	<super>
 </footer>

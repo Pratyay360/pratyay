@@ -1,0 +1,297 @@
+---
+.date = .date("2026-10-10T15:31:00Z"),
+.description = "Tauri v2 based AppImages crash or show blank screens on wayland. Here's a way to patch the AppImage and fix Wayland/EGL conflicts.",
+.draft = false,
+.layout = "post.shtml",
+.tags = ["appimage", "tauri", "tauriv2", "mise", "ai", "agents", "crab", "crabnebula", "egl", "container", "linux"],
+.title = "Why Your Tauri based appImage not working on Linux (And How to Fix It)",
+---
+# Tauri Apps Built as Appimages are not working on modern linux distributions, like fedora, arch
+
+Appimages are one of the nicest ways to distribute an app but not being able to run a format meant to be used on multiple os, is a bad thing. Appimage as a format is crucial for users who want to test a app and use it without the need of installing. Appimages are cool as they comes with all the required dependencies and can be operated on systems such as Windows with WSL2 and FreeBSD with the Linuxulator.
+Appimages are self contained in nature and requires no root access.
+
+[]($image.url("https://i.ibb.co/SzdDWNG/Screenshot-20261010-211137-png.png"))
+
+```bash
+Gtk-Message: 21:07:08.168: Failed to load module "appmenu-gtk-module": 'gtk_module_display_init': /usr/lib64/gtk-3.0/modules/libcolorreload-gtk-module.so: undefined symbol: gtk_module_display_init
+Could not create default EGL display: EGL_BAD_PARAMETER. Aborting...
+
+** (apiark:185476): WARNING **: 21:07:33.334: atk-bridge: get_device_events_reply: unknown signature
+```
+
+This is a sample app image for a Tauri based rest-api client [apiark]($link.url("https://apiark.dev/").new(true)).
+
+So, I was building [Drawx]($link.url("https://pratyay360.github.io/drawx/").new(true)), the offline version of [drawy]($link.url("https://github.com/Pratyay360/drawy").new(true)), which provides data sovereignty because nothing ever leaves your machine. However, the Drawx app was not working on my machine because of some odd issues. I wanted to run the AppImage in a portable manner, but using environment variables did not help. Setting `WEBKIT_DISABLE_DMABUF_RENDERER=1` or `WEBKIT_DISABLE_COMPOSITING_MODE=1` either caused a crash on launch or displayed a blank screen. The issue is that the CI environment adds libraries such as `libwayland-client.so` inside the AppImage. This creates conflicts between the AppImage's dependencies and the system's libraries. The solution is to remove the duplicated dependencies and let the AppImage use the system's libraries instead of those inside the AppImage.
+
+# How to Fix This ?
+
+Remove all dependencies related to wayland from the AppImage. Since XWayland can handle X11 applications, there is no need to bundle these libraries internally. The creator of the AppImage also noted this in [his comment]($link.url("https://x.com/realPratyay/status/2109024857203617944").new(true)).
+
+[]($image.url("https://i.ibb.co/Rkkyrt18/Screenshot-20261011-232802-png.png"))
+
+I have written a shell script to handle this for you. Please create a file at `src-tauri/scripts/patch-appimage-wayland.sh` and paste the script into it.
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+SRC_TAURI_DIR="$REPO_ROOT/src-tauri"
+TAURI_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/tauri"
+
+# Clean up temp files on exit
+TEMP_BIN=$(mktemp -d)
+TEMP_EXTRACT=""
+cleanup() {
+  rm -rf "$TEMP_BIN"
+  if [ -n "$TEMP_EXTRACT" ] && [ -d "$TEMP_EXTRACT" ]; then
+    rm -rf "$TEMP_EXTRACT"
+  fi
+}
+trap cleanup EXIT
+
+# 1. Resolve linuxdeploy and appimage tools
+LINUXDEPLOY_BIN=""
+if [ -d "$TAURI_CACHE_DIR" ]; then
+  cached_linuxdeploy=$(find "$TAURI_CACHE_DIR" -maxdepth 1 -name "linuxdeploy-*.AppImage" -print -quit 2>/dev/null || true)
+  if [ -n "$cached_linuxdeploy" ] && [ -f "$cached_linuxdeploy" ]; then
+    ln -sf "$cached_linuxdeploy" "$TEMP_BIN/linuxdeploy"
+    LINUXDEPLOY_BIN="$TEMP_BIN/linuxdeploy"
+  fi
+
+  cached_plugin=$(find "$TAURI_CACHE_DIR" -maxdepth 1 -name "linuxdeploy-plugin-appimage.AppImage" -print -quit 2>/dev/null || true)
+  if [ -n "$cached_plugin" ] && [ -f "$cached_plugin" ]; then
+    ln -sf "$cached_plugin" "$TEMP_BIN/linuxdeploy-plugin-appimage"
+  fi
+fi
+
+if [ -z "$LINUXDEPLOY_BIN" ] && command -v linuxdeploy >/dev/null 2>&1; then
+  LINUXDEPLOY_BIN="$(command -v linuxdeploy)"
+fi
+
+export PATH="$TEMP_BIN:$PATH"
+export APPIMAGE_EXTRACT_AND_RUN=1
+
+# 2. Patch an AppDir in-place
+patch_appdir() {
+  local appdir="$1"
+  echo "Patching AppDir: $appdir"
+
+  # 1. Write self-contained Wayland compatibility hook
+  mkdir -p "$appdir/apprun-hooks"
+  cat << 'EOF' > "$appdir/apprun-hooks/wayland-compat.sh"
+export DESKTOPINTEGRATION=1
+
+if [ -z "${LD_PRELOAD:-}" ]; then
+  for lib in \
+    /usr/lib/libwayland-client.so \
+    /usr/lib64/libwayland-client.so \
+    /usr/lib/x86_64-linux-gnu/libwayland-client.so \
+    /usr/lib/aarch64-linux-gnu/libwayland-client.so \
+    /usr/lib/arm-linux-gnueabihf/libwayland-client.so; do
+    if [ -f "$lib" ]; then
+      export LD_PRELOAD="$lib"
+      break
+    fi
+  done
+fi
+EOF
+  chmod +x "$appdir/apprun-hooks/wayland-compat.sh"
+
+  # 2. Patch AppRun so it sources the new hook before executing AppRun.wrapped
+  if [ -f "$appdir/AppRun.wrapped" ]; then
+    if ! grep -q "wayland-compat.sh" "$appdir/AppRun"; then
+      cat << 'EOF' > "$appdir/AppRun"
+#!/usr/bin/env bash
+HERE="$(dirname "$(readlink -f "${0}")")"
+if [ -f "$HERE/apprun-hooks/wayland-compat.sh" ]; then
+  . "$HERE/apprun-hooks/wayland-compat.sh"
+fi
+exec "$HERE/AppRun.wrapped" "$@"
+EOF
+      chmod +x "$appdir/AppRun"
+    fi
+  elif [ -f "$appdir/AppRun" ]; then
+    mv "$appdir/AppRun" "$appdir/AppRun.wrapped"
+    cat << 'EOF' > "$appdir/AppRun"
+#!/usr/bin/env bash
+HERE="$(dirname "$(readlink -f "${0}")")"
+if [ -f "$HERE/apprun-hooks/wayland-compat.sh" ]; then
+  . "$HERE/apprun-hooks/wayland-compat.sh"
+fi
+exec "$HERE/AppRun.wrapped" "$@"
+EOF
+    chmod +x "$appdir/AppRun"
+  fi
+}
+
+# 3. Repack AppDir into AppImage
+repack_appdir() {
+  local appdir="$1"
+  local expected_appimage="$2"
+  local bundle_dir
+  bundle_dir="$(dirname "$expected_appimage")"
+  local appimage_base
+  appimage_base="$(basename "$expected_appimage")"
+
+  echo "Repacking AppImage into $expected_appimage..."
+  (
+    cd "$bundle_dir"
+    export LDAI_OUTPUT="$appimage_base"
+
+    # Remove existing AppImage before repacking
+    [ -f "$expected_appimage" ] && rm -f "$expected_appimage"
+
+    if [ -n "$LINUXDEPLOY_BIN" ]; then
+      "$LINUXDEPLOY_BIN" --appdir "$appdir" --output appimage
+    elif command -v appimagetool >/dev/null 2>&1; then
+      appimagetool "$appdir" "$expected_appimage"
+    elif [ -x "$TEMP_BIN/linuxdeploy-plugin-appimage" ]; then
+      "$TEMP_BIN/linuxdeploy-plugin-appimage" --appdir "$appdir"
+    else
+      echo "Error: Could not find linuxdeploy or appimagetool to repack $appdir" >&2
+      exit 1
+    fi
+  )
+
+  echo "Successfully repacked AppImage at $expected_appimage"
+}
+
+# 4. Process targets
+if [ "${1:-}" != "" ]; then
+  TARGET_PATH="$(readlink -f "$1")"
+  if [ -d "$TARGET_PATH" ]; then
+    patch_appdir "$TARGET_PATH"
+    bundle_dir="$(dirname "$TARGET_PATH")"
+    appdir_name="$(basename "$TARGET_PATH")"
+    expected_appimage="${bundle_dir}/${appdir_name%.AppDir}.AppImage"
+    repack_appdir "$TARGET_PATH" "$expected_appimage"
+  elif [ -f "$TARGET_PATH" ]; then
+    TEMP_EXTRACT=$(mktemp -d)
+    echo "Extracting AppImage: $TARGET_PATH"
+    (cd "$TEMP_EXTRACT" && "$TARGET_PATH" --appimage-extract >/dev/null)
+    EXTRACTED_APPDIR="$TEMP_EXTRACT/squashfs-root"
+    patch_appdir "$EXTRACTED_APPDIR"
+    repack_appdir "$EXTRACTED_APPDIR" "$TARGET_PATH"
+  else
+    echo "Error: Target path not found: $TARGET_PATH" >&2
+    exit 1
+  fi
+else
+  APPDIRS=()
+  while IFS= read -r -d '' dir; do
+    APPDIRS+=("$dir")
+  done < <(find "$SRC_TAURI_DIR/target" "$REPO_ROOT/target" -type d -name "*.AppDir" -print0 2>/dev/null || true)
+
+  if [ "${#APPDIRS[@]}" -eq 0 ]; then
+    echo "No *.AppDir found to patch. (Did you run tauri build?)"
+    exit 0
+  fi
+
+  for appdir in "${APPDIRS[@]}"; do
+    patch_appdir "$appdir"
+    bundle_dir="$(dirname "$appdir")"
+    appdir_name="$(basename "$appdir")"
+    expected_appimage="${bundle_dir}/${appdir_name%.AppDir}.AppImage"
+    repack_appdir "$appdir" "$expected_appimage"
+  done
+fi
+
+echo "Wayland AppImage patching complete."
+```
+
+# And Change a Little Thing in the Existing Workflow
+
+# Replace All `tauri build` Commands With `tauri build && source src-tauri/scripts/patch-appimage-wayland.sh`
+
+if you are using vite then replace the `tauri build` command with `tauri build && source src-tauri/scripts/patch-appimage-wayland.sh` in the scripts section of `package.json`.
+
+```json
+{
+ "name": "drawx",
+ "version": "0.8.5",
+ "type": "module",
+ "imports": {
+  "#components/*": "./src/components/*.tsx",
+  "#lib/*": "./src/lib/*.ts",
+  "#hooks/*": "./src/hooks/*.ts"
+ },
+ "scripts": {
+  "dev": "vite",
+  "build": "tsc && vite build",
+  "typecheck": "tsc --noEmit",
+  "preview": "vite preview",
+  "tauri": "tauri",
+  "tauri:build": "tauri build && source src-tauri/scripts/patch-appimage-wayland.sh"
+ },
+ "dependencies": {
+  "@astryxdesign/cli": "^0.5.4",
+  "@astryxdesign/core": "^0.5.4",
+  "@astryxdesign/theme-matcha": "^0.5.4",
+  "@astryxdesign/theme-neutral": "^0.5.4",
+  "@astryxdesign/theme-stone": "^0.5.4",
+  "@astryxdesign/theme-y2k": "^0.5.4",
+  "@excalidraw/excalidraw": "^0.18.1",
+  "@fontsource-variable/inter": "^5.3.0",
+  "@fontsource-variable/jetbrains-mono": "^5.3.0",
+  "@hugeicons/core-free-icons": "^4.3.5",
+  "@hugeicons/react": "^1.1.10",
+  "@iconify/react": "^6.0.2",
+  "@phosphor-icons/react": "^2.1.10",
+  "@stylexjs/stylex": "^0.19.1",
+  "@tauri-apps/api": "^2.12.1",
+  "@tauri-apps/plugin-clipboard-manager": "^2.4.1",
+  "@tauri-apps/plugin-dialog": "^2.8.1",
+  "@tauri-apps/plugin-fs": "^2.6.0",
+  "@tauri-apps/plugin-log": "^2.10.0",
+  "@tauri-apps/plugin-opener": "^2.7.0",
+  "@tauri-apps/plugin-process": "^2.4.0",
+  "@tauri-apps/plugin-updater": "^2.13.2",
+  "class-variance-authority": "^0.7.1",
+  "clsx": "^2.1.1",
+  "lucide-react": "^1.53.0",
+  "radix-ui": "^1.7.0",
+  "react": "^19.3.0",
+  "react-dom": "^19.3.0",
+  "react-router-dom": "^7.18.4",
+  "tailwind-merge": "^3.7.0",
+  "tw-animate-css": "^1.4.0"
+ },
+ "devDependencies": {
+  "@biomejs/biome": "^2.5.15",
+  "@oxlint/plugins": "1.81.0",
+  "@tailwindcss/vite": "^4.3.3",
+  "@tauri-apps/cli": "^2.12.1",
+  "@types/node": "^26.6.4",
+  "@types/react": "^19.3.0",
+  "@types/react-dom": "^19.3.0",
+  "@vitejs/plugin-react": "^6.1.2",
+  "astryx": "^0.0.0",
+  "oxfmt": "^0.72.0",
+  "oxlint": "^1.87.0",
+  "typescript": "~7.0.2",
+  "vite": "^8.3.4",
+  "zustand": "^5.0.15"
+ },
+ "devEngines": {
+  "packageManager": {
+   "name": "pnpm",
+   "version": "^12.10.1",
+   "onFail": "warn"
+  }
+ },
+ "packageManager": "pnpm@12.10.1+sha512.ba40a37eb1a370d60fea8c4cf1d364c13bcccef518e98ad2bcee954f539d38da37458e58261a3fa55e06523450ea0ffff9f497b135be41f2c15c1642bacace6c",
+ "trustedDependencies": [
+  "@astryxdesign/cli",
+  "@astryxdesign/core"
+ ],
+ "allowScripts": {
+  "@astryxdesign/cli": true,
+  "@astryxdesign/core": true
+ }
+}
+```
+
+I referred to this [blog post]($link.url("https://girishjoshi.io/post/tauri-2.0-appimage-egl-issue-on-wayland/").new(true)) for the initial solution to the issue.

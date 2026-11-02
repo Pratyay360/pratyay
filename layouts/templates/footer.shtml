@@ -1,9 +1,75 @@
 <extend template="header.shtml">
-	<main id="main">
+	<main id="main-content">
 		<super>
 	</main>
-	<footer id="footer">
-		<div class="flx gap-l wt-600 flx-ctr">
+	<footer id="site-footer">
+		<nav aria-label="Footer Navigation">
+			<ul>
+				<li>
+					<a href="$site.page('blog').link()"
+						class="$page.link().eql($site.page('blog').link()).then('active', '')">Blog</a>
+				</li>
+				<li>
+					<a href="https://pratyay360.github.io" rel="noopener noreferrer" class="external">Projects</a>
+				</li>
+				<li>
+					<a href="$site.page('devlog').link()"
+						class="$page.link().eql($site.page('devlog').link()).then('active', '')">Devlog</a>
+				</li>
+				<li>
+					<a href="$site.page('notes').link()"
+						class="$page.link().eql($site.page('notes').link()).then('active', '')">Notes</a>
+				</li>
+				<li>
+					<a href="$site.page('contactme').link()"
+						class="$page.link().eql($site.page('contactme').link()).then('active', '')">Contact Me</a>
+				</li>
+				<li>
+					<a href="$site.page('search').link()"
+						class="$page.link().eql($site.page('search').link()).then('active', '')">Search</a>
+				</li>
+			</ul>
+		</nav>
+
+		<p>&copy; Pratyay writes, <span :text="$build.generated.format('2006')"></span></p>
+
+		<p>
+			<small>
+				Powered by
+				<a class="link" href="https://zine-ssg.io" rel="noopener noreferrer">Zine</a>
+				and
+				<a class="link" href="https://duckquill.daudix.one" rel="noopener noreferrer">Duckquill</a>
+			</small>
+		</p>
+
+		<ul id="external-links">
+			<li>
+				<a href="https://github.com/Pratyay360" rel="noopener noreferrer me" title="GitHub">
+					<i class="icon icon-github"></i>
+					<span>GitHub</span>
+				</a>
+			</li>
+			<li>
+				<a href="https://mastodon.social/@realPratyay" rel="noopener noreferrer me" title="Mastodon">
+					<i class="icon icon-mastodon"></i>
+					<span>Mastodon</span>
+				</a>
+			</li>
+			<li>
+				<a href="https://www.instagram.com/realpratyay" rel="noopener noreferrer me" title="Instagram">
+					<i class="icon icon-instagram"></i>
+					<span>Instagram</span>
+				</a>
+			</li>
+			<li>
+				<a href="https://x.com/realpratyay" rel="noopener noreferrer me" title="Twitter">
+					<i class="icon icon-twitter"></i>
+					<span>Twitter</span>
+				</a>
+			</li>
+		</ul>
+
+		<div class="footer-widgets">
 			<div class="footer-buttons">
 				<a href="https://notbyai.fyi/" rel="noopener noreferrer"><img src="$site.asset('buttons/by_human.svg').link()" alt="By Human"
 						width="97" height="31" loading="lazy" decoding="async"></a>
@@ -35,7 +101,7 @@
 				<link rel="stylesheet" href="https://townsquare.cauenapier.com/widget.css">
 				<div id="townsquare-root"></div>
 				<link rel="preconnect" href="https://townsquare.cauenapier.com" crossorigin>
-			    <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
+				<script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
 
 				<script type="module" async>
 					import { mountTownSquare } from "https://townsquare.cauenapier.com/townsquare.mjs";

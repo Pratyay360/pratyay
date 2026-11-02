@@ -6,13 +6,13 @@
 	</head>
 
 	<body id="body">
-		<header id="header">
+		<header id="site-nav">
 			<super>
 		</header>
-		<main id="main">
+		<main id="main-content">
 			<super>
 		</main>
-		<footer id="footer">
+		<footer id="site-footer">
 			<super>
 		</footer>
 	</body>

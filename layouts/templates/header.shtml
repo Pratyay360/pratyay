@@ -1,20 +1,70 @@
 <extend template="head.shtml">
-<header id="header">
+<header id="site-nav">
 	<nav aria-label="Main Navigation">
-		<a href="$site.page('').link()">Home</a>
-		<span class="nav-separator" aria-hidden="true">&nbsp; • &nbsp;</span>
-		<a href="$site.page('blog').link()">Blog</a>
-		<span class="nav-separator" aria-hidden="true">&nbsp; • &nbsp;</span>
-		<a href="https://pratyay360.github.io" rel="noopener noreferrer">Projects</a>
-		<span class="nav-separator" aria-hidden="true">&nbsp; • &nbsp;</span>
-		<a href="$site.page('devlog').link()">Devlog</a>
-		<span class="nav-separator" aria-hidden="true">&nbsp; • &nbsp;</span>
-		<a href="$site.page('notes').link()">Notes</a>
-		<span class="nav-separator" aria-hidden="true">&nbsp; • &nbsp;</span>
-		<a href="$site.page('contactme').link()">Contact Me</a>
-		<span class="nav-separator" aria-hidden="true">&nbsp; • &nbsp;</span>
-		<a href="$site.page('search').link()">Search</a>
+		<a href="#main-content" tabindex="0">Skip to Main Content</a>
+		<ul>
+			<li id="home">
+				<a href="$site.page('').link()"
+					class="$page.link().eql($site.page('').link()).then('active', '')">
+					<i class="icon"></i>Pratyay writes
+				</a>
+			</li>
+			<li class="divider"></li>
+			<li>
+				<a href="$site.page('blog').link()"
+					class="$page.link().eql($site.page('blog').link()).then('active', '')">Blog</a>
+			</li>
+			<li>
+				<a href="https://pratyay360.github.io" rel="noopener noreferrer" class="external">Projects</a>
+			</li>
+			<li>
+				<a href="$site.page('devlog').link()"
+					class="$page.link().eql($site.page('devlog').link()).then('active', '')">Devlog</a>
+			</li>
+			<li>
+				<a href="$site.page('notes').link()"
+					class="$page.link().eql($site.page('notes').link()).then('active', '')">Notes</a>
+			</li>
+			<li>
+				<a href="$site.page('contactme').link()"
+					class="$page.link().eql($site.page('contactme').link()).then('active', '')">Contact Me</a>
+			</li>
+			<li id="search">
+				<a class="circle" href="$site.page('search').link()" title="Search">
+					<i class="icon"></i>
+				</a>
+			</li>
+			<li id="theme-switcher">
+				<details class="closable">
+					<summary class="circle" title="Theme">
+						<i class="icon"></i>
+					</summary>
+					<ul>
+						<li>
+							<button class="circle" id="theme-light" title="Switch to Light Theme">
+								<i class="icon"></i>
+							</button>
+						</li>
+						<li>
+							<button class="circle" id="theme-dark" title="Switch to Dark Theme">
+								<i class="icon"></i>
+							</button>
+						</li>
+						<li>
+							<button class="circle" id="theme-system" title="Use System Theme">
+								<i class="icon"></i>
+							</button>
+						</li>
+					</ul>
+				</details>
+			</li>
+			<li id="feed">
+				<a class="circle" href="$site.index().alternative('rss-all').link()" title="RSS feed (all posts)">
+					<i class="icon"></i>
+				</a>
+			</li>
+		</ul>
 	</nav>
 </header>
-<main id="main"><super></main>
-<footer id="footer"><super></footer>
+<main id="main-content"><super></main>
+<footer id="site-footer"><super></footer>

@@ -1,25 +1,37 @@
 <extend template="footer.shtml">
-<main id="main" class="h-feed">
-	<h1 :text="$page.title" class="txt-ctr p-name"></h1>
+<main id="main-content" class="h-feed">
+	<h1 :text="$page.title"></h1>
 	<a class="p-author h-card u-url" href="$site.host_url" style="display:none" rel="author">Pratyay Mustafi</a>
-	<ctx :html="$page.content()"></ctx>
+	<div :html="$page.content()"></div>
 
-	<h2 class="wt-600">Latest Posts</h2>
-	<ul :loop="$page.subpages()">
-		<li class="h-entry">
-			<time class="flt-r fgshade3 font-mono wt-300 ft-size-s dt-published"
-			      datetime="$loop.it.date.format('2006-01-02')"
-			      :text="$loop.it.date.format('Jan 02, 2006')"
-			></time>
-			<a class="wt-500 u-url p-name" href="$loop.it.link()" :text="$loop.it.title"></a>
-			<br>
-			<span :text="$loop.it.description" class="italic fgshade2 ft-size-s p-summary"></span>
-		</li>
-	</ul>
+	<p>
+		<small>
+			<span :text="$page.subpages().len"></span>
+			posts in total
+		</small>
+	</p>
+
+	<div id="article-list" :loop="$page.subpages()">
+		<article class="h-entry">
+			<a href="$loop.it.link()"></a>
+			<h3>
+				<a class="u-url p-name" href="$loop.it.link()" :text="$loop.it.title"></a>
+			</h3>
+			<ctx :if="$loop.it.description.len().gt(0)">
+				<p class="p-summary" :text="$loop.it.description"></p>
+			</ctx>
+			<div class="details">
+				<small>
+					<time class="dt-published" datetime="$loop.it.date.format('2006-01-02')"
+						:text="$loop.it.date.format('January 02, 2006')"></time>
+				</small>
+			</div>
+		</article>
+	</div>
+
 	<ctx alt="$page.alternative('rss')">
-		<p class="txt-ctr">
+		<p class="center">
 			<a href="$ctx.alt.link()">RSS feed</a>
 		</p>
 	</ctx>
-
 </main>

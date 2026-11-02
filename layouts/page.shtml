@@ -1,25 +1,46 @@
 <extend template="footer.shtml">
-<main id="main">
+<main id="main-content">
 	<article itemscope itemtype="https://schema.org/WebPage">
-		<h1 :text="$page.title" class="txt-ctr" itemprop="headline"></h1>
-		<div class="subtitle-wrp txt-ctr">
+		<div id="heading">
 			<ctx :if="$page.custom.get?('subtitle')">
-				<span :text="$if" class="fgshade1"></span><br>
+				<p><small :text="$if"></small></p>
 			</ctx>
-			<time class="fgshade3"
-			      datetime="$page.date.format('2006-01-02')"
-			      itemprop="datePublished"
-			      :text="$page.date.format('January 02, 2006')"
-			></time>
+			<p>
+				<small>
+					<time datetime="$page.date.format('2006-01-02')" itemprop="datePublished">
+						<span :text="$page.date.format('January 02, 2006')"></span>
+					</time>
+				</small>
+			</p>
+			<h1 :text="$page.title" itemprop="headline"></h1>
+			<ctx :if="$page.tags.empty.not()">
+				<ul class="tags">
+					<li><span class="tag">tags:</span></li>
+					<ctx :loop="$page.tags">
+						<li><span class="tag" :text="$loop.it"></span></li>
+					</ctx>
+				</ul>
+			</ctx>
 		</div>
-		<ctx :if="$page.custom.get?('toc')">
-			<details>
-				<summary>Table of Contents</summary>
-				<ctx :html="$page.toc()"></ctx>
-			</details>
-		</ctx>
-		<div class="post" :html="$page.content()" itemprop="text"></div>
+
+		<div id="buttons-container">
+			<ctx :if="$page.custom.get?('toc')">
+				<details id="toc" class="closable">
+					<summary title="Table of Contents">
+						<i class="icon"></i>
+					</summary>
+					<div>
+						<strong class="title">Table of Contents</strong>
+						<div :html="$page.toc()"></div>
+					</div>
+				</details>
+			</ctx>
+			<a id="go-to-top" href="#top" title="Go to Top"><i class="icon"></i></a>
+		</div>
+
+		<div class="post" itemprop="text" :html="$page.content()"></div>
 	</article>
+
 	<ctx :if="$page.footnotes?()">
 		<ol :loop="$if">
 			<li id="$loop.it.def_id">
@@ -30,44 +51,20 @@
 			</li>
 		</ol>
 	</ctx>
-	<div class="no-print">
-		<ctx :if="$page.tags.empty.not()">
-			<p :loop="$page.tags" class="flex gap no-print ft-size-s">
-				<span :text="$loop.it.prefix('#')" class="italic fgshade3"></span>
-			</p>
-		</ctx>
-		<ctx :if="$page.parentSection().link().eql('/').not()">
-		<nav class="post-nav" aria-label="Post navigation">
+
+	<ctx :if="$page.parentSection().link().eql('/').not()">
+		<nav id="post-nav">
 			<ctx :if="$page.prevPage?()">
-				<a class="post-nav-card post-nav-prev" href="$if.link()" :title="$if.title">
-					<span class="post-nav-dir">← Previous</span>
-					<span class="post-nav-title" :text="$if.title"></span>
-					<time class="post-nav-date" :text="$if.date.format('Jan 02, 2006')"></time>
+				<a class="post-nav-item post-nav-prev" href="$if.link()" title="$if.title">
+					<div class="nav-arrow">Previous</div>
+					<span class="post-title" :text="$if.title"></span>
 				</a>
 			</ctx>
-			<ctx :if="$page.hasPrev().not()">
-				<span class="post-nav-card post-nav-disabled" aria-hidden="true">
-					<span class="post-nav-dir">← Previous</span>
-					<span class="post-nav-title opacity-40">No previous post</span>
-				</span>
-			</ctx>
-			<div class="post-nav-center">
-				<a href="$page.parentSection().link()" title="Back to section">↑ All</a>
-				<span class="opacity-30 mx-2">·</span>
-				<a href="#" title="Back to top">Top</a>
-			</div>
 			<ctx :if="$page.nextPage?()">
-				<a class="post-nav-card post-nav-next" href="$if.link()" :title="$if.title">
-					<span class="post-nav-dir">Next →</span>
-					<span class="post-nav-title" :text="$if.title"></span>
-					<time class="post-nav-date" :text="$if.date.format('Jan 02, 2006')"></time>
+				<a class="post-nav-item post-nav-next" href="$if.link()" title="$if.title">
+					<div class="nav-arrow">Next</div>
+					<span class="post-title" :text="$if.title"></span>
 				</a>
-			</ctx>
-			<ctx :if="$page.hasNext().not()">
-				<span class="post-nav-card post-nav-disabled" aria-hidden="true">
-					<span class="post-nav-dir">Next →</span>
-					<span class="post-nav-title opacity-40">No next post</span>
-				</span>
 			</ctx>
 		</nav>
 		<script>
@@ -83,6 +80,5 @@
 				}
 			});
 		</script>
-		</ctx>
-	</div>
+	</ctx>
 </main>

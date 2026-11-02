@@ -1,0 +1,23 @@
+---
+.date = .date("2026-09-28T05:28:00Z"),
+.description = "Newsy a newsletter platform powered by github issues.",
+.draft = false,
+.layout = "post.shtml",
+.tags = ["test", "newsy", "newsletter", "github", "probot", "octokit"],
+.title = "Project Newsy",
+---
+# Introducing Newsy: A Newsletter Platform Powered by GitHub Issues
+
+Newsy is a newsletter platform inspired by projects like [Utterances]($link.url("https://utteranc.es").new(true)), [Giscus]($link.url("https://giscus.app").new(true)), and [Gitalk]($link.url("https://gitalk.github.io").new(true))  projects that reimagined commenting on static sites by using GitHub Issues as the backend.
+
+Newsy takes the same idea and applies it to newsletters.
+
+Instead of relying on a traditional email marketing service, maintaining a separate mailing list, or paying for SMTP APIs, your newsletter can live alongside your code in a GitHub repository.
+
+Newsy is built around a simple idea: creating a newsletter should never be a complicated thing.
+
+It aims to remove much of the overhead that comes with traditional newsletter platforms while keeping everything close to the tools developers already use.
+
+Here’s a quick demo:
+
+[https://youtu.be/sfjo6ZVgC9w?si=RMeu6YWOWwOhn8q9]($link.url("https://youtu.be/sfjo6ZVgC9w?si=RMeu6YWOWwOhn8q9").new(true))
