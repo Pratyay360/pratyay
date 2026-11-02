@@ -1,0 +1,3 @@
+[submodule "blogs_md"]
+	path = blogs_md
+	url = https://github.com/Pratyay360/blogs_md
