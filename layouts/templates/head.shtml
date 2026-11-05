@@ -100,20 +100,20 @@
 			"@graph": [
 				{
 					"@type": "WebSite",
-					"@id": "https://www.pratyay.online/#website",
-					"url": "https://www.pratyay.online",
+					"@id": "https://pratyay.online/#website",
+					"url": "https://pratyay.online",
 					"name": "Pratyay writes",
 					"description": "The blog of a hobbyist navigating the seas of the internet",
 					"inLanguage": "en-US",
 					"publisher": {
-						"@id": "https://www.pratyay.online/#person"
+						"@id": "https://pratyay.online/#person"
 					}
 				},
 				{
 					"@type": "Person",
-					"@id": "https://www.pratyay.online/#person",
+					"@id": "https://pratyay.online/#person",
 					"name": "Pratyay Mustafi",
-					"url": "https://www.pratyay.online",
+					"url": "https://pratyay.online",
 					"sameAs": [
 						"mastodon.social/@realPratyay",
 						"github.com/Pratyay360",
@@ -122,7 +122,7 @@
 				},
 				{
 					"founder": {
-						"@id": "https://www.pratyay.online/#person"
+						"@id": "https://pratyay.online/#person"
 					},
 					"sameAs": [
 						"github.com/Pratyay360",

@@ -103,7 +103,7 @@ jobs:
           # This sitemap emits no <lastmod>, so there is nothing to rank by and
           # only <changefreq> is present. Submit every URL in one request
           # instead of guessing at a "top 5" (IndexNow allows up to 10,000).
-          host="www.pratyay.online"
+          host="pratyay.online"
           urls=()
           while IFS= read -r url; do
             urls+=("$url")
