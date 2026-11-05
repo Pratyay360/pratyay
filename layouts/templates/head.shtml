@@ -63,8 +63,8 @@
 	<ctx :if="$site.page('').isCurrent().not()">
 		<title :text="$site.title.prefix($page.title, ' - ')"></title>
 	</ctx>
-	<link rel="dns-prefetch" href="https://gc.zgo.at">
-	<link rel="dns-prefetch" href="https://pratyay.goatcounter.com">
+	<!--<link rel="dns-prefetch" href="https://gc.zgo.at">-->
+	<!--<link rel="dns-prefetch" href="https://pratyay.goatcounter.com">-->
 	<link type="text/css" rel="stylesheet" href="$site.asset('css/duckquill.css').link()">
 	<link type="text/css" rel="stylesheet" href="$site.asset('css/icons.css').link()">
 	<link type="text/css" rel="stylesheet" href="$site.asset('css/style.css').link()">
@@ -78,8 +78,15 @@
 	<script defer src="$site.asset('js/closable.js').link()"></script>
 	<script defer src="$site.asset('js/render-mathtex.js').link()"></script>
 	<script type="module" src="$site.asset('js/shiki-highlight.js').link()"></script>
-	<script data-goatcounter="https://pratyay.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+	<!--<script data-goatcounter="https://pratyay.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>-->
 	<ctx :if="$site.page('').isCurrent()">
+	<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PPDN9C9C"></script>
+	<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+	</script>
+
 		<script type="text/javascript">
 			(function(c,l,a,r,i,t,y){
 			c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};

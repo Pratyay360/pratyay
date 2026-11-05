@@ -118,3 +118,36 @@ span.date {
 a.title h3 {
   margin: 0.25rem 0 1rem;
 }
+
+/*
+ * Accessibility: provide sufficient colour contrast (WCAG AA).
+ * Light mode only; dark mode values already pass.
+ */
+:root {
+  --fg-muted-4: rgb(0 0 0 / 0.55);
+  --link-color: #9e4500;
+}
+
+[data-theme="dark"] {
+  --link-color: #ffa348;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --link-color: #ffa348;
+  }
+}
+
+/* Inline and general links use an accessible text colour */
+a {
+  color: var(--link-color);
+}
+
+/* Footer navigation links (default + active) */
+#site-footer nav a {
+  color: var(--fg-muted-4);
+}
+
+#site-footer nav a.active {
+  color: var(--link-color);
+}
