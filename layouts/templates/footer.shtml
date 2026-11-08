@@ -45,25 +45,28 @@
 		<ul id="external-links">
 			<li>
 				<a href="https://github.com/Pratyay360" rel="noopener noreferrer me" title="GitHub">
-					<i class="icon icon-github"></i>
+					<!--<i class="icon icon-github"></i>-->
+					<i class="fa-brands fa-github"></i>
 					<span>GitHub</span>
 				</a>
 			</li>
 			<li>
 				<a href="https://mastodon.social/@realPratyay" rel="noopener noreferrer me" title="Mastodon">
-					<i class="icon icon-mastodon"></i>
+					<!--<i class="icon icon-mastodon"></i>-->
+					<i class="fa-brands fa-mastodon"></i>
 					<span>Mastodon</span>
 				</a>
 			</li>
 			<li>
 				<a href="https://www.instagram.com/realpratyay" rel="noopener noreferrer me" title="Instagram">
-					<i class="icon icon-instagram"></i>
+					<!--<i class="icon icon-instagram"></i>-->
+					<i class="fa-brands fa-instagram"></i>
 					<span>Instagram</span>
 				</a>
 			</li>
 			<li>
 				<a href="https://x.com/realpratyay" rel="noopener noreferrer me" title="Twitter">
-					<i class="icon icon-twitter"></i>
+					<i class="fa-brands fa-x-twitter"></i>
 					<span>Twitter</span>
 				</a>
 			</li>
@@ -97,31 +100,7 @@
 			</div>
 			<div id="wcb" class="carbonbadge"></div>
 			<div>
-
-				<link rel="stylesheet" href="https://townsquare.cauenapier.com/widget.css">
-				<div id="townsquare-root"></div>
-				<link rel="preconnect" href="https://townsquare.cauenapier.com" crossorigin>
 				<script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
-
-				<script type="module" async>
-					import { mountTownSquare } from "https://townsquare.cauenapier.com/townsquare.mjs";
-
-					let triggered = false;
-					const observer = new IntersectionObserver((entries) => {
-						if (!triggered && entries[0].isIntersecting) {
-							triggered = true;
-							console.log('activating townsquare!');
-							observer.disconnect();
-
-							mountTownSquare(document.getElementById("townsquare-root"), {
-								serverOrigin: "https://townsquare.cauenapier.com",
-								siteKey: "site_yUlosxis4iwvEqt0",
-								theme: "host"
-							});
-						}
-					});
-					observer.observe(document.getElementById('townsquare-root'));
-				</script>
 			</div>
 		</div>
 	</footer>

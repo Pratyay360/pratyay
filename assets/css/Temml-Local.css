@@ -4,12 +4,6 @@ have been changed from ASCII to Unicode Mathematical Alphanumeric Symbols Script
 Unicode range 1D49C to 1D4B5.
 */
 
-@font-face {
-  font-family: 'Temml';
-  src: url('Temml.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
 
 math {
   font-family: "Cambria Math", 'STIXTwoMath-Regular', 'NotoSansMath-Regular', math;
@@ -40,11 +34,11 @@ math.tml-display { display: block; }
 }
 
 math .mathscr {
-  font-family: "Temml", math;
+  font-family: "JetBrains Mono", math;
 }
 
 mo.tml-prime {
-  font-family: Temml;
+  font-family: "JetBrains Mono";
 }
 
 /* Prevent f' from overlapping in Chromium */

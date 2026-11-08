@@ -19,7 +19,7 @@
   gap: 5px;
   padding: 4px 8px;
   font-size: 0.72rem;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  /*font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;*/
   background-color: #282828e6;
   color: #ebdbb2;
   border: 1px solid #504945;
@@ -73,7 +73,7 @@ pre > code {
   color: inherit;
   padding: 0 !important;
   display: block;
-  font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  /*font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;*/
   font-size: inherit;
 }
 
@@ -84,7 +84,7 @@ pre > code {
   border: 1px solid #5a4214;
   padding: 2px 6px;
   border-radius: 4px;
-  font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  /*font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;*/
   font-size: 0.85em;
 }
 

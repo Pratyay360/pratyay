@@ -262,7 +262,7 @@ input:is([type=button i],
   --purple-fg: rgb(220 138 221);
   --red-fg: rgb(246 97 81);
   --yellow-fg: rgb(248 228 92);
-  color-scheme: dark;
+  color-scheme: auto;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -2277,7 +2277,7 @@ video:fullscreen {
   border-radius: 0;
 }
 
-video:-webkit-full-screen {
+video {
   box-shadow: none;
   border-radius: 0;
 }

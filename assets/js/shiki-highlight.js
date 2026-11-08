@@ -8,7 +8,7 @@
 // Usage: loaded as <script type="module"> from head.shtml.
 // Docs: https://shiki.style/guide/install#cdn-usage
 
-import { codeToHtml } from "https://esm.sh/shiki@3.0.0";
+import { codeToHtml } from "https://cdn.jsdelivr.net/npm/shiki@3.0.0/+esm";
 
 // Theme configuration: Gruvbox dark matches the site's retro palette and Giscus setup
 const THEME = "gruvbox-dark-hard";
