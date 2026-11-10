@@ -83,7 +83,7 @@
 
 	<script defer src="$site.asset('js/theme-switcher.js').link()"></script>
 	<script defer src="$site.asset('js/closable.js').link()"></script>
-	<script defer src="$site.asset('js/image.js').link()"></script>
+	<!--<script defer src="$site.asset('js/image.js').link()"></script>-->
 	<script rel="dns-prefetch" defer src="https://cdn.jsdelivr.net/npm/temml@0.14.0/dist/temml.min.js"></script>
 	<script defer src="$site.asset('js/render-mathtex.js').link()"></script>
 	<script type="module" src="$site.asset('js/shiki-highlight.js').link()"></script>
