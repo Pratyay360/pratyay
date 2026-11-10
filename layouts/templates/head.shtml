@@ -15,7 +15,7 @@
 	<link rel="canonical" href="$site.host_url.addPath($page.link())">
 	<meta property="og:title" content="$page.title">
 	<meta name="ahrefs-site-verification" content="d3773a4e761cae81cfc313a1f250e863c527544e86f99edc96fd82d01cceb2cb">
-	<meta property="og:description" content="$page.description.len().gt(0).then($page.description, 'The blog of a hobbyist navigating the seas of the internet')">
+	<meta property="og:description" content="$page.description.len().gt(0).then($page.description, 'The blog of a hobbyist navigating around the seas of the internet')">
 	<meta property="og:url" content="$site.host_url.addPath($page.link())">
 	<meta property="og:type" content="$page.isSection().then('website', 'article')">
 	<ctx :if="$page.isSection().not()">
@@ -64,33 +64,32 @@
 	<ctx :if="$site.page('').isCurrent().not()">
 		<title :text="$site.title.prefix($page.title, ' - ')"></title>
 	</ctx>
-	<!--<link rel="dns-prefetch" href="https://gc.zgo.at">-->
-	<!--<link rel="dns-prefetch" href="https://pratyay.goatcounter.com">-->
+	<link rel="dns-prefetch" href="https://pratyay.goatcounter.com">
 	<link type="text/css" rel="stylesheet" href="$site.asset('css/duckquill.css').link()">
 	<link type="text/css" rel="stylesheet" href="$site.asset('css/icons.css').link()">
 	<link type="text/css" rel="stylesheet" href="$site.asset('css/style.css').link()">
 	<link type="text/css" rel="stylesheet" href="$site.asset('css/highlight.css').link()">
 	<link type="text/css" rel="stylesheet" href="$site.asset('css/Temml-Local.css').link()">
-	<link rel="preconnect" href="https://fly.webp.se">
-	<link rel="preconnect" type="text/css" href="https://fonts.googleapis.com">
-	<link rel="preconnect" type="text/css" href="https://fonts.gstatic.com" crossorigin>
+	<!--<link rel="preconnect" href="https://fly.webp.se">-->
+	<link rel="preconnect dns-prefetch" type="text/css" href="https://fonts.googleapis.com">
+	<link rel="preconnect dns-prefetch"  type="text/css" href="https://fonts.gstatic.com" crossorigin>
 
 	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap">
 	<link rel="alternate" type="application/rss+xml" title="All posts" href="$site.index().alternative('rss-all').link()">
 	<link rel="me" href="https://mastodon.social/@realPratyay">
 	<link rel="me" href="https://github.com/Pratyay360">
 	<meta name="index" href="$site.asset('69be26d93fe446a386772b6d7b3d9781.txt').link()">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+	<link rel="stylesheet dns-prefetch" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
 
 	<script defer src="$site.asset('js/theme-switcher.js').link()"></script>
 	<script defer src="$site.asset('js/closable.js').link()"></script>
 	<script defer src="$site.asset('js/image.js').link()"></script>
-	<script defer src="https://cdn.jsdelivr.net/npm/temml@0.14.0/dist/temml.min.js"></script>
+	<script rel="dns-prefetch" defer src="https://cdn.jsdelivr.net/npm/temml@0.14.0/dist/temml.min.js"></script>
 	<script defer src="$site.asset('js/render-mathtex.js').link()"></script>
 	<script type="module" src="$site.asset('js/shiki-highlight.js').link()"></script>
-	<!--<script data-goatcounter="https://pratyay.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>-->
+	<script defer src="$site.asset('js/view-counter.js').link()"></script>
 	<ctx :if="$site.page('').isCurrent()">
-	<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PPDN9C9C"></script>
+	<script defer async src="https://www.googletagmanager.com/gtm.js?id=GTM-PPDN9C9C"></script>
 	<script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}

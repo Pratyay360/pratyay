@@ -1,12 +1,12 @@
 <extend template="head.shtml">
 <header id="site-nav">
 	<nav aria-label="Main Navigation">
-		<a href="#main-content" tabindex="0">Skip to Main Content</a>
+		<a href="#main-content" tabindex="0">Skip</a>
 		<ul>
 			<li id="home">
 				<a href="$site.page('').link()"
 					class="$page.link().eql($site.page('').link()).then('active', '')">
-					<i class="icon"></i>Pratyay writes
+					<i class="icon"></i>Pratyay Mustafi
 				</a>
 			</li>
 			<li class="divider"></li>

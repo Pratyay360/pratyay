@@ -10,6 +10,9 @@
 					<time datetime="$page.date.format('2006-01-02')" itemprop="datePublished">
 						<span :text="$page.date.format('January 02, 2006')"></span>
 					</time>
+					<span class="view-counter" data-view-counter data-path="$page.link()" title="Page views" hidden>
+						<span data-views>0</span> <span data-views-label>views</span>
+					</span>
 				</small>
 			</p>
 			<h1 :text="$page.title" itemprop="headline"></h1>

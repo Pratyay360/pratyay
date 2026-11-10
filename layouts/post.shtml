@@ -7,6 +7,9 @@
 					<time class="dt-published" datetime="$page.date.format('2006-01-02')" itemprop="datePublished">Published on
 						<span :text="$page.date.format('January 02, 2006')"></span>
 					</time>
+					<span class="view-counter" data-view-counter data-path="$page.link()" title="Page views" hidden>
+						<span data-views>0</span> <span data-views-label>views</span>
+					</span>
 				</small>
 			</p>
 			<a class="p-author h-card u-url" href="$site.host_url" style="display:none" rel="author">Pratyay Mustafi</a>

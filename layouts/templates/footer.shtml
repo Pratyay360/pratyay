@@ -38,7 +38,7 @@
 				Powered by
 				<a class="link" href="https://zine-ssg.io" rel="noopener noreferrer">Zine</a>
 				and
-				<a class="link" href="https://duckquill.daudix.one" rel="noopener noreferrer">Duckquill</a>
+				<a class="link" href="https://duckquill.daudix.one" rel="noopener noreferrer">DuckQuill</a>
 			</small>
 		</p>
 
@@ -83,8 +83,8 @@
 				<span><img src="$site.asset('buttons/eyes.webp').link()" alt="Eyes icon" width="88" height="31" loading="lazy" decoding="async"></span>
 				<a href="https://fedoraproject.org/" rel="noopener noreferrer"><img src="$site.asset('buttons/fedora.webp').link()" alt="Fedora Project"
 						width="88" height="31" loading="lazy" decoding="async"></a>
-				<!--<a href="https://pratyay.goatcounter.com/" rel="noopener noreferrer"><img src="$site.asset('buttons/goat.webp').link()"
-						alt="GoatCounter analytics" width="88" height="31" loading="lazy" decoding="async"></a>-->
+				<a href="https://pratyay.goatcounter.com/" rel="noopener noreferrer"><img src="$site.asset('buttons/goat.webp').link()"
+						alt="GoatCounter analytics" width="88" height="31" loading="lazy" decoding="async"></a>
 				<a href="https://www.kernel.org/" rel="noopener noreferrer"><img src="$site.asset('buttons/linoox.webp').link()" alt="Linux kernel"
 						width="80" height="15" loading="lazy" decoding="async"></a>
 				<img src="$site.asset('buttons/milkandcookies.webp').link()" alt="Milk and Cookies" width="80"

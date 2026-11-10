@@ -15,5 +15,8 @@
 		<footer id="site-footer">
 			<super>
 		</footer>
+		<!-- GoatCounter tracking pixel: counts the pageview without count.js. -->
+		<img src="$page.link().prefix('https://pratyay.goatcounter.com/count?p=')" alt="" width="1" height="1"
+			decoding="async" class="tracking-pixel">
 	</body>
 </html>
