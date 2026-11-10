@@ -38,10 +38,10 @@
 					</div>
 				</details>
 			</ctx>
-			<a id="go-to-top" href="#top" title="Go to Top"><i class="icon"></i></a>
+			<a id="go-to-top" href="#top" title="Go to Top" aria-label="Go to Top"><i class="icon"></i></a>
 			<a id="share"
 				href="$site.host_url.addPath($page.link()).prefix('https://shareopenly.org/share/?url=')"
-				rel="noopener noreferrer" title="Share"><i class="icon"></i></a>
+				rel="noopener noreferrer" title="Share" aria-label="Share"><i class="icon"></i></a>
 		</div>
 
 		<div class="e-content" itemprop="articleBody" :html="$page.content()"></div>

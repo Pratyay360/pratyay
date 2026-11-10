@@ -30,7 +30,7 @@
 					class="$page.link().eql($site.page('contactme').link()).then('active', '')">Contact Me</a>
 			</li>
 			<li id="search">
-				<a class="circle" href="$site.page('search').link()" title="Search">
+				<a class="circle" href="$site.page('search').link()" title="Search" aria-label="Search">
 					<i class="icon"></i>
 				</a>
 			</li>
@@ -59,7 +59,8 @@
 				</details>
 			</li>
 			<li id="feed">
-				<a class="circle" href="$site.index().alternative('rss-all').link()" title="RSS feed (all posts)">
+				<a class="circle" href="$site.index().alternative('rss-all').link()" title="RSS feed (all posts)"
+					aria-label="RSS feed (all posts)">
 					<i class="icon"></i>
 				</a>
 			</li>

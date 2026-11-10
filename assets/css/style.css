@@ -7,6 +7,23 @@
   text-align: center;
 }
 
+/* The card-wide overlay link is aria-hidden/tabindex="-1" so it stays out of the
+   accessibility tree; the title link is the one keyboard users land on, so it
+   inherits duckquill's card focus ring. */
+#article-list article:has(h3 a:focus-visible) {
+  animation: focus-in var(--transition);
+  outline: 0.125rem solid var(--accent-color);
+  outline-offset: 0.125rem;
+}
+
+@supports not selector(:focus-visible) {
+  #article-list article:has(h3 a:focus) {
+    animation: focus-in var(--transition);
+    outline: 0.125rem solid var(--accent-color);
+    outline-offset: 0.125rem;
+  }
+}
+
 /* Post prev/next navigation spacing (duckquill's #post-nav has no margins) */
 #post-nav:has(a) {
   margin-block: 2rem 1rem;

@@ -5,7 +5,7 @@
 
 	<div id="article-list" :loop="$page.subpages()">
 		<article :if="$loop.it.isSection().not()">
-			<a href="$loop.it.link()"></a>
+			<a href="$loop.it.link()" aria-hidden="true" tabindex="-1"></a>
 			<h3>
 				<a href="$loop.it.link()" :text="$loop.it.title"></a>
 			</h3>
@@ -20,7 +20,7 @@
 			</div>
 		</article>
 		<article :if="$loop.it.isSection()">
-			<a href="$loop.it.link()"></a>
+			<a href="$loop.it.link()" aria-hidden="true" tabindex="-1"></a>
 			<h3>
 				<a href="$loop.it.link()" :text="$loop.it.title"></a>
 			</h3>

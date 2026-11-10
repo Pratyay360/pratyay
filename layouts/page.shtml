@@ -35,7 +35,7 @@
 					</div>
 				</details>
 			</ctx>
-			<a id="go-to-top" href="#top" title="Go to Top"><i class="icon"></i></a>
+			<a id="go-to-top" href="#top" title="Go to Top" aria-label="Go to Top"><i class="icon"></i></a>
 		</div>
 
 		<div class="post" itemprop="text" :html="$page.content()"></div>
@@ -46,7 +46,7 @@
 			<li id="$loop.it.def_id">
 				<ctx :html="$loop.it.html()"></ctx>
 				<ctx :loop="$loop.it.ref_ids">
-					<a href="$loop.it.prefix('#')">⤴</a>
+					<a href="$loop.it.prefix('#')" aria-label="Back to reference">⤴</a>
 				</ctx>
 			</li>
 		</ol>

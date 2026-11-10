@@ -13,7 +13,7 @@
 
 	<div id="article-list" :loop="$page.subpages()">
 		<article class="h-entry">
-			<a href="$loop.it.link()"></a>
+			<a href="$loop.it.link()" aria-hidden="true" tabindex="-1"></a>
 			<h3>
 				<a class="u-url p-name" href="$loop.it.link()" :text="$loop.it.title"></a>
 			</h3>
