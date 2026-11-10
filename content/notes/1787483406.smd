@@ -1,0 +1,35 @@
+---
+.date = .date("2026-08-23T11:10:00Z"),
+.description = "QCADesigner-E the app used by quantum researchers  is on appimagehub",
+.draft = false,
+.layout = "post.shtml",
+.tags = ["notes", "qcad", "qcadesigner-e", "appimage", "linux", "quantum"],
+.title = "QCADesigner-E is available on appimagehub",
+---
+# QCADesigner-E appimage
+
+QCADesigner-E is an extension of **QCADesigner 2.0.3**, developed at the University of Bremen. It adds power-dissipation estimation for **Quantum-dot Cellular Automata (QCA)** circuits, based on the theoretical work of Timler, Lent, and others. The extension was presented in [2]($link.url("https://doi.org/10.1109/TCAD.2018.2789782").new(true)).
+
+The power-estimation functionality is integrated as an additional simulation module based on the **Coherence Vector Simulation Engine (CVSE)**. QCADesigner-E remains fully compatible with QCA designs created using QCADesigner 2.0.3.
+
+QCADesigner is widely used by researchers working on QCA architectures for designing, simulating, and verifying cellular automata circuits. Its standardized environment makes it possible to model QCA logic gates and interconnects while performing timing analysis. QCADesigner-E extends this workflow by allowing researchers to estimate power dissipation and evaluate the energy characteristics of their designs.
+
+## Linux AppImage
+
+I have repackaged **QCADesigner-E as an AppImage**, making it possible to run the application on a wide range of Linux distributions without requiring users to manually install its dependencies or build the software from source.
+
+The resulting AppImage is portable and distribution-independent, providing a straightforward way to run QCADesigner-E on modern Linux systems.
+
+[]($image.url("https://i.ibb.co/CdHy7k1/Screenshot-20260928-002154-png.png"))
+
+[]($image.url("https://i.ibb.co/6c74w09k/download-appimage-banner-svg.jpg").alt("https://appimage.github.io/QCADesigner-E/"))
+
+[]($image.url("https://i.ibb.co/Gvrw30yb/Screenshot-2026-09-28-at-02-05-51-QCADesigner-E-App-Images-png.png"))
+
+[https://appimage.github.io/QCADesigner-E/]($link.url("https://appimage.github.io/QCADesigner-E/").new(true))
+
+[https://portable-linux-apps.github.io/en/app/qcadesigner-e.html]($link.url("https://portable-linux-apps.github.io/en/app/qcadesigner-e.html").new(true))
+
+Thanks to the original authors of  the application [fsillt.github.io/QCADesigner-E]($link.url("http://fsillt.github.io/QCADesigner-E").new(true)) 
+
+&nbsp;
