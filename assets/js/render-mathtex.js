@@ -5,4 +5,3 @@ for (let i=eqns.length-1; i>=0; i--) {
     let d = eqn.closest('p') == null;
     eqn.outerHTML = temml.renderToString(src, { displayMode: d });
 }
-
