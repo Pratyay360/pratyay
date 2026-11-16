@@ -59,9 +59,9 @@ jobs:
       - name: Deploy to Cloudflare
         run: mise run deploy
         env:
-          # SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+          # CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          # CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
 
       # - name: Upload artifact
