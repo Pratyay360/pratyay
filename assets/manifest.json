@@ -1,10 +1,13 @@
 {
   "name": "Pratyay writes",
   "short_name": "Pratyay",
+  "description": "The blog of a hobbyist navigating the seas of the internet",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "lang": "en-US",
   "background_color": "#1a1a1a",
-  "theme_color": "#1a1a1a",
+  "theme_color": "#9e4500",
   "icons": [
     {
       "src": "/favicon.ico",

@@ -15,7 +15,7 @@
 	<link rel="canonical" href="$site.host_url.addPath($page.link())">
 	<meta property="og:title" content="$page.title">
 	<meta name="ahrefs-site-verification" content="d3773a4e761cae81cfc313a1f250e863c527544e86f99edc96fd82d01cceb2cb">
-	<meta property="og:description" content="$page.description.len().gt(0).then($page.description, 'The blog of a hobbyist navigating around the seas of the internet')">
+	<meta property="og:description" content="$page.description.len().gt(0).then($page.description, 'The blog of a hobbyist navigating the seas of the internet')">
 	<meta property="og:url" content="$site.host_url.addPath($page.link())">
 	<meta property="og:type" content="$page.isSection().then('website', 'article')">
 	<ctx :if="$page.isSection().not()">
@@ -31,7 +31,7 @@
 	<meta property="og:image:alt" content="Pratyay writes cover art">
 	<meta property="og:image:width" content="500">
 	<meta property="og:image:height" content="715">
-	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:image:type" content="image/webp">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@realPratyay">
 	<meta name="twitter:creator" content="@realPratyay">
@@ -109,33 +109,25 @@
 			"@graph": [
 				{
 					"@type": "WebSite",
-					"@id": "https://pratyay.online/#website",
-					"url": "https://pratyay.online",
+					"@id": "https://www.pratyay.online/#website",
+					"url": "https://www.pratyay.online/",
 					"name": "Pratyay writes",
 					"description": "The blog of a hobbyist navigating the seas of the internet",
 					"inLanguage": "en-US",
 					"publisher": {
-						"@id": "https://pratyay.online/#person"
+						"@id": "https://www.pratyay.online/#person"
 					}
 				},
 				{
 					"@type": "Person",
-					"@id": "https://pratyay.online/#person",
+					"@id": "https://www.pratyay.online/#person",
 					"name": "Pratyay Mustafi",
-					"url": "https://pratyay.online",
+					"url": "https://www.pratyay.online/",
 					"sameAs": [
-						"mastodon.social/@realPratyay",
-						"github.com/Pratyay360",
-						"bsky.app/profile/pratyaymustafi.bsky.social"
-					]
-				},
-				{
-					"founder": {
-						"@id": "https://pratyay.online/#person"
-					},
-					"sameAs": [
-						"github.com/Pratyay360",
-						"mastodon.social/@realPratyay"
+						"https://mastodon.social/@realPratyay",
+						"https://github.com/Pratyay360",
+						"https://bsky.app/profile/pratyaymustafi.bsky.social",
+						"https://x.com/realpratyay"
 					]
 				},
 				{
@@ -145,7 +137,7 @@
 							"@type": "ListItem",
 							"position": 1,
 							"name": "Home",
-							"item": "/"
+							"item": "https://www.pratyay.online/"
 						}
 					]
 				}
@@ -153,6 +145,7 @@
 		}
 		</script>
 	</ctx>
+
 </head>
 <header id="site-nav">
 	<super>
