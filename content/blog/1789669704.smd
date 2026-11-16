@@ -88,3 +88,5 @@ See the disk usage of my system by containers above.
 By the way, I am a full stack developer. And I have a graveyard of dozens of late-night ideas, abandoned projects, and half finished stuffs. You can believe me when I say the storage utilized by those 10-15 project folders easily takes up 2 to 2.5x the amount of storage that all my containers do! and that's just from npm's node\_modules only and rust, go cache is yet to look into.
 
 [img]($image.url("https://i.ibb.co/whHVmSGH/image.png"))
+
+

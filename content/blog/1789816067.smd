@@ -15,14 +15,14 @@ To seriously grow, and sharing whatever I do with a wider audience is essential.
 
 ## But Who Is My Target Audience?
 
-People who are curious about technology and are accustomed to read articles.  
-These specific requirements make my target audience quite niche,  
-Which limits my choices of social media platforms even more limited.  
+People who are curious about technology and are accustomed to read articles.
+These specific requirements make my target audience quite niche,
+Which limits my choices of social media platforms even more limited.
 To keep people informed about my work, I can use microblogging platforms like (X twitter/threads/blue sky/ mastodon) and LinkedIn.
 
-But writing 10 different post on 10 different platforms is a lot of work, and I am not into that. 
+But writing 10 different post on 10 different platforms is a lot of work, and I am not into that.
 
-> Also, as programmers, we tend to be "lazy" as we hate repetitive tasks,  
+> Also, as programmers, we tend to be "lazy" as we hate repetitive tasks,
 > also on the other side we love doing overengineering to solve simple problems.
 
 ## *Here is what I have so far:*
@@ -31,7 +31,7 @@ But writing 10 different post on 10 different platforms is a lot of work, and I 
 2. An automatically generated RSS feed (handled automatically by the SSG).
 3. A [Cronjob]($link.url("https://en.wikipedia.org/wiki/Cron").new(true))  to check for new posts.
 
-First I have had planned to use some action runners on schedule like github actions, to check and trigger based on rss feed, but after I started, going through the different developer sections, I felt that's not worth my time as someone has already done so.  
+First I have had planned to use some action runners on schedule like github actions, to check and trigger based on rss feed, but after I started, going through the different developer sections, I felt that's not worth my time as someone has already done so.
 So, Why reinvent the wheel when there are already some good solutions available.
 
 ## *Exploring existing automation solutions*:
@@ -65,10 +65,10 @@ The X (Twitter) API is no longer free, so I use [Buffer]($link.url("https://buff
 
 [Make.com]($link.url("https://eu1.make.com/public/shared-scenario/GT23pzkTgzg/integration-rss-linked-in-bluesky").new(true)) lets you connect up to 3 actions in a chain on the free plan. At the time of writing, using my referral link may include a promotional credit offer; check Make's current terms and pricing before relying on it.
 
-Buffer is generous enough to allow you to connect 3 social media accounts and manage them for free.  
+Buffer is generous enough to allow you to connect 3 social media accounts and manage them for free.
 But you can at most post 10 posts per day on free plan which is more than enough for me.
 
-So you can hook 3 accounts to buffer and two on [make.com.]($link.url("https://eu1.make.com/public/shared-scenario/GT23pzkTgzg/integration-rss-linked-in-bluesky").new(true)) 
+So you can hook 3 accounts to buffer and two on [make.com.]($link.url("https://eu1.make.com/public/shared-scenario/GT23pzkTgzg/integration-rss-linked-in-bluesky").new(true))
 
 > The workflow consumes 4 credits per new post. If you post too frequently, you will be limited to approximately 8 per day (4 credits × 30 days × 8 runs = 960 credits).
 >

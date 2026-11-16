@@ -346,3 +346,5 @@ for other tech stack you can use make or [just]($link.url("https://just.systems/
 []($image.url("https://i.ibb.co/zvw5SdG/distributing-tools-with-goreleaser-png.png"))
 
 I am yet to explore aur as they have stopped registration and haven't seen any literature on conda forge so have to try this later on (maybe content for a new post),  Also creating a custom coppr repo or ppa to distribute tool is tbd.
+
+

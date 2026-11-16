@@ -295,3 +295,5 @@ if you are using vite then replace the `tauri build` command with `tauri build &
 ```
 
 I referred to this [blog post]($link.url("https://girishjoshi.io/post/tauri-2.0-appimage-egl-issue-on-wayland/").new(true)) For the initial solution to the issue.
+
+

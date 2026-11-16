@@ -6,9 +6,10 @@
 .tags = ["chezmoi", "age", "mise", "github", "dotfiles", "dotfiles manager"],
 .title = "Using chezmoi to manage dotfiles",
 ---
-[CHEZMOI]($link.url("https://www.chezmoi.io/").new(true))  is a nice, modern, secure dotfiles manager with built-in support for handling secrets and provides a nice configurable/hackable ecosystem to tinker with. Chezmoi is a batteries-included dotfiles manager .
+[CHEZMOI]($link.url("https://www.chezmoi.io/").new(true)) is a nice, modern, secure dotfiles manager with built-in support for handling secrets and provides a nice configurable/hackable ecosystem to tinker with. Chezmoi is a batteries-included dotfiles manager .
 
-Unlike yadm, chezmoi doesn’t just create a git repo of your user space .  Also, chezmoi supports integration with multiple password managers
+Unlike yadm, chezmoi doesn’t just create a git repo of your user space . 
+Also, chezmoi supports integration with multiple password managers
 
 Also, chezmoi is super nice with dotfiles. For example, .bashrc will be named as `dot_bashrc`
 
@@ -20,18 +21,18 @@ How to  use age with chezmoi?
 chezmoi age-keygen -o key.txt
 ```
 
-chezmoi comes prepackaged with age. you just can run any age related command with just a chezmoi prefix 
+chezmoi comes prepackaged with age. you just can run any age related command with just a chezmoi prefix
 
 age ==&gt; chezmoi age
 
-and everything stays the same. 
+and everything stays the same.
 
 You can use chezmoi with age encryption with ssh, pgp, passphrase for recipient ..
 
-I don’t recommend using a remote password manager to store secret values as I have faced delay in shell startup due to slow internet or dns related issues. 
+I don’t recommend using a remote password manager to store secret values as I have faced delay in shell startup due to slow internet or dns related issues.
 
 $callout💡
-Always remember AGE\_ (in caps) is your private key and should be stored safely ..and the one age.. (in small) is your public key and we will be encrypting this to this public key as an recipient 
+Always remember AGE\_ (in caps) is your private key and should be stored safely ..and the one age.. (in small) is your public key and we will be encrypting this to this public key as an recipient
 $
 
 The answer is yes and no.
@@ -56,9 +57,9 @@ This convention is followed by all the Gitforges, like GitLab, Codeberg, Source 
 
 If you want to use an SSH public key as the recipient in chezmoi, the general flow is:
 
-Pick the recipient key you want to encrypt to (one line that starts with \`ssh-rsa\`).  
-  
-Configure chezmoi/age to use it as the recipient (or export it in your shell), then add files with \`--encrypt\`. 
+Pick the recipient key you want to encrypt to (one line that starts with \`ssh-rsa\`).
+
+Configure chezmoi/age to use it as the recipient (or export it in your shell), then add files with \`--encrypt\`.
 
 you can integrate this with chezmoi config by hacking in your way.
 
@@ -82,9 +83,9 @@ The corresponding age1... string inside that file is the recipient (public key).
 
 ## answer is yes and no .
 
-1st you need to configure a chezmoi config 
+1st you need to configure a chezmoi config
 
-something  like this:- 
+something  like this:-
 
 ```yaml
 encryption = "age"

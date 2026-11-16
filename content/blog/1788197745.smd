@@ -66,3 +66,5 @@ This is the workflow with sops configuration.
 [asciicast]($image.url("https://asciinema.org/a/DByfEGsk6UQPSzmD.svg"))
 
 Using mise makes the process straightforward. Once this is set up, you can keep encrypted secrets in the repository and decrypt them when needed.
+
+

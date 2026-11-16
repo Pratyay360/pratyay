@@ -54,12 +54,12 @@ I personally boot Kde plasma flavor of fedora linux it's been 6 months and it's 
 
 ## **Freedom**
 
-One of the biggest reasons I fell in love with Linux is the sense of **freedom** it offers.  
+One of the biggest reasons I fell in love with Linux is the sense of **freedom** it offers.
 Unlike proprietary operating systems like Windows or macOS, Linux doesn’t limit you to a particular way of doing things. You’re free to:
 
 - Choose from hundreds of distributions that suit your needs, whether it's a beginner-friendly distro like Ubuntu or a cutting-edge rolling release like Arch Linux.
 - Customize your system to work the way you want, from changing the desktop environment to tweaking even the smallest settings.
-- Use your computer without worrying about invasive tracking or forced updates.  
+- Use your computer without worrying about invasive tracking or forced updates.
 This freedom extends to how you use your hardware as well. Linux runs smoothly even on older machines, letting you breathe new life into aging systems. For someone like me, who loves tinkering and optimizing, this level of control felt liberating.
 
 ## **Customization**
@@ -69,7 +69,7 @@ With Linux, you’re not stuck with a standard, unchangeable interface. Instead,
 
 - Switch between desktop environments like GNOME, KDE Plasma, or XFCE, depending on your preferences.
 - "Rice" your desktop to create stunning and minimalist designs, tailoring everything from the color schemes to the window manager.
-- Modify the terminal to look and behave exactly how you want, using themes, plugins, and tools like Zsh or Oh My Zsh.  
+- Modify the terminal to look and behave exactly how you want, using themes, plugins, and tools like Zsh or Oh My Zsh.
 For me, experimenting with different configurations felt like a creative outlet. The ability to design a workspace that was both visually pleasing and incredibly functional was empowering. Unlike closed systems, Linux encouraged me to make my computer an extension of my personality.
 
 ## **Open-Source Philosophy**
@@ -96,14 +96,14 @@ Toolbox containers also share the host's sockets like, SSH agent and the host's 
 
 I've often seen people recommend using Flatpak for GUI applications and Toolbox for command-line tools. However, Toolbox containers are perfectly capable of running GUI applications too. I've been installing and running GUI apps directly inside Toolbox for quite some time, and honestly, I've never noticed any significant difference in the overall experience. Even I have installed all my web browsers inside toolbox containers.
 
-Unlike flatpak where users are limited to specific number of [freedesktop]($link.url("https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/wikis/Freedesktop-SDK-Flatpak-repository").new(true)) run times, Users can use any in the case of toolbox, also the command `flatpak-spawn` available inside toolbox containers though it’s just a shell script, [I have even built a cli tool to accompany me while using toolbox containers.]($link.url("https://github.com/Pratyay360/toolbox-export").new(true)) 
+Unlike flatpak where users are limited to specific number of [freedesktop]($link.url("https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/wikis/Freedesktop-SDK-Flatpak-repository").new(true)) run times, Users can use any in the case of toolbox, also the command `flatpak-spawn` available inside toolbox containers though it’s just a shell script, [I have even built a cli tool to accompany me while using toolbox containers.]($link.url("https://github.com/Pratyay360/toolbox-export").new(true))
 
 ## **Conclusion**
 
-Switching to Linux taught me more than just technical skills it gave me a new perspective  
-on **freedom, creativity, and community**. The ability to customize my system,  
-use free and open-source software, and break away from proprietary restrictions  
-made my journey rewarding. Linux isn't just an operating system; it's a way to  
+Switching to Linux taught me more than just technical skills it gave me a new perspective
+on **freedom, creativity, and community**. The ability to customize my system,
+use free and open-source software, and break away from proprietary restrictions
+made my journey rewarding. Linux isn't just an operating system; it's a way to
 embrace technology with curiosity and empowerment.
 
 # Continuation

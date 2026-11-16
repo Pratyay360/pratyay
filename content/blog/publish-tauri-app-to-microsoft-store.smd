@@ -1,12 +1,13 @@
 ---
-.date = .date("2026-11-09T18:45:16Z"),
+.title = "Publish tauri app to microsoft store.",
 .description = "publish tauri v2 app on microsoft store.",
+.date = .date("2026-11-09T18:45:16Z"),
 .draft = false,
 .layout = "post.shtml",
 .tags = ["microsoft", "exe", "tauriv2", "lightcms", "msix", "drawx"],
-.title = "Publish tauri app to microsoft store.",
 ---
-I recently released DRAWX, a desktop app built with Tauri v2 and Vite + React. Tauri v2 is a Rust-based framework for building cross-platform desktop applications. Many Tauri projects already have CI set up (for example, through CrabNebula Cloud), but publishing to the Microsoft Store is a different process.
+
+I recently released [DRAWX]($link.url("https://github.com/pratyay/drawx").new(true)), a desktop app built with Tauri v2 and Vite + React. Tauri v2 is a Rust-based framework for building cross-platform desktop applications. Many Tauri projects already have CI set up (for example, through CrabNebula Cloud), but publishing to the Microsoft Store is a different process.
 
 This guide walks through the steps to publish a Tauriv2 app to the Microsoft Store.
 
