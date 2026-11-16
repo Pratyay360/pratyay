@@ -173,7 +173,7 @@ a.title h3 {
  */
 :root {
   --accent-color: #9e4500;
-  --fg-muted-4: rgb(0 0 0 / 0.55);
+  --fg-muted-4: rgb(0 0 0 / 0.65);
   --link-color: #9e4500;
   color-scheme: light dark;
 }
@@ -193,11 +193,51 @@ a {
   color: var(--link-color);
 }
 
-/* Footer navigation links (default + active) */
-#site-footer nav a {
-  color: var(--fg-muted-4);
+/* Nav/footer contrast (light) */
+:root:not([data-theme="dark"]),
+[data-theme="light"] {
+  --nav-link-color: rgba(0, 0, 0, 0.78);
+}
+[data-theme="dark"] {
+  --nav-link-color: var(--fg-muted-5, rgba(255,255,255,0.75));
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --nav-link-color: var(--fg-muted-5, rgba(255,255,255,0.75));
+  }
 }
 
+#site-nav nav a,
+#site-nav nav summary {
+  color: var(--nav-link-color, var(--fg-muted-4));
+}
+#site-nav nav a:hover,
+#site-nav nav summary:hover {
+  color: var(--fg-color, #000);
+}
+#site-nav nav a.active {
+  color: var(--link-color);
+}
+
+#site-footer nav a {
+  color: var(--nav-link-color, var(--fg-muted-4));
+}
+#site-footer nav a:hover {
+  color: var(--fg-color, #000);
+}
 #site-footer nav a.active {
   color: var(--link-color);
+}
+
+#site-footer .link {
+  color: var(--link-color);
+}
+:root:not([data-theme="dark"]) #site-footer .link,
+[data-theme="light"] #site-footer .link {
+  color: #8a3d00;
+}
+#site-footer .link:hover,
+#site-footer .link:active {
+  background-color: var(--accent-color);
+  color: #fff;
 }
