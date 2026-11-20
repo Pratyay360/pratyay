@@ -15,7 +15,7 @@ for (const file of walk("public")) {
   html = html.replace(/<a\b([^>]*?)>/g, (match, attrs) => {
     if (!/href=["']https?:\/\//i.test(attrs)) return match;
     if (/rel=/i.test(attrs)) return match;
-    return `<a${attrs} rel="noopener noreferrer">`;
+    return `<a${attrs} rel="">`;
   });
   fs.writeFileSync(file, html);
 }

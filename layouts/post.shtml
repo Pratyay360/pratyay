@@ -42,7 +42,7 @@
 				</details>
 			</ctx>
 			<a id="go-to-top" href="#top" title="Go to Top" aria-label="Go to Top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
-			<a id="share" href="$site.host_url.addPath($page.link()).prefix('https://shareopenly.org/share/?url=')" rel="noopener noreferrer" title="Share" aria-label="Share"><i class="fa-solid fa-share-nodes" aria-hidden="true"></i></a>
+			<a id="share" href="$site.host_url.addPath($page.link()).prefix('https://shareopenly.org/share/?url=')" title="Share" aria-label="Share"><i class="fa-solid fa-share-nodes" aria-hidden="true"></i></a>
 		</div>
 
 		<div class="e-content" itemprop="articleBody" :html="$page.content()"></div>
@@ -113,7 +113,7 @@
 			observer.disconnect();
 
 			const script = document.createElement("script");
-			script.src = "https://cdn.jsdelivr.net/npm/giscus@1.6.0/dist/giscus.mjs";
+			script.src = "https://giscus.app/client.js";
 			script.async = true;
 			script.crossOrigin = "anonymous";
 

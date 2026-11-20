@@ -1,6 +1,6 @@
 ---
 .title = "Contact",
-.description = "Contact Pratyay Mustafi — how to reach me",
+.description = "Contact me -- how to reach me",
 .date = .date("2026-01-01T00:00:00"),
 .authors = ["Pratyay Mustafi"],
 .layout = "page.shtml",
@@ -23,9 +23,3 @@ Don't hesitate to drop a little message, I'm looking to learn alot from people.
 - [Resume]($link.url("https://www.dropbox.com/scl/fo/1wtu0usazywvp64y7kcbq/ABvH9jWZGzaGdfMP38mkMcE?rlkey=lyfzar4bw3trg9k47hpt66k9w&st=fha8i1o1&dl=0").new(true)): Also you can refer me    to your company
 - [Support Me]($link.url("https://upi.pratyay.online").new(true)): Support Me (financially)
 - [Buy Me a Coffee]($link.url("https://buymeacoffee.com/Pratyay360").new(true)): Buy Me a Coffee
-
-
-
-
-
-
