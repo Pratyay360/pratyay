@@ -5,10 +5,10 @@
 			<p>
 				<small>
 					<time class="dt-published" datetime="$page.date.format('2006-01-02')" itemprop="datePublished">Published on
-						<span :text="$page.date.format('January 02, 2006')"></span>
-					</time>
+						<span :text="$page.date.format('January 02, 2006')"></span></time>
 					<span class="view-counter" data-view-counter data-path="$page.link()" title="Page views" hidden>
-						<span data-views>0</span> <span data-views-label>views</span>
+						<span data-views>0</span>
+						<span data-views-label>views</span>
 					</span>
 				</small>
 			</p>
@@ -42,9 +42,7 @@
 				</details>
 			</ctx>
 			<a id="go-to-top" href="#top" title="Go to Top" aria-label="Go to Top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
-			<a id="share"
-				href="$site.host_url.addPath($page.link()).prefix('https://shareopenly.org/share/?url=')"
-				rel="noopener noreferrer" title="Share" aria-label="Share"><i class="fa-solid fa-share-nodes" aria-hidden="true"></i></a>
+			<a id="share" href="$site.host_url.addPath($page.link()).prefix('https://shareopenly.org/share/?url=')" rel="noopener noreferrer" title="Share" aria-label="Share"><i class="fa-solid fa-share-nodes" aria-hidden="true"></i></a>
 		</div>
 
 		<div class="e-content" itemprop="articleBody" :html="$page.content()"></div>
@@ -89,9 +87,9 @@
 			if (!entry.isIntersecting || initialized) return;
 			initialized = true;
 			observer.disconnect();
-			await import("https://unpkg.com/applause-button/dist/applause-button.js");
+			await import("https://cdn.jsdelivr.net/npm/applause-button/dist/applause-button.js");
 			const button = document.createElement("applause-button");
-			button.setAttribute("color", "#d97706"); // amber
+			button.setAttribute("color", "#d9770689"); // amber
 			button.setAttribute("multiclap", "");
 			button.style.margin = "2rem auto";
 			button.style.display = "block";
@@ -99,7 +97,7 @@
 			root.appendChild(button);
 		});
 
-		observer.observe(root);
+	observer.observe(root);
 	</script>
 
 	<div id="comments"></div>
@@ -115,7 +113,7 @@
 			observer.disconnect();
 
 			const script = document.createElement("script");
-			script.src = "https://giscus.app/client.js";
+			script.src = "https://cdn.jsdelivr.net/npm/giscus@1.6.0/dist/giscus.mjs";
 			script.async = true;
 			script.crossOrigin = "anonymous";
 
@@ -137,11 +135,10 @@
 			root.appendChild(script);
 		});
 
-		observer.observe(root);
+	observer.observe(root);
 	</script>
 	<div class="center">
-		<a href="https://github.com/Pratyay360/blogs_md/issues/1" target="_blank" rel="noopener noreferrer"
-			class="github-subscribe-btn">Subscribe
+		<a href="https://github.com/Pratyay360/blogs_md/issues/1" target="_blank" class="github-subscribe-btn">Subscribe
 			on GitHub</a>
 	</div>
 </main>

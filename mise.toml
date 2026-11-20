@@ -8,6 +8,7 @@ argc = "latest"
 node = "24"
 "npm:surge" = "latest"
 superhtml = "latest"
+"npm:parcel" = "latest"
 # wrangler = { version = "latest", allow_builds = ["esbuild", "sharp", "workerd"] }
 
 [settings]

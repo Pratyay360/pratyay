@@ -5,7 +5,9 @@
 	<ul :loop="$site.pages()">
 		<li>
 			<a href="$loop.it.link()" :text="$loop.it.title"></a>
-			<span> — </span>
+			<span>
+				—
+			</span>
 			<span :text="$loop.it.link()"></span>
 			<br>
 			<small><em :text="$loop.it.description"></em></small>

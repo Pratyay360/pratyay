@@ -4,65 +4,58 @@
 		<a href="#main-content" tabindex="0">Skip</a>
 		<ul>
 			<li id="home">
-				<a href="$site.page('').link()"
-					class="$page.link().eql($site.page('').link()).then('active', '')">
-					<i class="fa-solid fa-house" aria-hidden="true"></i>Pratyay Mustafi
+				<a href="$site.page('').link()" class="$page.link().eql($site.page('').link()).then('active', '')">
+					<i class="icon"></i>Pratyay Mustafi
 				</a>
 			</li>
 			<li class="divider"></li>
 			<li>
-				<a href="$site.page('blog').link()"
-					class="$page.link().eql($site.page('blog').link()).then('active', '')">Blog</a>
+				<a href="$site.page('blog').link()" class="$page.link().eql($site.page('blog').link()).then('active', '')">Blog</a>
 			</li>
 			<li>
-				<a href="$site.page('projects').link()"
-					class="$page.link().eql($site.page('projects').link()).then('active', '')">Projects</a>
+				<a href="https://pratyay360.github.io" class="external">Projects</a>
 			</li>
 			<li>
-				<a href="$site.page('devlog').link()"
-					class="$page.link().eql($site.page('devlog').link()).then('active', '')">Devlog</a>
+				<a href="$site.page('devlog').link()" class="$page.link().eql($site.page('devlog').link()).then('active', '')">Devlog</a>
 			</li>
 			<li>
-				<a href="$site.page('notes').link()"
-					class="$page.link().eql($site.page('notes').link()).then('active', '')">Notes</a>
+				<a href="$site.page('notes').link()" class="$page.link().eql($site.page('notes').link()).then('active', '')">Notes</a>
 			</li>
 			<li>
-				<a href="$site.page('contactme').link()"
-					class="$page.link().eql($site.page('contactme').link()).then('active', '')">Contact Me</a>
+				<a href="$site.page('contactme').link()" class="$page.link().eql($site.page('contactme').link()).then('active', '')">Contact Me</a>
 			</li>
 			<li id="search">
 				<a class="circle" href="$site.page('search').link()" title="Search" aria-label="Search">
-					<i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+					<i class="icon"></i>
 				</a>
 			</li>
 			<li id="theme-switcher">
 				<details class="closable">
 					<summary class="circle" title="Theme">
-						<i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+						<i class="icon"></i>
 					</summary>
 					<ul>
 						<li>
 							<button class="circle" id="theme-light" title="Switch to Light Theme">
-								<i class="fa-solid fa-sun" aria-hidden="true"></i>
+								<i class="icon"></i>
 							</button>
 						</li>
 						<li>
 							<button class="circle" id="theme-dark" title="Switch to Dark Theme">
-								<i class="fa-solid fa-moon" aria-hidden="true"></i>
+								<i class="icon"></i>
 							</button>
 						</li>
 						<li>
 							<button class="circle" id="theme-system" title="Use System Theme">
-								<i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+								<i class="icon"></i>
 							</button>
 						</li>
 					</ul>
 				</details>
 			</li>
 			<li id="feed">
-				<a class="circle" href="$site.index().alternative('rss-all').link()" title="RSS feed (all posts)"
-					aria-label="RSS feed (all posts)">
-					<i class="fa-solid fa-rss" aria-hidden="true"></i>
+				<a class="circle" href="$site.index().alternative('rss-all').link()" title="RSS feed (all posts)" aria-label="RSS feed (all posts)">
+					<i class="icon"></i>
 				</a>
 			</li>
 		</ul>

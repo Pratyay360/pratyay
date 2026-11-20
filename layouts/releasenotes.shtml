@@ -5,7 +5,9 @@
 
 	<div id="article-list" :loop="$page.subpages()">
 		<article :if="$loop.it.isSection().not()">
-			<a href="$loop.it.link()" aria-hidden="true" ></a>
+			<a href="$loop.it.link()"
+			   aria-hidden="true"
+			></a>
 			<h3>
 				<a href="$loop.it.link()" :text="$loop.it.title"></a>
 			</h3>
@@ -15,8 +17,7 @@
 			</ctx>
 			<div class="details">
 				<small>
-					<time datetime="$loop.it.date.format('2006-01-02')"
-						:text="$loop.it.date.format('January 02, 2006')"></time>
+					<time datetime="$loop.it.date.format('2006-01-02')" :text="$loop.it.date.format('January 02, 2006')"></time>
 				</small>
 			</div>
 		</article>
