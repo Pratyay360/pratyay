@@ -60,7 +60,7 @@
 
 :where(button,
 input:is([type=button i], [type=reset i], [type=submit i])) {
-  -webkit-appearance: button;
+  -appearance: button;
 }
 
 :where(progress) {
@@ -76,7 +76,7 @@ input:is([type=button i], [type=reset i], [type=submit i])) {
 }
 
 :where(input[type=search i]) {
-  -webkit-appearance: textfield;
+  -appearance: textfield;
   outline-offset: -2px;
 }
 
@@ -91,11 +91,11 @@ input:is([type=button i], [type=reset i], [type=submit i])) {
 }
 
 ::-webkit-search-decoration {
-  -webkit-appearance: none;
+  -appearance: none;
 }
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
+  -appearance: button;
   font: inherit;
 }
 

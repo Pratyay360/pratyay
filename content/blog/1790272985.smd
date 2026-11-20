@@ -1,0 +1,79 @@
+---
+.date = .date("2026-09-24T18:03:00Z"),
+.description = "Building your own operating system isn’t that hard! Thanks to bootc. Customize distros add your favorite packages, remove unwanted, configure your system, and personalize it.",
+.draft = false,
+.layout = "post.shtml",
+.tags = ["ostree", "bootc", "iso", "os", "os customization", "Rhel", "Fedora", "Alma", "Rocky", "Red hat"],
+.title = "Building Your own operating system is not that hard",
+---
+Containerizing web applications is standard practice these days, but deploying  
+your entire operating system as a container image fundamentally changes how we   
+interact with and manage the system. If you have been exploring the  
+cloud-native ecosystem, you have likely heard of the `bootc` and `ostree`
+projects. But what exactly do they do, and why should you care?
+
+# First, let's talk about what bootc is ?
+
+Bootc (bootable containers) fundamentally changes how we operate our OS.
+Instead of just spinning up containers on top of a traditional host, you
+practically boot into and live inside one.
+
+Operating systems built this way are inherently **immutable**, meaning you
+cannot write directly to the root directory (`/`). While this might sound
+restrictive at first glance, it provides massive advantages for system
+security, predictability, and stability.
+
+## Why an immutable, container centric OS?
+
+A bootc based OS gives you very little headroom to break your system. It is
+not a drill you tried some tinkering with and suddenly the system refuses to boot.
+If you were still able to break it, no worries, because your system treats
+itself as a version-controlled system:
+
+- **Atomic upgrades:** Updates download in the background and unpack in
+parallel to the running system without interrupting your work. It is
+either successful or failed, with no in-between state.
+- **Instant rollbacks:** If a bad update or regression ever slips through, you
+can instantly roll back to the previous working deployment with a simple
+reboot.
+
+There are also excellent templates and tooling built around `bootc`,
+such as [BlueBuild]($link.url("https://blue-build.org/").new(true)), which has a fantastic community.
+Because your OS is essentially a container image, you can customize it,
+build, and distribute it via a container registry.
+
+## Creating and Sharing Custom ISOs
+
+Building your own container image is straightforward, but what if you want to
+use it on your machine? You can't directly install a container image on a new system.
+
+Should you be re-basing to your image after installing [CoreOS]($link.url("https://fedoraproject.org/coreos/").new(true))?
+No. Then why write recipes to mend your own OS?
+
+BlueBuild gives you an option to generate your own ISO files with `blue-build generate-iso`, but creating that on your machine is a lot of work. So we are going to delegate that to GitHub Actions, but there remains a catch: GitHub allows release assets up to 2 GB per file, which is often too small for full OS ISOs.
+
+Alternative storage options include object storage like S3, but there is an egress ingress cost associated,
+and paying money for a small hobby is a big no-no. Services like [Gofile.io]($link.url("https://gofile.io/").new(true)) can be great
+options for storing and sharing ISO files.
+
+## Be gentle with GitHub-hosted runners: the whole process can be computationally expensive
+
+[Please Be Gentle XD]($image.url("https://img.youtube.com/vi/60A9WaeDMYU/hqdefault.jpg"))
+
+Here is an example of my resource consumption:
+
+[GitHub Actions Workflow Run]($image.url("https://i.ibb.co/LD573nDr/Screenshot-2026-09-25-at-00-53-54-Workflow-runs-Pratyay360-blueee-os-png.png"))
+
+You can check out the repository building these ISOs here:
+[Pratyay360/blueee-os]($link.url("https://github.com/Pratyay360/blueee-os").new(true)).
+---
+# Recommended Base Images for Customization
+
+If you are looking to start building your own custom `bootc` images, here are
+popular upstream base image registries:
+
+| Distribution      | Base Image Registry                                                           |
+| :----------------- | :----------------------------------------------------------------------------- |
+| **Fedora**        | [fedora-ostree-desktops]($link.url("https://quay.io/organization/fedora-ostree-desktops").new(true)) |
+| **AlmaLinux**     | [almalinuxorg]($link.url("https://quay.io/organization/almalinuxorg").new(true))                     |
+| **CentOS Stream** | [centos-bootc]($link.url("https://quay.io/organization/centos-bootc").new(true))                     |

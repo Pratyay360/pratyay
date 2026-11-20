@@ -14,6 +14,7 @@ const DIRECTORY_MAPPINGS = [
   { src: "content/blog", dest: "content/blog", layout: "post.shtml" },
   { src: "content/devlogs", dest: "content/devlog", layout: "page.shtml" },
   { src: "content/notes", dest: "content/notes", layout: "page.shtml" },
+  { src: "content/projects", dest: "content/projects", layout: "page.shtml" },
 ];
 
 async function fileExists(p) {

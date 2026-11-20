@@ -6,7 +6,7 @@
 			<li id="home">
 				<a href="$site.page('').link()"
 					class="$page.link().eql($site.page('').link()).then('active', '')">
-					<i class="icon"></i>Pratyay Mustafi
+					<i class="fa-solid fa-house" aria-hidden="true"></i>Pratyay Mustafi
 				</a>
 			</li>
 			<li class="divider"></li>
@@ -15,7 +15,8 @@
 					class="$page.link().eql($site.page('blog').link()).then('active', '')">Blog</a>
 			</li>
 			<li>
-				<a href="https://pratyay360.github.io" rel="noopener noreferrer" class="external">Projects</a>
+				<a href="$site.page('projects').link()"
+					class="$page.link().eql($site.page('projects').link()).then('active', '')">Projects</a>
 			</li>
 			<li>
 				<a href="$site.page('devlog').link()"
@@ -31,28 +32,28 @@
 			</li>
 			<li id="search">
 				<a class="circle" href="$site.page('search').link()" title="Search" aria-label="Search">
-					<i class="icon"></i>
+					<i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
 				</a>
 			</li>
 			<li id="theme-switcher">
 				<details class="closable">
 					<summary class="circle" title="Theme">
-						<i class="icon"></i>
+						<i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
 					</summary>
 					<ul>
 						<li>
 							<button class="circle" id="theme-light" title="Switch to Light Theme">
-								<i class="icon"></i>
+								<i class="fa-solid fa-sun" aria-hidden="true"></i>
 							</button>
 						</li>
 						<li>
 							<button class="circle" id="theme-dark" title="Switch to Dark Theme">
-								<i class="icon"></i>
+								<i class="fa-solid fa-moon" aria-hidden="true"></i>
 							</button>
 						</li>
 						<li>
 							<button class="circle" id="theme-system" title="Use System Theme">
-								<i class="icon"></i>
+								<i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
 							</button>
 						</li>
 					</ul>
@@ -61,7 +62,7 @@
 			<li id="feed">
 				<a class="circle" href="$site.index().alternative('rss-all').link()" title="RSS feed (all posts)"
 					aria-label="RSS feed (all posts)">
-					<i class="icon"></i>
+					<i class="fa-solid fa-rss" aria-hidden="true"></i>
 				</a>
 			</li>
 		</ul>

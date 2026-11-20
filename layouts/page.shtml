@@ -30,7 +30,7 @@
 			<ctx :if="$page.custom.get?('toc')">
 				<details id="toc" class="closable">
 					<summary title="Table of Contents">
-						<i class="icon"></i>
+						<i class="fa-solid fa-list" aria-hidden="true"></i>
 					</summary>
 					<div>
 						<strong class="title">Table of Contents</strong>
@@ -38,7 +38,7 @@
 					</div>
 				</details>
 			</ctx>
-			<a id="go-to-top" href="#top" title="Go to Top" aria-label="Go to Top"><i class="icon"></i></a>
+			<a id="go-to-top" href="#top" title="Go to Top" aria-label="Go to Top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
 		</div>
 
 		<div class="post" itemprop="text" :html="$page.content()"></div>

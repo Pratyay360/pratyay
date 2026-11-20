@@ -59,16 +59,18 @@ function switchTheme(theme) {
 }
 
 function updateIconClass(theme) {
-	const iconElement = document.querySelector("#theme-switcher summary .icon");
+	const iconElement = document.querySelector("#theme-switcher summary i.fa-solid");
+	if (!iconElement) return;
 
-	// Remove any existing theme classes
-	iconElement.classList.remove("light", "dark");
+	// Swap the Font Awesome glyph to match the active theme.
+	iconElement.classList.remove("fa-sun", "fa-moon", "fa-circle-half-stroke");
 
-	// Add the appropriate class based on the selected theme
 	if (theme === "light") {
-		iconElement.classList.add("light");
+		iconElement.classList.add("fa-sun");
 	} else if (theme === "dark") {
-		iconElement.classList.add("dark");
+		iconElement.classList.add("fa-moon");
+	} else {
+		iconElement.classList.add("fa-circle-half-stroke");
 	}
 }
 
