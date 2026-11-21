@@ -9,7 +9,7 @@
 		<meta name="robots" content="noindex, nofollow">
 	</ctx>
 	<ctx :if="$page.link().eql('/search/')">
-		<meta name="robots" content="follow">
+		<meta name="robots" content="noindex, follow">
 	</ctx>
 	<ctx :if="$page.link().eql('/search/').or($page.link().eql('/404/')).not()">
 		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -125,7 +125,6 @@
 	<link rel="alternate" type="application/rss+xml" title="All posts" href="$site.index().alternative('rss-all').link()">
 	<link rel="me" href="https://mastodon.social/@realPratyay">
 	<link rel="me" href="https://github.com/Pratyay360">
-	<meta name="index" href="$site.asset('69be26d93fe446a386772b6d7b3d9781.txt').link()">
 	<link rel="stylesheet dns-prefetch" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
 
 	<script defer src="$site.asset('js/theme-switcher.js').link()"></script>

@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /search/
-Disallow: /404/
 
 Sitemap: https://www.pratyay.online/sitemap.xml
-Pgp: https://www.pratyay.online/pgp.pub
+Sitemap: https://pratyay360.github.io/sitemap.xml
+Sitemap: https://www.pratyay.online/rss.xml

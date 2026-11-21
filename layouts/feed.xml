@@ -1,10 +1,12 @@
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title :text="$site.title"></title>
     <link :text="$site.host_url"></link>
     <description :text="$site.title.suffix(' - All posts')"></description>
+    <atom:link href="$site.host_url.addPath($site.index().alternative('rss-all').link())" rel="self" type="application/rss+xml" />
     <generator>Zine -- https://zine-ssg.io</generator>
     <language>en-US</language>
+    <ttl>60</ttl>
     <lastBuildDate :text="$build.generated.formatHTTP()"></lastBuildDate>
     <ctx :loop="$site.page('blog').leaves()">
       <item>

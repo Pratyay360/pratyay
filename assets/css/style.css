@@ -80,6 +80,10 @@
   vertical-align: -0.125em;
 }
 
+#site-nav nav #home a i[class*="fa-"] {
+  margin-inline-end: 0.25rem;
+}
+
 /* Footer widgets (badge wall, carbon badge, townsquare) */
 .footer-widgets {
   display: flex;
@@ -158,29 +162,78 @@ a.title h3 {
 }
 
 /*
- * Accessibility: provide sufficient colour contrast (WCAG AA).
- * Light mode only; dark mode values already pass.
+ * Accessibility: WCAG AA colour contrast in both themes.
+ *
+ * This sheet loads after duckquill.css, so a plain :root override would also
+ * win in dark mode (a light --fg-muted-4 once left dark-mode text at 1.03:1).
+ * Every value duckquill redefines for dark mode is restated here at the same
+ * specificity, plus the higher-specificity system-preference variant.
  */
 :root {
   --accent-color: #9e4500;
+  --accent-text: #7a3300;
   --fg-muted-4: rgb(0 0 0 / 0.65);
   --link-color: #9e4500;
+  --blue-fg: #1758a8;
+  --green-fg: #12662f;
+  --purple-fg: #7b2b96;
+  --red-fg: #a5151c;
+  --yellow-fg: #755200;
   color-scheme: light dark;
 }
 
 [data-theme="dark"] {
+  --accent-color: #ffa348;
+  --accent-text: #ffa348;
+  --fg-muted-4: rgb(255 255 255 / 0.6);
   --link-color: #ffa348;
+  --blue-fg: rgb(153 193 241);
+  --green-fg: rgb(143 240 164);
+  --purple-fg: rgb(220 138 221);
+  --red-fg: rgb(246 97 81);
+  --yellow-fg: rgb(248 228 92);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
+    --accent-color: #ffa348;
+    --accent-text: #ffa348;
+    --fg-muted-4: rgb(255 255 255 / 0.6);
     --link-color: #ffa348;
+    --blue-fg: rgb(153 193 241);
+    --green-fg: rgb(143 240 164);
+    --purple-fg: rgb(220 138 221);
+    --red-fg: rgb(246 97 81);
+    --yellow-fg: rgb(248 228 92);
   }
 }
 
 /* Inline and general links use an accessible text colour */
 a {
   color: var(--link-color);
+}
+
+/* duckquill's placeholder opacity puts text at 3.01:1 on the light background. */
+::placeholder,
+::-webkit-input-placeholder {
+  opacity: 0.75;
+}
+
+/* The sidebar fades to 0.2 until hovered; reveal it for keyboard users too. */
+#sidebar:focus-within {
+  opacity: 1;
+}
+
+/* Accent text on the accent's own tinted background needs a darker shade. */
+#paginator #paginator-counter,
+#article-list article h3,
+#article-list article .tags a,
+#site-footer .link,
+.buttons a.colored,
+.buttons button.colored,
+:target:not(#main-content),
+#comments #comments-wrapper .comment .author .instance.op {
+  color: var(--accent-text);
 }
 
 /* Nav/footer contrast (light) */
@@ -205,8 +258,10 @@ a {
 #site-nav nav summary:hover {
   color: var(--fg-color, #000);
 }
-#site-nav nav a.active {
-  color: var(--link-color);
+#site-nav nav a.active,
+#site-nav nav #home a.active,
+#site-nav nav #theme-switcher .active {
+  color: var(--accent-text);
 }
 
 #site-footer nav a {
@@ -216,16 +271,9 @@ a {
   color: var(--fg-color, #000);
 }
 #site-footer nav a.active {
-  color: var(--link-color);
+  color: var(--accent-text);
 }
 
-#site-footer .link {
-  color: var(--link-color);
-}
-:root:not([data-theme="dark"]) #site-footer .link,
-[data-theme="light"] #site-footer .link {
-  color: #8a3d00;
-}
 #site-footer .link:hover,
 #site-footer .link:active {
   background-color: var(--accent-color);
