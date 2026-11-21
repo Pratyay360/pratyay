@@ -83,7 +83,7 @@
 			<img src="$site.asset('buttons/nosmoking.webp').link()" alt="No Smoking" width="88" height="31" loading="lazy" decoding="async">
 			<a href="$site.index().alternative('rss-all').link()"><img src="$site.asset('buttons/rss.webp').link()" alt="RSS Feed (all posts)" width="80" height="15" loading="lazy" decoding="async"></a>
 			<a href="https://app.youform.com/forms/8kgi7jvm" ><img src="$site.asset('buttons/contact.webp').link()" alt="Contact form" width="88" height="31" loading="lazy" decoding="async"></a>
-			<a href="https://buymeacoffee.com/Pratyay360" target="_blank" ><img src="$site.asset('buttons/buymeacoffee.svg').link()" alt="Buy Me A Coffee" width="88" height="31" loading="lazy" decoding="async"></a>
+			<a href="https://buymeacoffee.com/Pratyay360"><img src="$site.asset('buttons/buymeacoffee.svg').link()" alt="Buy Me A Coffee" width="88" height="31" loading="lazy" decoding="async"></a>
 		</div>
 		<div id="wcb" class="carbonbadge"></div>
 		<div>

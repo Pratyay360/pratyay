@@ -1,24 +1,8 @@
 ---
 .title = "Sitemap",
-.date = .date("1990-01-01T00:00:00"),
+.date = .date("2026-01-01T00:00:00"),
 .layout = "sitemap.shtml",
 .description = "Overview and complete index of pages, blog posts, and notes on Pratyay writes",
 ---
 
 Sitemap of the entire site:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

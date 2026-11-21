@@ -54,7 +54,7 @@
 				</details>
 			</li>
 			<li id="feed">
-				<a class="circle" href="$site.index().alternative('rss-all').link()" title="RSS feed (all posts)" aria-label="RSS feed (all posts)">
+				<a class="circle" href="$site.index().alternative('rss-all').link()" title="RSS feed" aria-label="RSS feed">
 					<i class="icon"></i>
 				</a>
 			</li>

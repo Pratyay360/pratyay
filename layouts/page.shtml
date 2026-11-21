@@ -16,6 +16,14 @@
 					</span>
 				</small>
 			</p>
+			<div itemprop="author" itemscope itemtype="https://schema.org/Person" style="display:none">
+				<span itemprop="name">Pratyay Mustafi</span>
+				<link itemprop="url" href="$site.host_url">
+			</div>
+			<meta itemprop="dateModified" content="$page.date.format('2006-01-02T15:04:05Z07:00')">
+			<meta itemprop="description" content="$page.description">
+			<meta itemprop="inLanguage" content="en-US">
+			<link itemprop="mainEntityOfPage" href="$site.host_url.addPath($page.link())">
 			<h1 :text="$page.title" itemprop="headline"></h1>
 			<ctx :if="$page.tags.empty.not()">
 				<ul class="tags">

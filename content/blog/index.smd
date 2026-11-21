@@ -1,7 +1,7 @@
 ---
 .title = "Blog",
-.description = "Blog posts by Pratyay Mustafi",
-.date = .date("1990-01-01T00:00:00"),
+.description = "Technical blog posts and tutorials on Linux, dotfiles, containerization, and open-source software by Pratyay Mustafi",
+.date = .date("2026-11-20T00:00:00"),
 .layout = "blog.shtml",
 .alternatives = [.{
     .name = "rss",
@@ -9,10 +9,3 @@
     .output = "section.xml",
 }],
 ---
-
-
-
-
-
-
-

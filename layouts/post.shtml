@@ -9,25 +9,37 @@
 					<span class="view-counter" data-view-counter data-path="$page.link()" title="Page views" hidden>
 						<span data-views>0</span>
 						<span data-views-label>views</span>
-					</span>
-				</small>
-			</p>
-			<a class="p-author h-card u-url" href="$site.host_url" style="display:none" rel="author">Pratyay Mustafi</a>
-			<meta itemprop="author" content="Pratyay Mustafi">
-			<meta itemprop="publisher" content="Pratyay Mustafi">
-			<link itemprop="mainEntityOfPage" href="$site.host_url.addPath($page.link())">
-			<link class="u-url" href="$site.host_url.addPath($page.link())">
-			<meta itemprop="image" content="$site.host_url.addPath($site.asset('fanzine.webp').link())">
-			<h1 class="p-name" :text="$page.title" itemprop="headline"></h1>
-			<ctx :if="$page.tags.empty.not()">
-				<ul class="tags">
-					<li><span class="tag">tags:</span></li>
-					<ctx :loop="$page.tags">
-						<li><span class="tag" :text="$loop.it"></span></li>
-					</ctx>
-				</ul>
-			</ctx>
+				</span>
+			</small>
+		</p>
+		<a class="p-author h-card u-url" href="$site.host_url" style="display:none" rel="author">Pratyay Mustafi</a>
+		<div itemprop="author" itemscope itemtype="https://schema.org/Person" style="display:none">
+			<span itemprop="name">Pratyay Mustafi</span>
+			<link itemprop="url" href="$site.host_url">
 		</div>
+		<div itemprop="publisher" itemscope itemtype="https://schema.org/Person" style="display:none">
+			<span itemprop="name">Pratyay Mustafi</span>
+			<link itemprop="url" href="$site.host_url">
+			<div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+				<link itemprop="url" href="$site.host_url.addPath($site.asset('fanzine.webp').link())">
+			</div>
+		</div>
+		<meta itemprop="dateModified" content="$page.date.format('2006-01-02T15:04:05Z07:00')">
+		<meta itemprop="description" content="$page.description">
+		<meta itemprop="inLanguage" content="en-US">
+		<link itemprop="mainEntityOfPage" href="$site.host_url.addPath($page.link())">
+		<link class="u-url" href="$site.host_url.addPath($page.link())">
+		<meta itemprop="image" content="$site.host_url.addPath($site.asset('fanzine.webp').link())">
+		<h1 class="p-name" :text="$page.title" itemprop="headline"></h1>
+		<ctx :if="$page.tags.empty.not()">
+			<ul class="tags">
+				<li><span class="tag">tags:</span></li>
+				<ctx :loop="$page.tags">
+					<li><span class="tag" :text="$loop.it"></span></li>
+				</ctx>
+			</ul>
+		</ctx>
+	</div>
 
 		<div id="buttons-container">
 			<ctx :if="$page.custom.get?('toc')">

@@ -31,7 +31,10 @@ async function collect(dir, out = []) {
 
 function run(cmd, args) {
 	return new Promise((resolve, reject) => {
-		const child = spawn(cmd, args, { stdio: ["ignore", "ignore", "pipe"] });
+		const child = spawn(cmd, args, {
+			stdio: ["ignore", "ignore", "pipe"],
+			env: { ...process.env, npm_config_cache: process.env.npm_config_cache || "/tmp/npm-cache" },
+		});
 		let stderr = "";
 		child.stderr.on("data", (chunk) => (stderr += chunk));
 		child.on("error", reject);

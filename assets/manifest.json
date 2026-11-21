@@ -1,8 +1,8 @@
 {
-  "name": "Pratyay writes",
+  "name": "Pratyay Mustafi",
   "short_name": "Pratyay",
-  "description": "The blog of a hobbyist navigating the seas of the internet",
-  "start_url": "/",
+  "description": "Personal blog and technical guides on Linux, dotfiles, containers, and open-source software.",
+  "start_url": "https://www.pratyay.online/",
   "scope": "/",
   "display": "standalone",
   "lang": "en-US",

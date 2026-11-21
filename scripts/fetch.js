@@ -62,16 +62,25 @@ async function getFilesRecursively(dir) {
 }
 
 async function main() {
-  const tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), "blogs-md-"));
-  console.log(`Cloning ${REPO_URL} (${REPO_BRANCH}) into ${tmpDir}...`);
+  const localBlogsDir = path.resolve(process.cwd(), "blogs_md");
+  let sourceBaseDir;
+  let tmpDir = null;
 
-  try {
+  if (await fileExists(path.join(localBlogsDir, "content"))) {
+    console.log("Using local blogs_md directory...");
+    sourceBaseDir = localBlogsDir;
+  } else {
+    tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), "blogs-md-"));
+    console.log(`Cloning ${REPO_URL} (${REPO_BRANCH}) into ${tmpDir}...`);
     execSync(`git -c core.hooksPath=/dev/null clone --depth 1 --branch "${REPO_BRANCH}" "${REPO_URL}" "${tmpDir}"`, {
       stdio: "inherit",
     });
+    sourceBaseDir = tmpDir;
+  }
 
+  try {
     for (const mapping of DIRECTORY_MAPPINGS) {
-      const srcDir = path.join(tmpDir, mapping.src);
+      const srcDir = path.join(sourceBaseDir, mapping.src);
       if (!(await fileExists(srcDir))) {
         continue;
       }
@@ -86,7 +95,9 @@ async function main() {
 
     console.log("Successfully fetched and converted all content!");
   } finally {
-    await fs.rm(tmpDir, { recursive: true, force: true }).catch(() => { });
+    if (tmpDir) {
+      await fs.rm(tmpDir, { recursive: true, force: true }).catch(() => { });
+    }
   }
 }
 

@@ -1,6 +1,6 @@
 ---
 .title = "Devlog",
 .description = "Devlog entries by Pratyay",
-.date = .date("1990-01-01T00:00:00"),
+.date = .date("2026-01-01T00:00:00"),
 .layout = "devlog-archive.shtml",
 ---

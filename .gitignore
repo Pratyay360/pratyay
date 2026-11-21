@@ -1,3 +1,9 @@
 .wrangler/
 public
 .commandcode/taste/
+content/blog/*.smd
+!content/blog/index.smd
+content/devlog/*.smd
+!content/devlog/index.smd
+content/notes/*.smd
+!content/notes/index.smd

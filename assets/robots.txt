@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /search/
+Disallow: /404/
 
 Sitemap: https://www.pratyay.online/sitemap.xml
+Pgp: https://www.pratyay.online/pgp.pub

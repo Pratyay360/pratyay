@@ -1,9 +1,9 @@
 ---
 .title = "Pratyay Mustafi",
-.date = .date("1990-01-01T00:00:00"),
+.date = .date("2026-11-20T00:00:00"),
 .authors = ["Pratyay Mustafi"],
 .layout = "index.shtml",
-.description = "The blog of a hobbyist navigating the seas of the internet",
+.description = "Personal blog and technical guides by Pratyay Mustafi covering Linux, dotfiles, containerization, Tauri, and open source development.",
 .alternatives = [.{
     .name = "rss-all",
     .layout = "feed.xml",
@@ -31,11 +31,4 @@ Anyways, read more about me or what I do from this page.
 - Container and bootc experiments.
 - Cloudflare deployment notes.
 
-I usually spend days on Reddit and contribute to open source. I enjoy tinkering, even when it bricks a device. Humor included, timing not guaranteed.
-
-
-
-
-
-
-
+I usually spend my days on Reddit and contribute to open source. I enjoy tinkering, even when it bricks a device. Humor included, timing not guaranteed.

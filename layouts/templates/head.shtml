@@ -5,21 +5,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="generator" content="Zine">
 	<meta name="author" content="Pratyay Mustafi">
-	<ctx :if="$page.link().eql('/search/').or($page.link().eql('/404/'))">
-		<meta name="robots" content="noindex, follow">
+	<ctx :if="$page.link().eql('/404/')">
+		<meta name="robots" content="noindex, nofollow">
+	</ctx>
+	<ctx :if="$page.link().eql('/search/')">
+		<meta name="robots" content="follow">
 	</ctx>
 	<ctx :if="$page.link().eql('/search/').or($page.link().eql('/404/')).not()">
 		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 	</ctx>
-	<meta name="description" content="$page.description.len().gt(0).then($page.description, 'The blog of a hobbyist navigating the seas of the internet')">
+	<meta name="description" content="$page.description.len().gt(0).then($page.description, 'Personal blog and technical guides by Pratyay Mustafi covering Linux, dotfiles, containerization, Tauri, and open source development.')">
 	<link rel="canonical" href="$site.host_url.addPath($page.link())">
 	<meta property="og:title" content="$page.title">
 	<meta name="ahrefs-site-verification" content="d3773a4e761cae81cfc313a1f250e863c527544e86f99edc96fd82d01cceb2cb">
-	<meta property="og:description" content="$page.description.len().gt(0).then($page.description, 'The blog of a hobbyist navigating the seas of the internet')">
+	<meta property="og:description" content="$page.description.len().gt(0).then($page.description, 'Personal blog and technical guides by Pratyay Mustafi covering Linux, dotfiles, containerization, Tauri, and open source development.')">
 	<meta property="og:url" content="$site.host_url.addPath($page.link())">
 	<meta property="og:type" content="$page.isSection().then('website', 'article')">
 	<ctx :if="$page.isSection().not()">
 		<meta property="article:published_time" content="$page.date.format('2006-01-02T15:04:05Z07:00')">
+		<meta property="article:modified_time" content="$page.date.format('2006-01-02T15:04:05Z07:00')">
 		<meta property="article:author" content="Pratyay Mustafi">
 		<ctx :loop="$page.tags">
 			<meta property="article:tag" content="$loop.it">
@@ -36,9 +40,52 @@
 	<meta name="twitter:site" content="@realPratyay">
 	<meta name="twitter:creator" content="@realPratyay">
 	<meta name="twitter:title" content="$page.title">
-	<meta name="twitter:description" content="$page.description.len().gt(0).then($page.description, 'The blog of a hobbyist navigating the seas of the internet')">
+	<meta name="twitter:description" content="$page.description.len().gt(0).then($page.description, 'Personal blog and technical guides by Pratyay Mustafi covering Linux, dotfiles, containerization, Tauri, and open source development.')">
 	<meta name="twitter:image" content="$site.host_url.addPath($site.asset('fanzine.webp').link())">
 	<meta name="twitter:image:alt" content="Pratyay writes cover art">
+	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "WebSite",
+				"@id": "https://www.pratyay.online/#website",
+				"url": "https://www.pratyay.online/",
+				"name": "Pratyay Mustafi",
+				"description": "Personal blog and technical guides by Pratyay Mustafi covering Linux, dotfiles, containers, and open-source software.",
+				"publisher": {
+					"@id": "https://www.pratyay.online/#person"
+				},
+				"potentialAction": {
+					"@type": "SearchAction",
+					"target": "https://www.pratyay.online/search/?q={search_term_string}",
+					"query-input": "required name=search_term_string"
+				},
+				"inLanguage": "en-US"
+			},
+			{
+				"@type": "Person",
+				"@id": "https://www.pratyay.online/#person",
+				"name": "Pratyay Mustafi",
+				"url": "https://www.pratyay.online/",
+				"image": "https://www.pratyay.online/fanzine.webp",
+				"description": "Software developer, Linux enthusiast, and open source contributor.",
+				"jobTitle": "Software Developer",
+				"sameAs": [
+					"https://github.com/Pratyay360",
+					"https://gitlab.com/pratyay360",
+					"https://codeberg.org/pratyay360",
+					"https://www.linkedin.com/in/pratyay360",
+					"https://mastodon.social/@realPratyay",
+					"https://x.com/realpratyay",
+					"https://bsky.app/profile/pratyaymustafi.bsky.social",
+					"https://www.instagram.com/realpratyay"
+				]
+			}
+		]
+	}
+	</script>
 	<meta name="theme-color" content="#9e4500">
 	<meta name="theme-color" content="#ffa348" media="(prefers-color-scheme: dark)">
 	<meta name="color-scheme" content="light dark">
@@ -59,7 +106,7 @@
 	<link rel="apple-touch-icon" href="$site.asset('favicon.ico').link()">
 	<link rel="manifest" href="/manifest.json">
 	<ctx :if="$site.page('').isCurrent()">
-		<title :text="$site.title"></title>
+		<title :text="$site.title.suffix(' | Linux, Dotfiles & Tech Blog')"></title>
 	</ctx>
 	<ctx :if="$site.page('').isCurrent().not()">
 		<title :text="$site.title.prefix($page.title, ' - ')"></title>
