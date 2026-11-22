@@ -137,8 +137,8 @@ for (const file of walk("public")) {
       "headline": cleanTitle,
       "description": description,
       "image": LOGO_URL,
-      "datePublished": publishedDate || "2026-01-01T00:00:00Z",
-      "dateModified": publishedDate || "2026-01-01T00:00:00Z",
+      "datePublished": publishedDate,
+      "dateModified": publishedDate,
       "author": {
         "@type": "Person",
         "name": AUTHOR_NAME,
