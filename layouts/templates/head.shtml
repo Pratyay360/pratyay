@@ -43,7 +43,6 @@
 	<meta name="twitter:description" content="$page.description.len().gt(0).then($page.description, 'Personal blog and technical guides by Pratyay Mustafi covering Linux, dotfiles, containerization, Tauri, and open source development.')">
 	<meta name="twitter:image" content="$site.host_url.addPath($site.asset('fanzine.webp').link())">
 	<meta name="twitter:image:alt" content="Pratyay writes cover art">
-	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
@@ -99,11 +98,10 @@
 		@media (prefers-color-scheme: dark) {
 			:root:not([data-theme="light"]) {
 				--accent-color: #ffa348;
-			}
 		}
-	</style>
+	}
+</style>
 	<link rel="icon" type="image/x-icon" href="$site.asset('favicon.ico').link()">
-	<link rel="apple-touch-icon" href="$site.asset('favicon.ico').link()">
 	<link rel="manifest" href="/manifest.json">
 	<ctx :if="$site.page('').isCurrent()">
 		<title :text="$site.title.suffix(' | Linux, Dotfiles & Tech Blog')"></title>
@@ -112,17 +110,17 @@
 		<title :text="$site.title.prefix($page.title, ' - ')"></title>
 	</ctx>
 	<link rel="dns-prefetch" href="https://pratyay.goatcounter.com">
-	<link type="text/css" rel="stylesheet" href="$site.asset('css/duckquill.css').link()">
-	<link type="text/css" rel="stylesheet" href="$site.asset('css/icons.css').link()">
-	<link type="text/css" rel="stylesheet" href="$site.asset('css/style.css').link()">
-	<link type="text/css" rel="stylesheet" href="$site.asset('css/highlight.css').link()">
-	<link type="text/css" rel="stylesheet" href="$site.asset('css/Temml-Local.css').link()">
+	<link rel="stylesheet" href="$site.asset('css/duckquill.css').link()">
+	<link rel="stylesheet" href="$site.asset('css/icons.css').link()">
+	<link rel="stylesheet" href="$site.asset('css/style.css').link()">
+	<link rel="stylesheet" href="$site.asset('css/highlight.css').link()">
+	<link rel="stylesheet" href="$site.asset('css/Temml-Local.css').link()">
 	<!--<link rel="preconnect" href="https://fly.webp.se">-->
 	<link rel="preconnect dns-prefetch" type="text/css" href="https://fonts.googleapis.com">
 	<link rel="preconnect dns-prefetch" type="text/css" href="https://fonts.gstatic.com" crossorigin>
 
 	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap">
-	<link rel="alternate" type="application/rss+xml" title="All posts" href="$site.index().alternative('rss-all').link()">
+	<!--<link rel="alternate" type="application/rss+xml" title="All posts" href="$site.index().alternative('rss-all').link()">-->
 	<link rel="me" href="https://mastodon.social/@realPratyay">
 	<link rel="me" href="https://github.com/Pratyay360">
 	<link rel="stylesheet dns-prefetch" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">

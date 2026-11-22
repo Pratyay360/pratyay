@@ -1,5 +1,11 @@
 {
   "devDependencies": {
-    "@parcel/transformer-jsonld": "^2.16.4"
+    "@parcel/config-default": "^2.16.4",
+    "@parcel/packager-raw-url": "^2.16.4",
+    "@parcel/packager-xml": "^2.16.4",
+    "@parcel/plugin": "^2.16.4",
+    "@parcel/transformer-jsonld": "^2.16.4",
+    "@parcel/transformer-webmanifest": "^2.16.4",
+    "@parcel/transformer-xml": "^2.16.4"
   }
 }

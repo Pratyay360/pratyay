@@ -53,11 +53,7 @@
 					</ul>
 				</details>
 			</li>
-			<li id="feed">
-				<a class="circle" href="$site.index().alternative('rss-all').link()" title="RSS feed" aria-label="RSS feed">
-					<i class="fa-solid fa-rss" aria-hidden="true"></i>
-				</a>
-			</li>
+
 		</ul>
 	</nav>
 </header>

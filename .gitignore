@@ -8,3 +8,4 @@ content/devlog/*.smd
 content/notes/*.smd
 !content/notes/index.smd
 node_modules
+.parcel-cache/

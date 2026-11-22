@@ -3,4 +3,3 @@ Allow: /
 
 Sitemap: https://www.pratyay.online/sitemap.xml
 Sitemap: https://pratyay360.github.io/sitemap.xml
-Sitemap: https://www.pratyay.online/rss.xml

@@ -2,15 +2,6 @@
 <main id="main-content">
 	<h1 :text="$page.title"></h1>
 	<div :html="$page.content()"></div>
-	<ctx alt="$page.alternative('rss-all')">
-		<p>
-			<a href="$ctx.alt.link()">RSS feed (all posts)</a>
-			|
-			<a href="$site.page('blog').alternative('rss').link()">Blog RSS</a>
-			|
-			<a href="$site.page('notes').alternative('rss').link()">Notes RSS</a>
-		</p>
-	</ctx>
 	<section id="latest-posts">
 		<h2>Latest Posts</h2>
 		<div id="article-list" :loop="$site.page('blog').subpages()">
