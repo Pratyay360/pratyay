@@ -7,3 +7,4 @@ content/devlog/*.smd
 !content/devlog/index.smd
 content/notes/*.smd
 !content/notes/index.smd
+node_modules
