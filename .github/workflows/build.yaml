@@ -27,9 +27,9 @@ jobs:
           path: |
             ~/.local/share/mise/installs
             ~/.local/share/mise/cache
-          key: mise-${{ runner.os }}-${{ hashFiles('mise.toml') }}
+          key: mise-${{ runner.os }}
           restore-keys: |
-            mise-${{ runner.os }}-
+            mise-${{ runner.os }}
       - name: Install dependencies
         run: |
             mise trust
