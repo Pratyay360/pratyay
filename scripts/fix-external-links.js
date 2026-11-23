@@ -109,8 +109,9 @@ for (const file of walk("public")) {
 
   const jsonLdSnippets = [];
 
-  // 4. Breadcrumb schema for non-root pages
-  if (urlPath !== "/" && urlPath !== "") {
+  // 4. Breadcrumb schema for non-root pages (skip error pages)
+  const is404 = urlPath === "/404/" || urlPath === "/404.html" || urlPath.startsWith("/404");
+  if (urlPath !== "/" && urlPath !== "" && !is404) {
     const breadcrumbs = generateBreadcrumbs(urlPath, cleanTitle);
     if (breadcrumbs) {
       jsonLdSnippets.push(breadcrumbs);
@@ -141,11 +142,13 @@ for (const file of walk("public")) {
       "dateModified": publishedDate,
       "author": {
         "@type": "Person",
+        "@id": `${SITE_URL}/#person`,
         "name": AUTHOR_NAME,
         "url": `${SITE_URL}/`
       },
       "publisher": {
         "@type": "Person",
+        "@id": `${SITE_URL}/#person`,
         "name": AUTHOR_NAME,
         "url": `${SITE_URL}/`,
         "logo": {

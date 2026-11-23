@@ -11,7 +11,7 @@
 			<h3>
 				<a href="$loop.it.link()" :text="$loop.it.title"></a>
 			</h3>
-			<p>viewers: $loop.it.viewers()</p>
+			<!--<p :int="$loop.it.viewers()"></p>-->
 			<ctx :if="$loop.it.description.len().gt(0)">
 				<p :text="$loop.it.description"></p>
 			</ctx>

@@ -12,7 +12,7 @@
 
 	<div class="buttons">
 		<a href="$site.page('').link()">Go Home</a>
-		<a href="/sitemap/">Sitemap</a>
-		<a href="/search/">Search</a>
+		<a href="$site.page('sitemap').link()">Sitemap</a>
+		<a href="$site.page('search').link()">Search</a>
 	</div>
 </main>

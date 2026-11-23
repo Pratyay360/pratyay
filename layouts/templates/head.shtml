@@ -43,6 +43,7 @@
 	<meta name="twitter:description" content="$page.description.len().gt(0).then($page.description, 'Personal blog and technical guides by Pratyay Mustafi covering Linux, dotfiles, containerization, Tauri, and open source development.')">
 	<meta name="twitter:image" content="$site.host_url.addPath($site.asset('fanzine.webp').link())">
 	<meta name="twitter:image:alt" content="Pratyay writes cover art">
+	<ctx :if="$page.link().eql('/404/').not()">
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
@@ -79,12 +80,23 @@
 					"https://mastodon.social/@realPratyay",
 					"https://x.com/realpratyay",
 					"https://bsky.app/profile/pratyaymustafi.bsky.social",
-					"https://www.instagram.com/realpratyay"
+					"https://www.instagram.com/realpratyay",
+					"https://www.facebook.com/realpratyay",
+					"https://buymeacoffee.com/Pratyay360"
+				],
+				"knowsAbout": [
+					"Linux",
+					"Dotfiles",
+					"Containerization",
+					"Tauri",
+					"Open Source Software",
+					"System Administration"
 				]
 			}
 		]
 	}
 	</script>
+	</ctx>
 	<meta name="theme-color" content="#9e4500">
 	<meta name="theme-color" content="#ffa348" media="(prefers-color-scheme: dark)">
 	<meta name="color-scheme" content="light dark">
