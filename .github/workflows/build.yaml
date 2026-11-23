@@ -31,6 +31,7 @@ jobs:
           restore-keys: |
             mise-${{ runner.os }}
       - name: Install dependencies
+        shell: bash
         run: |
             mise trust
             mise deps
@@ -56,6 +57,7 @@ jobs:
           echo "Wrote ./public/${key}.txt"
 
       - name: Deploy to surge
+        shell: bash
         run: mise run deploy
         env:
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}

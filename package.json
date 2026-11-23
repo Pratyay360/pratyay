@@ -1,26 +1,26 @@
 {
-  "scripts": {
-    "build": "cd public && parcel build \"**/*.html\" --dist-dir ."
-  },
-  "devDependencies": {
-    "@parcel/config-default": "^2.16.4",
-    "@parcel/packager-raw-url": "^2.16.4",
-    "@parcel/packager-xml": "^2.16.4",
-    "@parcel/plugin": "^2.16.4",
-    "@parcel/transformer-jsonld": "^2.16.4",
-    "@parcel/transformer-webmanifest": "^2.16.4",
-    "@parcel/transformer-xml": "^2.16.4"
-  },
-  "trustedDependencies": [
-    "@parcel/watcher",
-    "@swc/core",
-    "lmdb",
-    "msgpackr-extract"
-  ],
-  "dependencies": {
-    "@parcel/resolver-default": "^2.16.4",
-    "@parcel/transformer-css": "^2.16.4",
-    "@swc/core": "^1.16.22",
-    "parcel": "^2.16.4"
-  }
+	"scripts": {
+		"build": "cd public && parcel build \"**/*.html\" --dist-dir . && cd .."
+	},
+	"devDependencies": {
+		"@parcel/config-default": "^2.16.4",
+		"@parcel/packager-raw-url": "^2.16.4",
+		"@parcel/packager-xml": "^2.16.4",
+		"@parcel/plugin": "^2.16.4",
+		"@parcel/transformer-jsonld": "^2.16.4",
+		"@parcel/transformer-webmanifest": "^2.16.4",
+		"@parcel/transformer-xml": "^2.16.4"
+	},
+	"trustedDependencies": [
+		"@parcel/watcher",
+		"@swc/core",
+		"lmdb",
+		"msgpackr-extract"
+	],
+	"dependencies": {
+		"@parcel/resolver-default": "^2.16.4",
+		"@parcel/transformer-css": "^2.16.4",
+		"@swc/core": "^1.16.22",
+		"parcel": "^2.16.4"
+	}
 }
