@@ -9,6 +9,10 @@ node = "24"
 "npm:surge" = "latest"
 superhtml = "latest"
 "npm:parcel" = "latest"
+bun = "latest"
+"npm:pagefind" = "latest"
+biome = "latest"
+prettier = "latest"
 # wrangler = { version = "latest", allow_builds = ["esbuild", "sharp", "workerd"] }
 
 [settings]
@@ -16,11 +20,11 @@ experimental = true
 
 
 [tasks.fetch]
-run = "node scripts/fetch.js"
+run = "bun scripts/fetch.js"
 description = "fetch the latest posts"
 
 [tasks.build]
-	run = ["mise fetch", "zine release -f", "node scripts/fix-external-links.js", "node scripts/minify.js", "npx -y pagefind --site public", "parcel build public/*.html --dist-dir public", "parcel build public/*.xml --dist-dir public", "node scripts/minify-html.js"]
+	run = ["mise fetch", "zine release -f", "bun scripts/fix-external-links.js", "bun scripts/minify.js", "pagefind --site public", "bun install", "bun run build", "bun scripts/minify-html.js"]
 	description = "build the site"
 
 [tasks.dev]

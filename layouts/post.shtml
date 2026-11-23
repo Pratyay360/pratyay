@@ -27,6 +27,7 @@
 		<meta itemprop="dateModified" content="$page.date.format('2006-01-02T15:04:05Z07:00')">
 		<meta itemprop="description" content="$page.description">
 		<meta itemprop="inLanguage" content="en-US">
+		<link itemprop="stylesheet" href="https://cdn.jsdelivr.net/npm/applause-button/dist/applause-button.css">
 		<link itemprop="mainEntityOfPage" href="$site.host_url.addPath($page.link())">
 		<link class="u-url" href="$site.host_url.addPath($page.link())">
 		<meta itemprop="image" content="$site.host_url.addPath($site.asset('fanzine.webp').link())">
@@ -99,7 +100,17 @@
 			if (!entry.isIntersecting || initialized) return;
 			initialized = true;
 			observer.disconnect();
-			await import("https://cdn.jsdelivr.net/npm/applause-button/dist/applause-button.js");
+
+			// Dynamically load the applause-button module from CDN by injecting a module script
+			await new Promise((resolve, reject) => {
+				const s = document.createElement('script');
+				s.type = 'module';
+				s.src = 'https://cdn.jsdelivr.net/npm/applause-button/dist/applause-button.js';
+				s.onload = resolve;
+				s.onerror = reject;
+				document.head.appendChild(s);
+			});
+
 			const button = document.createElement("applause-button");
 			button.setAttribute("color", "#d9770689"); // amber
 			button.setAttribute("multiclap", "");

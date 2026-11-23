@@ -1,116 +1,120 @@
 /* Shiki syntax highlighting and code block styling */
 
 .code-block-container {
-  position: relative;
-  margin: 1.2rem 0;
+	position: relative;
+	margin: 1.2rem 0;
 }
 
 .code-block-container pre.shiki,
 .code-block-container pre {
-  margin: 0;
+	margin: 0;
 }
 
 .code-copy-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 4px 8px;
-  font-size: 0.72rem;
-  background-color: #282828e6;
-  color: #ebdbb2;
-  border: 1px solid #504945;
-  border-radius: 4px;
-  cursor: pointer;
-  opacity: 0.6;
-  transition: opacity 0.15s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-  z-index: 2;
-  user-select: none;
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	padding: 4px 8px;
+	font-size: 0.72rem;
+	background-color: #282828e6;
+	color: #ebdbb2;
+	border: 1px solid #504945;
+	border-radius: 4px;
+	cursor: pointer;
+	opacity: 0.6;
+	transition:
+		opacity 0.15s ease,
+		background-color 0.15s ease,
+		color 0.15s ease,
+		border-color 0.15s ease;
+	z-index: 2;
+	user-select: none;
 }
 
 .code-block-container:hover .code-copy-btn,
 .code-copy-btn:focus-visible {
-  opacity: 1;
+	opacity: 1;
 }
 
 .code-copy-btn:hover {
-  opacity: 1;
-  background-color: #3c3836;
-  color: #fbf1c7;
-  border-color: #b58b4c;
+	opacity: 1;
+	background-color: #3c3836;
+	color: #fbf1c7;
+	border-color: #b58b4c;
 }
 
 .code-copy-btn.copied {
-  opacity: 1;
-  color: #b8bb26;
-  border-color: #b8bb26;
-  background-color: #1d2021;
+	opacity: 1;
+	color: #b8bb26;
+	border-color: #b8bb26;
+	background-color: #1d2021;
 }
 
 pre.shiki,
 pre:has(> code),
 pre {
-  background-color: #1d2021 !important;
-  color: #ebdbb2 !important;
-  border: 1px solid #5a4214;
-  border-radius: 6px;
-  padding: 12px 16px;
-  margin: 1.2rem 0;
-  overflow-x: auto;
-  font-size: 0.88rem;
-  line-height: 1.6;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
-  scrollbar-width: thin;
-  scrollbar-color: #5a4214 transparent;
+	background-color: #1d2021;
+	color: #ebdbb2;
+	border: 1px solid #5a4214;
+	border-radius: 6px;
+	padding: 12px 16px;
+	margin: 1.2rem 0;
+	overflow-x: auto;
+	font-size: 0.88rem;
+	line-height: 1.6;
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+	scrollbar-width: thin;
+	scrollbar-color: #5a4214 transparent;
 }
 
 pre.shiki code,
 pre > code {
-  background: transparent !important;
-  color: inherit;
-  padding: 0 !important;
-  display: block;
-  /*font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;*/
-  font-size: inherit;
+	background: transparent;
+	color: inherit;
+	padding: 0;
+	display: block;
+	/*font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;*/
+	font-size: inherit;
 }
 
 /* Inline code outside pre */
 :not(pre) > code {
-  background-color: #241b08;
-  color: #f9c509;
-  border: 1px solid #5a4214;
-  padding: 2px 6px;
-  border-radius: 4px;
-  /*font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;*/
-  font-size: 0.85em;
+	background-color: #241b08;
+	color: #f9c509;
+	border: 1px solid #5a4214;
+	padding: 2px 6px;
+	border-radius: 4px;
+	/*font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;*/
+	font-size: 0.85em;
 }
 
 @media (pointer: coarse) {
-  .code-copy-btn {
-    min-width: 44px;
-    min-height: 44px;
-    opacity: 1;
-  }
+	.code-copy-btn {
+		min-width: 44px;
+		min-height: 44px;
+		opacity: 1;
+	}
 
-  .code-block-container pre {
-    padding-top: 60px;
-  }
+	.code-block-container pre {
+		padding-top: 60px;
+	}
 }
 
 /* Dual-theme fallback safety: ensure dark vars take precedence over inline light styles */
 @media (prefers-color-scheme: dark) {
-  .shiki,
-  .shiki span {
-    color: var(--shiki-dark) !important;
-    background-color: var(--shiki-dark-bg) !important;
-    font-style: var(--shiki-dark-font-style) !important;
-    font-weight: var(--shiki-dark-font-weight) !important;
-    text-decoration: var(--shiki-dark-text-decoration) !important;
-  }
+	.shiki,
+	.shiki span {
+		color: var(--shiki-dark);
+		background-color: var(--shiki-dark-bg);
+		font-style: var(--shiki-dark-font-style);
+		font-weight: var(--shiki-dark-font-weight);
+		text-decoration: var(--shiki-dark-text-decoration);
+	}
 
-  pre.shiki {
-    background-color: var(--shiki-dark-bg) !important;
-  }
+	pre.shiki {
+		background-color: var(--shiki-dark-bg);
+	}
 }
