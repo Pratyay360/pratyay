@@ -141,8 +141,8 @@
 	<script defer src="$site.asset('js/closable.js').link()"></script>
 	<!--<script defer src="$site.asset('js/image.js').link()"></script>-->
 	<script rel="dns-prefetch" defer src="https://cdn.jsdelivr.net/npm/temml@0.14.0/dist/temml.min.js"></script>
-	<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.1.3/sre/speech-worker.min.js"></script>
-	<script type="module" src="https://cdn.jsdelivr.net/npm/shiki@4.6.0/dist/core.mjs"></script>
+	<script rel="dns-prefetch" defer src="https://cdn.jsdelivr.net/npm/mathjax@4.1.3/sre/speech-worker.min.js"></script>
+	<script type="module" rel="dns-prefetch" defer src="https://cdn.jsdelivr.net/npm/@shikijs/core@4.6.0/dist/index.mjs"></script>
 	<script defer src="$site.asset('js/view-counter.js').link()"></script>
 	<ctx :if="$site.page('').isCurrent()">
 		<script defer async src="https://www.googletagmanager.com/gtm.js?id=GTM-PPDN9C9C"></script>
