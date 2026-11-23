@@ -124,9 +124,9 @@
 	<link rel="dns-prefetch" href="https://pratyay.goatcounter.com">
 	<link rel="stylesheet" href="$site.asset('css/duckquill.css').link()">
 	<link rel="stylesheet" href="$site.asset('css/icons.css').link()">
-	<link rel="stylesheet" href="$site.asset('css/style.css').link()">
-	<link rel="stylesheet" href="$site.asset('css/highlight.css').link()">
-	<link rel="stylesheet" href="$site.asset('css/Temml-Local.css').link()">
+	<!--<link rel="stylesheet" href="$site.asset('css/style.css').link()">-->
+	<!--<link rel="stylesheet" href="$site.asset('css/highlight.css').link()">-->
+	<!--<link rel="stylesheet" href="$site.asset('css/Temml-Local.css').link()">-->
 	<!--<link rel="preconnect" href="https://fly.webp.se">-->
 	<link rel="preconnect dns-prefetch" type="text/css" href="https://fonts.googleapis.com">
 	<link rel="preconnect dns-prefetch" type="text/css" href="https://fonts.gstatic.com" crossorigin>
