@@ -6,6 +6,13 @@ import path from "node:path";
 // the generated public/ directory instead, where Zine actually put the files.
 export default new Resolver({
   async resolve({ specifier, options }) {
+    // Pagefind's runtime files must keep their /pagefind/... URLs in the
+    // built HTML: the component UI resolves pagefind.js, the wasm module and
+    // workers relative to itself at runtime. Bundling/hashing them breaks that.
+    if (/(?:^|\/)pagefind\//.test(specifier)) {
+      return { isExcluded: true };
+    }
+
     if (!specifier.startsWith("/") || specifier.startsWith("//")) {
       return null;
     }
