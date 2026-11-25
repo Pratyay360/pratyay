@@ -5,7 +5,7 @@
 .layout = "blog.shtml",
 .alternatives = [.{
     .name = "rss",
-    .layout = "blog.xml",
-    .output = "section.xml",
+    .layout = "feed.xml",
+    .output = "rss.xml",
 }],
 ---
