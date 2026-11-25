@@ -1,6 +1,6 @@
 ---
 .title = "Blog",
-.description = "Technical blog posts and tutorials on Linux, dotfiles, containerization, and open-source software by Pratyay Mustafi",
+.description = "Technical blog posts by Pratyay Mustafi",
 .date = .date("2026-11-20T00:00:00"),
 .layout = "blog.shtml",
 .alternatives = [.{
