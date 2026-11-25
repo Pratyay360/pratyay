@@ -2,10 +2,11 @@
 <main id="main-content">
 	<div data-pagefind-ignore="all">
 		<!--<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@pagefind/component-ui@1.6.0/+esm">-->
-		<script type="module" :href="/pagefind/pagefind-component-ui.js"></script>
-		<link type="text/css" rel="stylesheet" :href="/pagefind/pagefind-component-ui.css">
+		<script type="module" src="/pagefind/pagefind-component-ui.js"></script>
+		<link type="text/css" rel="stylesheet" href="/pagefind/pagefind-component-ui.css">
 		<h1 :text="$page.title"></h1>
 		<div :html="$page.content()"></div>
-		<pagefind-searchbox excerpt-length="20" show-sub-results></pagefind-searchbox>
+		<pagefind-config excerpt-length="20"></pagefind-config>
+		<pagefind-searchbox show-sub-results></pagefind-searchbox>
 	</div>
 </main>

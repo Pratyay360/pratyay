@@ -24,7 +24,7 @@ run = "bun scripts/fetch.js"
 description = "fetch the latest posts"
 
 [tasks.build]
-run = ["mise fetch", "zine release -f", "bun install", "bun run build", "bunx pagefind --site ./public"]
+run = ["mise fetch", "zine release -f", "bun install", "bun run build", "pagefind --site public"]
 description = "build the site"
 
 [tasks.dev]
