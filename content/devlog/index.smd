@@ -3,4 +3,9 @@
 .description = "Devlog entries by Pratyay",
 .date = .date("2026-01-01T00:00:00"),
 .layout = "devlog-archive.shtml",
+.alternatives = [.{
+    .name = "rss",
+    .layout = "blog.xml",
+    .output = "section.xml",
+}]
 ---
