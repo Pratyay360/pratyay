@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <ctx :loop="$site.pages()">
-    <ctx :if="$loop.it.link().eql('/search/').or($loop.it.link().eql('/404/')).or($loop.it.link().eql('/sitemap/')).not()">
-      <url>
-        <loc :text="$site.host_url.addPath($loop.it.link())"></loc>
-        <lastmod :text="$loop.it.date.format('2006-01-02')"></lastmod>
-      </url>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title :text="$site.title"></title>
+    <link :text="$site.host_url"></link>
+    <atom:link href="$site.host_url.addPath('/sitemap.xml')" rel="self" type="application/rss+xml"/>
+    <ctx :loop="$site.pages()">
+      <ctx :if="$loop.it.link().eql('/search/').or($loop.it.link().eql('/404/')).or($loop.it.link().eql('/sitemap/')).not()">
+        <url>
+          <loc :text="$site.host_url.addPath($loop.it.link())"></loc>
+          <lastmod :text="$loop.it.date.format('2006-01-02')"></lastmod>
+        </url>
+      </ctx>
     </ctx>
-  </ctx>
-</urlset>
+  </channel>
+</rss>

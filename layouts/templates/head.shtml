@@ -6,10 +6,10 @@
 	<meta name="generator" content="Zine">
 	<meta name="author" content="Pratyay Mustafi">
 	<ctx :if="$page.link().eql('/404/')">
-		<meta name="robots" content="noindex, nofollow">
+		<meta name="robots" content="index">
 	</ctx>
 	<ctx :if="$page.link().eql('/search/')">
-		<meta name="robots" content="noindex, follow">
+		<meta name="robots" content="index, follow">
 	</ctx>
 	<ctx :if="$page.link().eql('/search/').or($page.link().eql('/404/')).not()">
 		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
