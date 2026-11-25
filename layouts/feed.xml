@@ -1,31 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title :text="$site.title"></title>
-    <link :text="$site.host_url"></link>
-    <description :text="$site.title.suffix(' - All posts')"></description>
-    <atom:link href="$site.host_url.addPath($site.index().alternative('rss-all').link())" rel="self" type="application/rss+xml" />
+    <title :text="$site.index().isCurrent().then($site.title, $page.title.suffix(' - ', $site.title))"></title>
+    <link :text="$site.host_url.addPath($page.link())"></link>
+    <description :text="$page.description"></description>
+    <atom:link href="$site.host_url.addPath($page.link(), 'rss.xml')" rel="self" type="application/rss+xml" />
     <generator>Zine -- https://zine-ssg.io</generator>
     <language>en-US</language>
     <ttl>60</ttl>
     <lastBuildDate :text="$build.generated.formatHTTP()"></lastBuildDate>
-    <ctx :loop="$site.page('blog').leaves()">
-      <item>
-        <title :text="$loop.it.title"></title>
-        <description :text="$loop.it.content()"></description>
-        <link :text="$site.host_url.addPath($loop.it.link())"></link>
-        <pubDate :text="$loop.it.date.formatHTTP()"></pubDate>
-        <guid :text="$site.host_url.addPath($loop.it.link())"></guid>
-      </item>
-    </ctx>
-    <ctx :loop="$site.page('notes').leaves()">
-      <item>
-        <title :text="$loop.it.title"></title>
-        <description :text="$loop.it.content()"></description>
-        <link :text="$site.host_url.addPath($loop.it.link())"></link>
-        <pubDate :text="$loop.it.date.formatHTTP()"></pubDate>
-        <guid :text="$site.host_url.addPath($loop.it.link())"></guid>
-      </item>
+    <ctx :loop="$page.leaves()">
+      <ctx :if="$loop.it.link().eql('/search/').or($loop.it.link().eql('/sitemap/')).or($loop.it.link().eql('/contactme/')).or($loop.it.link().eql('/404/')).not()">
+        <item>
+          <title :text="$loop.it.title"></title>
+          <description :text="$loop.it.content()"></description>
+          <link :text="$site.host_url.addPath($loop.it.link())"></link>
+          <pubDate :text="$loop.it.date.formatHTTP()"></pubDate>
+          <guid :text="$site.host_url.addPath($loop.it.link())"></guid>
+        </item>
+      </ctx>
     </ctx>
   </channel>
 </rss>
