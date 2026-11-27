@@ -4,7 +4,6 @@
     <ctx :if="$loop.it.link().eql('/search/').not()">
       <url>
         <loc :text="$site.host_url.addPath($loop.it.link())"></loc>
-        <lastmod :text="$loop.it.date.format('2006-1-14T12:10:00Z')"></lastmod>
       </url>
     </ctx>
   </ctx>
