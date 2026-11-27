@@ -36,9 +36,7 @@
 		</article>
 	</div>
 
-	<ctx alt="$page.alternative('rss')">
-		<p class="center">
-			<a href="$ctx.alt.link()">RSS feed</a>
-		</p>
-	</ctx>
+	<p class="center">
+		<a href="$site.index().alternative('rss').link()">RSS feed</a>
+	</p>
 </main>

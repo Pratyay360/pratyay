@@ -16,9 +16,7 @@
 			<span :text="$loop.it.description" class="italic fgshade2 ft-size-s"></span>
 		</li>
 	</ul>
-	<ctx :alt="$page.alternative('rss')">
-		<p class="txt-ctr">
-			<a href="$ctx.alt.link()">RSS feed</a>
-		</p>
-	</ctx>
+	<p class="txt-ctr">
+		<a href="$site.index().alternative('rss').link()">RSS feed</a>
+	</p>
 </main>

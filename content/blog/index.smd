@@ -3,10 +3,4 @@
 .description = "Technical blog posts by Pratyay Mustafi",
 .date = .date("2026-11-20T00:00:00"),
 .layout = "blog.shtml",
-.alternatives = [.{
-    .name = "rss",
-    .layout = "feed.xml",
-    .output = "rss.xml",
-}],
 ---
-
