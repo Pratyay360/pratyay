@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="generator" content="Zine">
+	<meta name="canonical" content="$site.host_url">
 	<meta name="author" content="Pratyay Mustafi">
 	<ctx :if="$page.link().eql('/404/')">
 		<meta name="robots" content="index">
@@ -15,7 +16,6 @@
 		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 	</ctx>
 	<meta name="description" content="$page.description.len().gt(0).then($page.description, 'Personal blog and technical guides by Pratyay Mustafi covering Linux, dotfiles, containerization, Tauri, and open source development.')">
-	<link rel="canonical" href="$site.host_url.addPath($page.link())">
 	<meta property="og:title" content="$page.title">
 	<meta name="ahrefs-site-verification" content="d3773a4e761cae81cfc313a1f250e863c527544e86f99edc96fd82d01cceb2cb">
 	<meta property="og:description" content="$page.description.len().gt(0).then($page.description, 'Personal blog and technical guides by Pratyay Mustafi covering Linux, dotfiles, containerization, Tauri, and open source development.')">
